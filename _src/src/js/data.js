@@ -14,7 +14,7 @@ export const CHAPTERS = [
 // Saját animációs videók (video/<n>.html, img/thumb/<n>.jpg)
 export const VIDEOS = [
   { n: 'h1', t: 'Rezeg a talaj', s: 'Dinamikus hatások: források, érzékeny talajok, önrezgésszám, hatászóna, gépalap', d: '', g: 'electro', c: 'c1' },
-  { n: 'h2', t: 'Földrengések', s: 'Fészek és epicentrum, magnitúdó és intenzitás, hazai rengések, tervezés az EC8 szerint', d: '', g: 'dubstep', c: 'c2' },
+  { n: 'h2', t: 'Földrengések', s: 'Fészek és epicentrum, magnitúdó és intenzitás, hazai rengések, tervezés az EC8 szerint', d: '', g: 'deep house', c: 'c2' },
   { n: 'h3', t: 'Üreg az épület alatt', s: 'Pincék, bányák, alagutak: süllyedési teknő, szakadólap, védekezés', d: '', g: 'phonk', c: 'c3' },
   { n: 'h4', t: 'Elhordja a víz', s: 'Gyors apadás, szemcsekimosás, hídpillérek, zsompos víztelenítés folyós homokban', d: '', g: 'afro', c: 'c4' },
   { n: 'h5', t: 'Felemeli a fagy', s: 'Jéglencse-képződés, külső falak, pinceablak, hűtőházak', d: '', g: 'future bass', c: 'c5' },
