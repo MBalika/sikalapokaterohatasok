@@ -1,0 +1,84 @@
+<header class="topbar" id="top">
+  <div class="topbar-in">
+    <a class="brand" href="#bevezeto" aria-label="Síkalapokat érő hatások – az oldal eleje">
+      <svg viewBox="0 0 36 36" aria-hidden="true"><rect x="1" y="1" width="34" height="34" rx="9" fill="var(--ink)"/><path d="M4 22h6l2-9 3 15 3-19 3 13 2-5 2 5h7" fill="none" stroke="var(--pen)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><path d="M4 28h28" stroke="var(--surface)" stroke-width="1.4" opacity=".5"/></svg>
+      <span><b>Síkalapokat érő hatások</b><small>Alapozás · 7. előadás</small></span>
+    </a>
+    <nav class="topnav" id="topnav" aria-label="Fejezetek"></nav>
+    <button class="iconbtn menubtn" id="menuBtn" type="button" aria-label="Fejezetek menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <button class="iconbtn" id="themeBtn" type="button" aria-label="Téma"></button>
+  </div>
+  <div class="strip" aria-hidden="true"><canvas id="stripCv"></canvas><div class="ro"><i></i><span class="lbl" id="stripLbl">CH0 · Áttekintés</span><canvas id="stripVal" width="96" height="16" style="width:96px;height:16px"></canvas></div></div>
+</header>
+
+<div class="navsheet" id="navsheet" hidden>
+  <div class="navsheet-in">
+    <h4>Mérőcsatornák</h4>
+    <nav class="navlist" id="navlist" aria-label="Fejezetek"></nav>
+  </div>
+</div>
+
+<main class="main" id="main">
+  <section class="hero" id="bevezeto">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="hero-kick">Alapozás · interaktív tananyag</span>
+        <h1>Síkalapokat <em>érő</em> hatások</h1>
+        <p class="hero-lead">A statikus teher okozta süllyedést jól tudjuk számítani. Az alapot azonban más, sokszor nem várt hatások is érik: rezeg alatta a talaj, megmozdul a föld, üreg nyílik alatta, kimossa a víz, vagy felemeli a fagy. Ezeket nem kiszámítani, hanem felismerni és megelőzni kell.</p>
+        <div class="hero-chips" id="heroChips"></div>
+        <div class="hero-stats">
+          <div><b id="statW">40+</b><span>interaktív elem</span></div>
+          <div><b>6</b><span>animációs videó</span></div>
+          <div><b id="statC">20+</b><span>valós eset</span></div>
+        </div>
+      </div>
+      <div class="sim" id="heroSim">
+        <div class="sim-view">
+          <canvas id="heroCv"></canvas>
+          <div class="sim-tag" id="heroTag">Mérőállomás · <b>válassz hatást</b></div>
+        </div>
+        <div class="sim-cap" id="heroCap"><b>Egy ház, öt hatás.</b> Válaszd ki lent, mi éri az alapot – az alsó sávon a ház két sarkának mozgását rögzíti a „toll” (felnagyítva).</div>
+        <div class="sim-ctrl" id="heroCtrl"></div>
+        <div class="sim-rec"><span>Sarokmozgás</span><canvas id="heroRec"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+<!--CHAPTERS-->
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h5>Síkalapokat érő hatások</h5>
+        <p>Interaktív tananyag a BME Építőmérnöki Kar Alapozás tárgyához: dinamikus hatások, földrengések, földalatti üregek, a talajvíz kimosó hatása és a fagyhatás. A szimulátorok egyszerűsített, szemléltető modellek – tervezésre nem alkalmasak.</p>
+      </div>
+      <div>
+        <h5>Kapcsolódó oldalak</h5>
+        <a href="https://sikalapoktervezese.vercel.app" target="_blank" rel="noopener">Síkalapok tervezése ↗</a>
+        <a href="https://sikalapok-sullyedesszamitasa.vercel.app" target="_blank" rel="noopener">Síkalapok süllyedésszámítása ↗</a>
+        <a href="https://kedvezotlen-altalaj.vercel.app" target="_blank" rel="noopener">Alapozás kedvezőtlen altalajon ↗</a>
+        <a href="https://vedekezesakarossullyedesekellen.vercel.app" target="_blank" rel="noopener">Védekezés a káros süllyedések ellen ↗</a>
+        <a href="https://melyalapozasok.vercel.app" target="_blank" rel="noopener">Mélyalapozások ↗</a>
+      </div>
+      <div>
+        <h5>Fejezetek</h5>
+        <nav id="footnav" aria-label="Fejezetek"></nav>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="vmodal" hidden role="dialog" aria-modal="true" aria-labelledby="vmTitle">
+  <div class="modal-bar"><b id="vmTitle"></b><button id="vmPrev" type="button" aria-label="Előző videó">←</button><button id="vmNext" type="button" aria-label="Következő videó">→</button><button id="vmClose" type="button">Bezárás ✕</button></div>
+  <div class="modal-frame"><iframe id="vmFrame" title="Animációs videó" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+  <div class="modal-info" id="vmInfo"></div>
+</div>
+<div class="modal" id="ytmodal" hidden role="dialog" aria-modal="true" aria-labelledby="ytTitle">
+  <div class="modal-bar"><b id="ytTitle"></b><a id="ytOpen" href="#" target="_blank" rel="noopener">Megnyitás a YouTube-on ↗</a><button id="ytClose" type="button">Bezárás ✕</button></div>
+  <div class="modal-frame"><iframe id="ytFrame" title="YouTube-videó" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe></div>
+  <div class="modal-info" id="ytInfo"></div>
+</div>
+<div class="lightbox" id="lightbox" hidden><img alt=""><p></p></div>
+<span class="hyphenate" hidden>elválasztás</span>
