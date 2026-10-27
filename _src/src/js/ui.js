@@ -38,6 +38,7 @@ export const WAVES = {
   drop: (t) => { const ph = t % 9; let y = 0.05 * nz(t); if (ph > 3) y -= 0.75 * (1 - Math.exp(-(ph - 3) * 6)) + 0.06 * (ph - 3); return y + 0.35; },
   flow: (t) => { const ph = t % 10; return 0.25 + 0.08 * Math.sin(t * 1.3) + 0.05 * nz(t) - 0.06 * ph - (ph > 6 ? 0.22 : 0) * Math.min(1, (ph - 6) * 4); },
   heave: (t) => { const ph = t % 10; const up = ph < 7 ? ph / 7 : 1 - (ph - 7) / 3; return -0.55 + 1.05 * (up * up * (3 - 2 * up)) + 0.04 * nz(t); },
+  swell: (t) => 0.62 * Math.sin((t / 4.75) * 2 * Math.PI) + 0.04 * nz(t), // évszakos duzzadás–zsugorodás
 };
 const READ = {
   calm: () => '—',
@@ -66,6 +67,7 @@ function initNav() {
     list?.append(h('a', { href: '#' + c.id, 'data-ch': c.id, style: `--c:${col};color:var(--ink)`, html: `<span style="color:${col}">${miniWave(c.wave)}</span><span><small>${c.no} · ${c.k}</small>${c.t}</span>` }));
     foot?.append(h('a', { href: '#' + c.id }, c.t));
     if (chipBox && /^CH[1-5]$/.test(c.no)) chipBox.append(h('a', { href: '#' + c.id, style: `--c:${col}` }, h('i'), c.nav));
+    if (chipBox && c.no === 'CH5') chipBox.append(h('a', { class: 'ext', href: 'https://kedvezotlen-altalaj.vercel.app/#terfogatvaltozo', target: '_blank', rel: 'noopener', title: 'Részletesen az Alapozás kedvezőtlen altalajon oldalon', style: '--c:var(--c7)' }, h('i'), 'Duzzadó agyag ↗'));
     c.el.style.setProperty('--c', col);
   }
   const sheet = $('#navsheet');

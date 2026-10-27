@@ -79,6 +79,7 @@ defineGlossary([
   { t: 'Zsompos víztelenítés', ch: 'CH4', d: 'Víztelenítés a gödör mélypontján kialakított zsompból szivattyúzva; folyós homokban a talajt is kiszívhatja.' },
   { t: 'Szűrőszabály', ch: 'CH4', d: 'Terzaghi feltételei a szűrőréteg szemcseméretére: a szűrő tartsa vissza a védett talajt, és jól engedje át a vizet.' },
   { t: 'Kimélyülés', ch: 'CH4', d: 'A pillér körüli örvény által a mederbe vájt tölcsér; ha eléri az alapot, a pillér megsüllyed.' },
+  { t: 'Térfogatváltozó agyag', ch: 'külön oldal', d: 'Kövér, nagy plaszticitású agyag, amely víz felvételekor duzzad, kiszáradáskor zsugorodik; a kis terhelésű házat évszakos ciklusban emeli és süllyeszti. Részletesen: <a href="https://kedvezotlen-altalaj.vercel.app/#terfogatvaltozo" target="_blank" rel="noopener">Alapozás kedvezőtlen altalajon ↗</a>.' },
   { t: 'Tömbfagyás', ch: 'CH5', d: 'A pórusvíz helyben megfagy; a víz kb. 9 %-os térfogat-növekedése csak kis emelést ad.' },
   { t: 'Jéglencse', ch: 'CH5', d: 'A fagyfront alá kapillárisan áramló vízből növő, vízszintes jégréteg; a nagy fagyemelés okozója.' },
   { t: 'Fagyhatár', ch: 'CH5', d: 'Az a mélység, ameddig a fagy a talajba hatol; az alapozás ez alá kerüljön (itthon általában 0,8 m).' },
