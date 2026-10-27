@@ -158,57 +158,94 @@ register('frost-house', (root) => {
   const snow = toggle(ctrls, { label: 'hó halmozódik a fal mellett (olvad, visszafagy)', value: true });
   const unh = toggle(ctrls, { label: 'fűtetlen épület (téli építés)', value: false });
   const D = slider(ctrls, { label: 'A jobb oldali külső fal alapjának mélysége', sym: 'D', min: 0.4, max: 1.2, step: 0.05, value: 0.5, unit: 'm', d: 2 });
-  const fig = figure(viz, 720, 360);
+  const W = 760, H = 400;
+  const fig = figure(viz, W, H);
   const vd = verdict(out);
+  const up = (x, y, len, col = 'var(--c5)') => svg('path', { d: `M${x} ${y} v-${len} m-5 7 l5 -7 l5 7`, fill: 'none', stroke: col, 'stroke-width': 2.4, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, fig);
+  const lenses = (x0, x1, y0, y1, gap = 9) => { for (let y = y0 + gap * 0.7; y < y1 - 2; y += gap) svg('line', { x1: x0 + 4, y1: y, x2: x1 - 4, y2: y, stroke: '#ffffff', 'stroke-width': 1.6, opacity: 0.75 }, fig); };
   const draw = () => {
     clear(fig);
-    const y0 = 150, sc = 100, xL = 120, xM = 380, xR = 620, fz = 0.8 + (snow.v ? 0.15 : 0); // a fagyfront mélysége kint
+    const y0 = 170, sc = 60;                          // terepszint, px/m
+    const xL = 120, xM = 360, xR = 620, tw = 13;       // falak tengelye, fél falvastagság
+    const pf = y0 + 2.2 * sc;                          // pincepadló (2,2 m mélyen)
+    const fz = 0.8 + (snow.v ? 0.15 : 0);              // fagyfront kint (a hó miatt nedves talajban mélyebb)
+    const yF = y0 + fz * sc;
+    const heaveR = D.v < fz;                           // a jobb alap a fagyfront fölött
+    const dfR = heaveR ? 12 : 0;                       // torzított emelkedés
+    const pCold = win.v || unh.v;                      // a pince alatt is fagy
+    const pH = pCold ? 10 : 0;
+    const cold = 'color-mix(in srgb, var(--frost) 35%, var(--surface))';
     // ég, talaj
-    svg('rect', { x: 0, y: 0, width: 720, height: y0, fill: 'var(--sky)' }, fig);
-    svg('rect', { x: 0, y: y0, width: 720, height: 210, fill: 'var(--soilC)' }, fig);
-    // fagyott zónák
-    const fr = [];
-    fr.push(`M0 ${y0} H${xL} V${y0 + fz * sc} H0 Z`);
-    fr.push(`M${xR} ${y0} H720 V${y0 + fz * sc} H${xR} Z`);
-    svg('path', { d: fr.join(' '), fill: 'var(--frost)', opacity: 0.75 }, fig);
-    // pince (bal oldal): padló 2,0 m mélyen
-    const pf = y0 + 2.0 * sc;
-    svg('rect', { x: xL, y: y0 - 5, width: xM - xL, height: pf - y0 + 5, fill: 'var(--surface2)' }, fig);
-    if (win.v || unh.v) svg('rect', { x: xL + 12, y: pf, width: xM - xL - 24, height: 0.55 * sc, fill: 'var(--frost)', opacity: 0.85 }, fig);
-    // földszint (jobb oldal) – padló a terepen
-    if (unh.v) svg('rect', { x: xM, y: y0, width: xR - xM, height: 0.7 * sc, fill: 'var(--frost)', opacity: 0.75 }, fig);
-    else svg('path', { d: `M${xR} ${y0} L${xR - 40} ${y0} L${xR} ${y0 + 0.8 * sc} Z`, fill: 'var(--frost)', opacity: 0.6 }, fig);
-    // fal alapok
-    const heaveR = D.v < fz && !(!unh.v && false); const dfR = heaveR ? 10 : 0;
-    const pH = (win.v || unh.v) ? 10 : 0;
-    svg('rect', { x: xL - 20, y: pf - 10, width: 40, height: 30, class: 'f-conc', stroke: 'var(--ink2)' }, fig); // pincefal alapja (mély)
-    svg('rect', { x: xM - 16, y: pf - 10, width: 32, height: 30, class: 'f-conc', stroke: 'var(--ink2)' }, fig);
-    svg('rect', { x: xR - 18, y: y0 + D.v * sc - 26 - dfR, width: 36, height: 26, class: 'f-conc', stroke: 'var(--ink2)' }, fig);
+    svg('rect', { x: 0, y: 0, width: W, height: y0, fill: 'var(--sky)' }, fig);
+    svg('rect', { x: 0, y: y0, width: W, height: H - y0, fill: 'var(--soilC)' }, fig);
+    // fagyott zónák kint (bal és jobb), a fűtött ház alá csak éken hatol be
+    svg('rect', { x: 0, y: y0, width: xL - tw, height: fz * sc, fill: 'var(--frost)', opacity: 0.7 }, fig);
+    const rz = unh.v ? `M${W} ${y0} V${yF} H${xR + tw} V${y0} Z` : `M${W} ${y0} V${yF} H${xR + tw} L${xR - 70} ${y0} Z`;
+    svg('path', { d: rz, fill: 'var(--frost)', opacity: 0.7 }, fig);
+    if (snow.v) lenses(xR + tw + 2, W, y0, yF);
+    // fűtetlen épület: a földszinti padló alatt is átfagy
+    if (unh.v) { svg('rect', { x: xM + tw, y: y0 + 4, width: xR - xM - 2 * tw, height: 0.75 * fz * sc, fill: 'var(--frost)', opacity: 0.7 }, fig); lenses(xM + tw, xR - tw, y0 + 4, y0 + 4 + 0.75 * fz * sc, 11); }
+    // pince alatti fagyott zóna
+    if (pCold) { svg('rect', { x: xL + tw + 18, y: pf + 2, width: xM - xL - 2 * tw - 36, height: 0.6 * sc, fill: 'var(--frost)', opacity: 0.75 }, fig); lenses(xL + tw + 18, xM - tw - 18, pf + 2, pf + 2 + 0.6 * sc, 8); }
+    // fagyfront vonala és mérete
+    svg('line', { x1: 0, y1: yF, x2: xL - tw, y2: yF, stroke: 'var(--c5)', 'stroke-width': 1.6, 'stroke-dasharray': '6 4' }, fig);
+    svg('line', { x1: xR + tw, y1: yF, x2: W, y2: yF, stroke: 'var(--c5)', 'stroke-width': 1.6, 'stroke-dasharray': '6 4' }, fig);
+    svg('text', { x: W - 8, y: yF + 16, 'text-anchor': 'end', class: 't-num halo', text: `fagyfront ≈ ${fmt(fz, 2)} m`, style: 'fill:var(--c5);font-size:12px' }, fig);
+    // belső terek
+    const yb = y0 - 50;                               // magasföldszint: a pince födéme a terep fölött (pinceablak)
+    svg('rect', { x: xL + tw, y: 50, width: xR - xL - 2 * tw, height: y0 - 56, fill: unh.v ? cold : 'var(--surface)' }, fig);
+    svg('rect', { x: xL + tw, y: yb + 4, width: xM - xL - 2 * tw, height: pf - yb - 4, fill: pCold ? cold : 'var(--surface2)' }, fig);
+    // tető
+    svg('path', { d: `M${xL - 30} 50 L${(xL + xR) / 2} 8 L${xR + 30} ${50 - dfR}`, fill: 'none', stroke: 'var(--brick)', 'stroke-width': 7, 'stroke-linejoin': 'round' }, fig);
+    svg('line', { x1: xL - tw, y1: 46, x2: xR + tw, y2: 46 - dfR, stroke: 'var(--concrete2)', 'stroke-width': 8 }, fig);
+    // alaptestek (vízszintes tetejű vasbeton tömbök)
+    const fw = 50, fh = 22;
+    svg('rect', { x: xL - fw / 2, y: pf, width: fw, height: fh, class: 'f-conc', stroke: 'var(--ink2)' }, fig);
+    svg('rect', { x: xM - fw / 2, y: pf, width: fw, height: fh, class: 'f-conc', stroke: 'var(--ink2)' }, fig);
+    const fyR = y0 + D.v * sc - fh - dfR;
+    svg('rect', { x: xR - fw / 2, y: fyR, width: fw, height: fh, class: 'f-conc', stroke: 'var(--ink2)' }, fig);
     // falak
-    svg('rect', { x: xL - 12, y: 30, width: 24, height: pf - 40, fill: 'var(--brick)', stroke: 'var(--ink2)' }, fig);
-    svg('rect', { x: xM - 10, y: 30 - dfR * 0.4, width: 20, height: pf - 40, fill: 'var(--brick)', stroke: 'var(--ink2)', opacity: 0.9 }, fig);
-    svg('rect', { x: xR - 12, y: 30 - dfR, width: 24, height: y0 + D.v * sc - 26 - 30, fill: 'var(--brick)', stroke: 'var(--ink2)' }, fig);
-    svg('line', { x1: xL, y1: 30, x2: xR, y2: 30 - dfR, stroke: 'var(--ink2)', 'stroke-width': 8 }, fig);
-    // pincepadló
-    svg('path', { d: `M${xL + 12} ${pf} Q${(xL + xM) / 2} ${pf - pH * 2.2} ${xM - 16} ${pf}`, fill: 'none', stroke: 'var(--concrete2)', 'stroke-width': 8 }, fig);
-    // földszinti padló
-    svg('line', { x1: xM + 10, y1: y0 - 4 - (unh.v ? 8 : 0), x2: xR - 12, y2: y0 - 4 - dfR - (unh.v ? 8 : 0), stroke: 'var(--concrete2)', 'stroke-width': 8 }, fig);
-    // pinceablak
-    svg('rect', { x: xL - 14, y: y0 - 38, width: 28, height: 26, fill: win.v ? 'var(--sky)' : 'var(--ink2)', stroke: 'var(--ink)' }, fig);
-    if (win.v) svg('path', { d: `M${xL - 60} ${y0 - 60} q30 6 54 30`, fill: 'none', stroke: 'var(--c5)', 'stroke-width': 3 }, fig);
-    if (win.v) svg('text', { x: xL - 112, y: y0 - 66, class: 't-s t-b', text: 'hideg levegő', style: 'fill:var(--c5)' }, fig);
-    // hó
-    if (snow.v) svg('path', { d: `M${xR + 12} ${y0} q40 -26 90 -10 q30 8 70 10 Z`, fill: '#ffffff', stroke: 'var(--line2)' }, fig);
-    // emelő nyilak, repedés
-    if (dfR) { for (const dx of [-8, 8]) svg('path', { d: `M${xR + dx} ${y0 + D.v * sc + 22} v-16 m-5 6 l5 -6 l5 6`, fill: 'none', stroke: 'var(--c5)', 'stroke-width': 2.4 }, fig); svg('text', { x: xR + 22, y: y0 + D.v * sc + 18, class: 't-b halo', text: 'F', style: 'fill:var(--c5)' }, fig); svg('path', { d: `M${xR - 70} 60 l8 14 l-6 10 l10 16 l-4 12`, fill: 'none', stroke: 'var(--ink)', 'stroke-width': 1.8 }, fig); svg('text', { x: xR - 30, y: 22, class: 't-num t-b halo', text: '↑ Δf' }, fig); }
-    if (pH) { for (const dx of [-30, 0, 30]) svg('path', { d: `M${(xL + xM) / 2 + dx} ${pf + 40} v-16 m-5 6 l5 -6 l5 6`, fill: 'none', stroke: 'var(--c5)', 'stroke-width': 2.4 }, fig); svg('path', { d: `M${(xL + xM) / 2 - 50} ${pf - 30} l10 -14 l-6 -12 l12 -16`, fill: 'none', stroke: 'var(--ink)', 'stroke-width': 1.8 }, fig); }
+    svg('rect', { x: xL - tw, y: 46, width: 2 * tw, height: pf - 46, fill: 'var(--brick)', stroke: 'var(--ink2)' }, fig);
+    svg('rect', { x: xM - tw + 2, y: 46 - dfR * 0.25, width: 2 * tw - 4, height: pf - 46 + dfR * 0.25, fill: 'var(--brick)', stroke: 'var(--ink2)' }, fig);
+    svg('rect', { x: xR - tw, y: 46 - dfR, width: 2 * tw, height: fyR - 46 + dfR, fill: 'var(--brick)', stroke: 'var(--ink2)' }, fig);
+    // födém a pince fölött, földszinti padló, pincepadló
+    svg('line', { x1: xL + tw, y1: yb, x2: xM - tw + 2, y2: yb, stroke: 'var(--concrete2)', 'stroke-width': 8 }, fig);
+    const ups = unh.v ? 8 : 0;
+    svg('line', { x1: xM + tw - 2, y1: y0 - 2 - ups, x2: xR - tw, y2: y0 - 2 - ups - dfR, stroke: 'var(--concrete2)', 'stroke-width': 8 }, fig);
+    svg('path', { d: `M${xL + tw} ${pf - 3} Q${(xL + xM) / 2} ${pf - 3 - pH * 2.2} ${xM - tw} ${pf - 3}`, fill: 'none', stroke: 'var(--concrete2)', 'stroke-width': 7 }, fig);
+    // pinceablak a bal falban, terep fölött
+    const wy = y0 - 38;
+    svg('rect', { x: xL - tw, y: wy, width: 2 * tw, height: 26, fill: win.v ? 'var(--sky)' : 'color-mix(in srgb, var(--ink2) 50%, var(--sky))', stroke: 'var(--ink2)' }, fig);
+    if (win.v) {
+      svg('path', { d: `M${xL + tw} ${wy} l16 -10 v26 l-16 10 Z`, fill: 'color-mix(in srgb, var(--sky) 70%, var(--ink2))', stroke: 'var(--ink2)' }, fig); // kinyitott szárny
+      svg('path', { d: `M${xL - 70} ${wy - 24} Q${xL - 30} ${wy - 6} ${xL + 6} ${wy + 14} Q${xL + 60} ${wy + 50} ${xL + 70} ${pf - 30}`, fill: 'none', stroke: 'var(--c5)', 'stroke-width': 2.6, 'stroke-dasharray': '7 5' }, fig);
+      svg('path', { d: `M${xL + 64} ${pf - 40} l6 10 l6 -10`, fill: 'none', stroke: 'var(--c5)', 'stroke-width': 2.6 }, fig);
+      svg('text', { x: 8, y: wy - 30, class: 't-b halo', text: 'hideg levegő', style: 'fill:var(--c5);font-size:12px' }, fig);
+    }
+    // hó a jobb fal mellett
+    if (snow.v) { svg('path', { d: `M${xR + tw} ${y0} V${y0 - 30 - dfR * 0.5} Q${xR + 60} ${y0 - 34} ${xR + 100} ${y0 - 12} Q${xR + 120} ${y0 - 2} ${W - 10} ${y0} Z`, fill: '#ffffff', stroke: 'var(--line2)' }, fig); svg('text', { x: xR + 70, y: y0 - 40, 'text-anchor': 'middle', class: 't-s halo', text: 'olvadó hó' }, fig); }
+    // D méretvonal
+    const dx = xR + 44;
+    svg('line', { x1: dx, y1: y0, x2: dx, y2: y0 + D.v * sc, stroke: 'var(--ink2)', 'stroke-width': 1.2 }, fig);
+    for (const yy of [y0, y0 + D.v * sc]) svg('line', { x1: dx - 5, y1: yy, x2: dx + 5, y2: yy, stroke: 'var(--ink2)', 'stroke-width': 1.2 }, fig);
+    svg('text', { x: dx + 8, y: y0 + D.v * sc / 2 + 4, class: 't-num halo', text: `D = ${fmt(D.v, 2)} m` }, fig);
+    // emelő erők, repedések, Δf
+    if (dfR) {
+      for (const ox of [-14, 0, 14]) up(xR + ox, y0 + D.v * sc + 24, 16);
+      svg('path', { d: `M${xR - 2} 96 l-7 12 l6 9 l-8 14 l5 12`, fill: 'none', stroke: 'var(--ink)', 'stroke-width': 1.8 }, fig);
+      svg('text', { x: xR + tw + 6, y: 40 - dfR, class: 't-num t-b halo', text: `↑ Δf`, style: 'fill:var(--c5)' }, fig);
+    }
+    if (pCold) {
+      for (const ox of [-40, 0, 40]) up((xL + xM) / 2 + ox, pf + 0.6 * sc - 2, 16);
+      svg('path', { d: `M${(xL + xM) / 2 - 3} ${pf - 3 - pH * 1.1} l5 -7 l-4 -6 l5 -8`, fill: 'none', stroke: 'var(--ink)', 'stroke-width': 1.8 }, fig);
+    }
+    if (unh.v) for (const ox of [-60, 0, 60]) up((xM + xR) / 2 + ox, y0 + 0.75 * fz * sc, 14);
     // feliratok
-    svg('line', { x1: 700, y1: y0, x2: 700, y2: y0 + fz * sc, stroke: 'var(--c5)', 'stroke-width': 2 }, fig);
-    svg('text', { x: 696, y: y0 + fz * sc + 16, 'text-anchor': 'end', class: 't-num t-s halo', text: `fagyhatár ≈ ${fmt(fz, 2)} m` }, fig);
-    svg('text', { x: (xL + xM) / 2, y: y0 + 60, 'text-anchor': 'middle', class: 't-s', text: 'pince' }, fig);
-    svg('text', { x: (xM + xR) / 2, y: y0 - 30, 'text-anchor': 'middle', class: 't-s', text: unh.v ? 'fűtetlen' : 'fűtött' }, fig);
+    svg('text', { x: (xL + xM) / 2, y: y0 + 60, 'text-anchor': 'middle', class: 't-s', text: pCold ? 'kihűlt pince' : 'pince (fűtött)' }, fig);
+    svg('text', { x: (xL + xM) / 2, y: 90, 'text-anchor': 'middle', class: 't-s', text: unh.v ? 'fűtetlen földszint' : 'fűtött földszint' }, fig);
+    svg('text', { x: (xM + xR) / 2, y: 130, 'text-anchor': 'middle', class: 't-s', text: unh.v ? 'fűtetlen bővítmény' : 'fűtött bővítmény' }, fig);
     const bad = dfR || pH;
-    vd.set(bad ? 'bad' : 'ok', bad ? 'Fagyemelés és repedések' : 'Nincs fagykár', [dfR ? 'A jobb oldali alap a fagyhatár fölött van: a fagy alá hatol és megemeli a falat.' : '', pH ? (unh.v ? 'A fűtetlen épület alatt is átfagy a talaj, a padlók megemelkednek.' : 'A nyitott pinceablakon beáramló hideg a pincepadló alatt is átfagyasztja a talajt.') : '', snow.v && !dfR ? 'Az olvadó-visszafagyó hó nedvesen tartja a talajt – a fagyhatár alatti alapot ez nem veszélyezteti.' : ''].filter(Boolean).join(' ') || 'A külső falak alapja a fagyhatár alatt, a pince zárva, az épület fűtött.');
+    vd.set(bad ? 'bad' : 'ok', bad ? 'Fagyemelés és repedések' : 'Nincs fagykár', [dfR ? 'A jobb oldali alap a fagyfront fölött van: a fagy alá hatol, és megemeli a falat.' : '', pH ? (unh.v ? 'A fűtetlen épület alatt is átfagy a talaj, a padlók megemelkednek.' : 'A nyitott pinceablakon beáramló hideg a pincepadló alatt is átfagyasztja a talajt.') : '', snow.v && !dfR ? 'Az olvadó, majd visszafagyó hó nedvesen tartja a talajt, és mélyebbre engedi a fagyot – a fagyfront alatti alapot ez nem veszélyezteti.' : ''].filter(Boolean).join(' ') || 'A külső falak alapja a fagyhatár alatt van, a pince zárva, az épület fűtött.');
   };
   [win, snow, unh, D].forEach((x) => x.on(draw)); draw(); onTheme(draw);
 });
