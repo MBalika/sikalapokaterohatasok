@@ -44,7 +44,10 @@ export const LAYOUT = (() => {
     const f0 = tw[0] / (tw[0] + tw[1]); const h0 = ks.map((k) => k.getBoundingClientRect().height); const d0 = Math.abs(h0[0] - h0[1]);
     const done = () => last.set(g, kidsOf(g).map((k) => Math.round(k.getBoundingClientRect().height)).join('/') + '@' + Math.round(g.getBoundingClientRect().width));
     if (Math.min(...h0) < 40 || d0 < Math.max(40, 0.1 * Math.max(...h0))) { g.style.alignItems = prevAlign; delete g.dataset.balanced; done(); return; }
-    const tl = ks.map(textLen); const media = ks.map((k, i) => tl[i] < 40 && !!k.querySelector('img, svg, canvas, video, iframe, picture'));
+    const tl = ks.map(textLen);
+    // képoldal: alig van rajta szöveg, vagy egyetlen kép/ábra teszi ki a magassága nagyobb részét (képaláírással együtt is)
+    const mediaDom = (k) => { const r = k.getBoundingClientRect(); return [...k.querySelectorAll('img, svg, canvas, video, iframe, picture')].some((m) => { const q = m.getBoundingClientRect(); return q.height >= 0.55 * r.height && q.width >= 0.6 * r.width; }); };
+    const media = ks.map((k, i) => !!k.querySelector('img, svg, canvas, video, iframe, picture') && (tl[i] < 40 || mediaDom(k)));
     // a csak képet/videót tartalmazó oszlop keskenyebb is lehet (28 %), a szöveges legalább 34 %
     const lo = Math.max(media[0] ? 0.28 : 0.34, f0 - 0.26), hi = Math.min(media[1] ? 0.72 : 0.66, f0 + 0.26);
     // cél: kicsi magasságkülönbség (üres folt) és kompakt blokk
