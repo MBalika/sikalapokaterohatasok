@@ -8,6 +8,37 @@
  *    a bekezdés balra zárt lesz (.rag).
  * Csak stílus-attribútumot és osztályt ír, szöveget nem – az elválasztó őrt nem indítja újra.
  */
+/* RAG3 – lyukas sorkizárt blokk tartaléka (formázás skill): (1) ha a szép tördelés (text-wrap: pretty) lyukas,
+   előbb sima tördeléssel (text-wrap: wrap, .twr) próbálja – a blokk sorkizárt marad; (2) csak ha így is lyukas,
+   balra zárt lesz (.rag). Az összetartozó egységek (NBSP/U+2060 kötések) érintetlenek maradnak.
+   Idempotens: a döntést szélesség + szöveg szerint megjegyzi, ismételt futáskor nem mér újra. */
+const RAG3 = (() => {
+  try { const st = document.createElement('style'); st.textContent = '.twr{text-wrap:wrap!important}'; document.head.appendChild(st); } catch (e) {}
+  const memo = new WeakMap();
+  const sig = (el) => el.textContent;   // a teljes szöveg (az elválasztás után is újramér)
+  function bad(el, strict) {
+    const fs = parseFloat(getComputedStyle(el).fontSize) || 16; const all = document.createRange(); all.selectNodeContents(el); const rs = all.getClientRects(); if (rs.length < 2) return false;
+    let lastTop = -1e9; for (const r of rs) if (r.width && r.top > lastTop) lastTop = r.top; let big = 0, mid = 0;
+    // sima tördelésnél (strict): egy nem utolsó, nagyon rövid sor (pl. hosszú, nem törhető képlet előtt) is rossz – a sorokat
+    // függőleges átfedés szerint vonjuk össze, így az alsó/felső index nem számít külön sornak; <br>-es blokknál nem vizsgáljuk
+    if (strict && !el.querySelector('br')) { const L = []; for (const r of rs) { if (!r.width || !r.height) continue; let l = L.find((q) => Math.min(q.b, r.bottom) - Math.max(q.t, r.top) > 0.5 * Math.min(q.b - q.t, r.height));
+      if (!l) L.push({ t: r.top, b: r.bottom, l: r.left, r: r.right }); else { l.t = Math.min(l.t, r.top); l.b = Math.max(l.b, r.bottom); l.l = Math.min(l.l, r.left); l.r = Math.max(l.r, r.right); } }
+      L.sort((a, b) => a.t - b.t); for (let i = 0; i < L.length - 1; i++) if (L[i].r - L[i].l < el.clientWidth * 0.35) return true; }
+    const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); let n;
+    while ((n = w.nextNode())) { const t = n.nodeValue; for (let i = 0; i < t.length; i++) { const c = t[i]; if (c !== ' ' && c !== '\u00A0') continue; const r = document.createRange(); r.setStart(n, i); r.setEnd(n, i + 1); const b = r.getBoundingClientRect(); if (!b.width || b.top >= lastTop - 2) continue; if (b.width > fs * 1.15) big++; else if (b.width > fs * 0.9) mid++; } }
+    return big > 0 || mid >= 2;
+  }
+  function check(el) {
+    if (!el || !el.isConnected || !el.offsetParent) return;
+    const w = el.clientWidth, s = sig(el), m = memo.get(el);
+    if (m && m.w === w && m.s === s) { el.classList.toggle('twr', m.res === 'twr'); el.classList.toggle('rag', m.res === 'rag'); return; }
+    el.classList.remove('rag', 'twr'); let res = 'ok';
+    if (getComputedStyle(el).textAlign === 'justify' && bad(el)) { el.classList.add('twr'); res = 'twr'; if (bad(el, true)) { el.classList.remove('twr'); el.classList.add('rag'); res = 'rag'; } }
+    memo.set(el, { w, s, res });
+  }
+  return { check };
+})();
+
 export const LAYOUT = (() => {
   const EXCL = '.vcard, .ytc, .ytm, .w, .w-body, .w-ctrls, .seg, .seg-btns, .lab, .game, svg, table, [data-nobal], header, nav, footer, .topbar, .menu, .vmodal, .modal, .lightbox, .quiz, .q-opts, .tf-btns, .chips, .sim, .rail, .strip, .stats, .hero-stats, .facts-mini';
   const RAGSEL = 'main p, main li, main .note, main .verdict, footer p, .hero-lead, main .lead, main .ch-lead';
@@ -84,14 +115,7 @@ export const LAYOUT = (() => {
     });
   }
   /* ---- 3) lyukas sorkizárás → balra zárás ---- */
-  function ragOne(el) {
-    el.classList.remove('rag'); const cs = getComputedStyle(el); if (cs.textAlign !== 'justify' || cs.display === 'none') return;
-    const fs = parseFloat(cs.fontSize); const all = document.createRange(); all.selectNodeContents(el); const rs = all.getClientRects(); if (rs.length < 2) return;
-    const lastTop = Math.max(...Array.from(rs).map((r) => r.top)); let big = 0, mid = 0;
-    const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); let n;
-    while ((n = w.nextNode())) { const t = n.nodeValue; for (let i = 0; i < t.length; i++) { if (t[i] !== ' ') continue; const r = document.createRange(); r.setStart(n, i); r.setEnd(n, i + 1); const b = r.getBoundingClientRect(); if (!b.width || b.top >= lastTop - 2) continue; if (b.width > fs * 1.15) big++; else if (b.width > fs * 0.9) mid++; } }
-    if (big || mid >= 2) el.classList.add('rag');
-  }
+  function ragOne(el) { RAG3.check(el); }
   const rag = () => document.querySelectorAll(RAGSEL).forEach((e) => { if (vis(e)) ragOne(e); });
   /* ---- futtatás ---- */
   let busy = false;
@@ -115,6 +139,7 @@ export const LAYOUT = (() => {
     setTimeout(go, 2500);
     let tm = 0; addEventListener('resize', () => { clearTimeout(tm); tm = setTimeout(go, 300); });
     document.addEventListener('click', () => { clearTimeout(tm); tm = setTimeout(rag, 150); });
+    let ts = 0; addEventListener('scroll', () => { clearTimeout(ts); ts = setTimeout(rag, 350); }, { passive: true });   // görgetéskor megjelenő (lusta) tartalom is
   }
   return { start, runAll, rag };
 })();
