@@ -23,6 +23,8 @@ export const LAYOUT = (() => {
       if (!vis(g) || g.closest(EXCL)) return; const cs = getComputedStyle(g); if (cs.display !== 'grid' && !g.classList.contains('bal-float')) return;
       if (!g.dataset.balanced && !g.classList.contains('bal-float') && tracks(cs).length !== 2) return; const ks = kidsOf(g); if (ks.length !== 2) return;
       if (g.getBoundingClientRect().width < 700) return; if (ks.some((k) => getComputedStyle(k).position === 'sticky')) return;
+      // két egyforma kártya (azonos elem és osztály) egyforma magas kártyasor marad – nem kiegyenlítjük
+      const c0 = (ks[0].className || '').split(' ')[0], c1 = (ks[1].className || '').split(' ')[0]; if (ks[0].tagName === ks[1].tagName && c0 && c0 === c1) return;
       out.push([g, ks]); });
     return out;
   }
