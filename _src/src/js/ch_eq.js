@@ -186,13 +186,15 @@ const EMS = [
 ];
 const MSK = [['1.', '0,002', 'csak műszerrel mérhető'], ['5.', '0,025–0,05', 'ébreszt, az ablaküveg megreped'], ['6.', '0,05–0,1', 'ijedtség – a maximális szélerővel azonos'], ['7.', '0,1–0,25', 'kémény ledőlése'], ['8.', '0,25–0,5', 'a házak 25 %-ánál súlyos kár'], ['10.', '1–2,5', 'épületek általános pusztulása'], ['11.', '2,5–5', 'katasztrófa, minden tönkremegy'], ['12.', '5–10', 'tárgyak felrepülnek, a domborzat megváltozik']];
 register('eq-ems', (root) => {
-  const { ctrls, viz, out } = shell(root);
+  const { viz, out, body } = shell(root, { layout: 'wide' });
+  const ctrls = h('div', { class: 'w-ctrls w-ctrls-bar' }); root.insertBefore(ctrls, body); // a vezérlő a widget tetején, teljes szélességben
   const I = slider(ctrls, { label: 'Intenzitás (EMS-98)', min: 1, max: 12, step: 1, value: 6, fmt: (v) => EMS[v - 1][0] });
   const tbl = h('div', { class: 'tbl-wrap', style: 'margin-top:4px' });
   tbl.innerHTML = '<table class="tbl" style="font-size:13px"><thead><tr><th>MSK</th><th class="num">a [m/s²]</th><th>hatás</th></tr></thead><tbody>' + MSK.map((r) => `<tr data-msk="${parseInt(r[0], 10)}"><td>${r[0]}</td><td class="num">${r[1]}</td><td>${r[2]}</td></tr>`).join('') + '</tbody></table>';
   const fig = figure(viz, 640, 360);
   const txt = h('div', { class: 'grid3', style: 'margin-top:10px' });
-  viz.append(txt, h('h4', { class: 'mh', style: 'font-size:17px;margin:16px 0 8px' }, 'A régi MSK-táblázat gyorsulássávjai'), tbl, h('p', { class: 'note', style: 'margin-top:6px', html: 'A 6–8. fokozat jelenti a szerkezeti károk kezdetét (a 2–4. és a 9. fokozat a táblázatban nem szerepel). A gyorsulássávok régi, empirikus értékek; a mai mérések a kárt okozó fokozatokhoz jóval nagyobb gyorsulásokat rendelnek (VII. fok ≈ 1 m/s², VIII. fok ≈ 2 m/s²).' }));
+  viz.append(txt);
+  const msk = h('div', { class: 'w-extra' }); msk.append(h('h4', { class: 'mh', style: 'font-size:17px;margin:16px 0 8px' }, 'A régi MSK-táblázat gyorsulássávjai'), tbl, h('p', { class: 'note', style: 'margin-top:6px', html: 'A 6–8. fokozat jelenti a szerkezeti károk kezdetét (a 2–4. és a 9. fokozat a táblázatban nem szerepel). A gyorsulássávok régi, empirikus értékek; a mai mérések a kárt okozó fokozatokhoz jóval nagyobb gyorsulásokat rendelnek (VII. fok ≈ 1 m/s², VIII. fok ≈ 2 m/s²).' })); root.append(msk); // MSK-táblázat teljes szélességben a widget alján
   ctrls.append(h('p', { class: 'ctl-hint', html: 'Az EMS-98 az intenzitást három tényező alapján határozza meg: hatás az emberre, a tárgyakra és a természetre, valamint az épületek károsodása.' }));
   let ph = 0, shakeG = null, lampG = null, objs = [];
   const cards = ['Ember', 'Tárgyak, természet', 'Épületek'].map((k) => { const c = h('div', { class: 'card', style: 'padding:12px 14px' }, h('span', { class: 'k' }, k), h('p', { style: 'margin:0;font-size:14.5px' })); txt.append(c); return c; });

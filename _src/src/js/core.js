@@ -417,6 +417,8 @@ export const GUARD = (() => {
     if (done.get(el) === cur) return;
     const nodes = textNodes(el);
     for (const n of nodes) { const v = textPass(n.nodeValue); if (v !== n.nodeValue) n.nodeValue = v; }
+    // záró szóköz törlése: a text-wrap: pretty mellett (Chrome) a záró szóköz-csomópont miatt az utolsó sor is sorkizárt lenne
+    for (let i = nodes.length - 1; i >= 0; i--) { const v = nodes[i].nodeValue; if (/^[ \t\n\r]*$/.test(v)) { if (v) nodes[i].nodeValue = ''; continue; } if (/[ \t\n\r]$/.test(v)) nodes[i].nodeValue = v.replace(/[ \t\n\r]+$/, ''); break; }
     crossPass(nodes);
     // blokk-szintű kötés
     const full = nodes.map(n => n.nodeValue).join('');
