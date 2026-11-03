@@ -9,3 +9,8 @@ Egyoldalas, statikus oldal (`index.html`), a forrás a `_src/` mappában (a Verc
 - Videók: `video/h1–h6.html` (önálló lejátszók, `#autoplay`), bélyegképek: `img/thumb/`
 - Magyar elválasztás: `vendor/hyphenopoly/`; betűk: `fonts/` (Fraunces, Manrope, DM Mono)
 - Teszt: `index.html?all` (minden widget azonnal), `?nohero` (a 3D hős nélkül)
+
+
+## Videók zenéje
+
+A videók zenéje (2026-11) valódi hangszerek felvett mintáiból készült – zongora, vonósok, akusztikus és elektromos gitár, basszusgitár, fúvósok, akusztikus dob –, ütemre igazítva a képhez; a gép- és effekthangok a korábbi hangkönyvtárból vannak. Hangminták: Salamander Grand Piano (Alexander Holm, CC BY 3.0); tonejs-instruments (nbrosowsky; VSCO2, Karoryfer, Iowa, Freesound – CC BY 3.0); Tone.js dobminták.
