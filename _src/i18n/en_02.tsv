@@ -1,0 +1,140 @@
+375e6ae	below 10 Hz; between 50 and 100 Hz 40–50 mm/s.
+68e9888	residential building
+c985222	=
+304c75f	below 10 Hz; between 50 and 100 Hz 15–20 mm/s.
+299407b	sensitive, listed building
+8d76aa8	=
+869f133	below 10 Hz; between 50 and 100 Hz 8–10 mm/s.
+52dcb4b	Short-term vibration, peak particle velocity on the foundation (DIN 4150-3). For long-term vibration it is measured on the top floor, and the limits are much lower: <span class="nw">10, 5 and 2.5 mm/s</span> respectively.
+4df57a6	<span class="k">06 · compaction</span>Settlement crater around the pile
+f6642d5	In loose and medium-dense sand, pile driving itself compacts the soil. Compaction occurs in a zone around the pile with a radius of roughly three pile diameters, but at the surface a much wider, funnel-shaped <b>settlement crater</b> forms – its radius is roughly 3·<i>D</i> + <i>L</i>/2. This is why it is considered dangerous if a neighbouring foundation is closer to a driven pile than one pile length.
+920623e	Crater estimator
+1454fb5	<span class="k">07 · machine foundations</span>Machine foundations
+15c84c6	Machine foundations (for turbines, compressors, presses, pumps) are dynamically loaded foundations. Two things must be checked in their design: the operating frequency of the machine <b>must not fall close to the natural frequency of the system consisting of the machine, the foundation and the soil</b>, and the vibration amplitude must not exceed the value permitted for the machine and its surroundings. The machine foundation is separated from the rest of the building by a movement joint, so that the vibration does not pass to the floor and the walls.
+14700e4	Machine foundation designer
+fba5009	How much vibration can be felt?
+6a7225a	People are much more sensitive to vibration than buildings: continuous vibration is clearly perceptible at around 1 mm/s, and 2.5 mm/s is strong. In buildings next to busy roads, traffic vibration rarely reaches 2 mm/s; at 5 mm/s it is already disturbing. The 5 mm/s limit for residential buildings is therefore not the limit of discomfort but of damage.
+1cba905	<span class="ch-no">CH2</span><span>focus · intensity · EC8</span>
+f0e9c33	Earth<em>quakes</em>
+32e6159	Of the dynamic effects, earthquakes damage structures the most, and they are also the least predictable. An earthquake is a sudden shaking of the Earth’s surface, triggered by a rupture, a sudden displacement caused by stress accumulated in the rocks of the solid crust. Its strength can range from vibration detectable only by instruments to shaking that destroys cities and even changes the landscape.
+d4dcd46	<span class="k">01 · origin</span>From the focus to the surface
+f254a1d	Our Earth is an active planet: material flows in its hot interior move the huge rock plates that make up the crust, which shift relative to each other by a few centimetres a year. Stress accumulates along their boundaries because of this movement, and when it exceeds the strength of the rock, the rock suddenly slips along an existing or newly formed fracture plane (fault). The foci of more than 90 % of earthquakes lie at plate boundaries – these, however, are not lines but deformation zones often several hundred kilometres wide. Smaller stresses can also accumulate within the plates, so moderate or smaller earthquakes can occur far from the boundaries too.
+6f0adbe	The point deep in the Earth where the rupture of the rock begins is called the <b>hypocentre</b> or <b>focus</b>. The point on the surface above the focus is the <b>epicentre</b>; the distance between the two is the <b>focal depth</b>. This can range from a few kilometres to as much as 600–700 km, but the vast majority of earthquakes are at most 30 km deep. The released energy generates elastic waves: the faster, compressional <b>P-waves</b> arrive first, followed by the slower, shear <b>S-waves</b>, and finally the surface waves – these are recorded by seismographs even at great distances.
+1d6acdb	An earthquake in the crust
+bb159f6	Epicentre finder
+b5359eb	circum-Pacific belt
+17f321b	Most of the largest earthquakes occur in the belt around the Pacific Ocean, at colliding plate boundaries.
+468a071	Alpine–Himalayan belt
+3005291	It stretches from the Mediterranean region through Turkey, Central Asia and China to Indonesia – the Carpathian Basin lies on its edge.
+ab5bc2e	mid-ocean ridges
+cc99c25	smaller
+b29ecc2	Earthquakes are frequent at the boundaries of diverging plates, but rarely large. The large, destructive earthquakes are all linked to the main belts.
+b9228bd	<span class="k">02 · size</span>Magnitude and intensity
+4929cf5	An earthquake has <b>one magnitude</b> but <b>many intensities</b>. The <b>magnitude</b> (<i>M</i>) is a measure of the energy released at the focus – it was introduced by the American seismologist Richter. The scale is logarithmic: an increase of one unit means ten times the amplitude and about 32 times more energy. <b>Intensity</b>, on the other hand, is the strength of the effect at a given place, and it decreases with distance from the focus. The MSK-64 scale uses 12 degrees, in Roman numerals, based on the effects characteristic of the phenomena. In the early 1990s the European Seismological Commission built on its principles to develop the <b>European Macroseismic Scale (EMS)</b>; EMS-98 determines the degree of intensity from three factors: the effect on people, on objects and on nature, and the damage to buildings.
+9234bee	Magnitude scale
+5317a05	Intensity room: the degrees of EMS-98
+c58669c	Isoseismal map
+fc8b244	Hungarian firsts
+90a16de	After the 1810 Mór earthquake, Pál Kitaibel and Ádám Tomcsányi produced in 1814 what is perhaps the world’s first isoseismal map. The relationship describing the decrease of intensity with distance was formulated by Radó Kövesligethy, the founder of Hungarian seismology – the map above also uses it.
+f721fc1	<span class="k">03 · at home</span>Earthquakes in Hungary
+1826d6d	Hungary is not considered highly exposed, but it is not earthquake-free either. The national seismological network records 100–150 smaller earthquakes a year, most of which cannot be felt; a few a year are clearly felt around the epicentre but do not yet cause damage. An earthquake causing more significant damage occurs every decade, and a strong one causing heavy damage (<i>M</i> 5.5–6.0) on average every 40–70 years. The first known earthquake in Hungary occurred on 7 September 456 in Savaria, near today’s Szombathely (<i>M</i> ≈ 6.1). The area stretching from Komárom to the northern end of Lake Balaton is still one of the most active parts of the country; in the east, near the Hungarian–Romanian border, the activity of the Érmellék seismic zone has been known since 1829 – the damage from the 1834 earthquake can still be seen in the church of Máriapócs.
+31bae14	Map of historical earthquakes
+2269d9c	=
+21fd958	A third of the town was destroyed
+545221d	The intensity was IX: of the 1169 houses, 279 collapsed completely and 353 partly, seven churches collapsed, and 63 people died in Komárom. The number of victims was small for the strength of the earthquake – because of the light rammed-earth houses of the time.
+ee7dddc	=
+be5bbdb	3144 of 3500 buildings damaged
+34eebbc	The epicentral intensity of the earthquake on the morning of 12 January was VIII. Two people died and about 500 were left homeless; the earthquake was also strongly felt in Budapest.
+5daabf6	=
+99450b8	4557 damage claims
+f700868	The largest Hungarian earthquake of the instrumental era: chimney damage, cracks, about 600 million forints of damage. Even a moderate earthquake can damage buildings in the thousands.
+e22c64b	<span class="k">04 · design</span>Design to EC8
+1d0daac	The seismic design of a facility must be carried out according to EN 1998 (Eurocode 8), for the earthquake with a <b>10 % probability of exceedance in 50 years</b> – this corresponds to a <b>return period of about 475 years</b> – as an accidental action. The seismicity of Hungary is shown by the ground acceleration map: the horizontal reference peak ground acceleration <i>a</i><sub>gR</sub> characteristic of a given area is between 0.08 and 0.15 g. Depending on the importance of the building, it is multiplied by the importance factor γ<sub>I</sub> (0.8 minor, 1.0 ordinary, 1.2 large occupancy, 1.4 vital structures).
+50e8bbf	Ground acceleration map
+6694c5a	Ground types: the soil amplifies the earthquake
+8478601	The same earthquake causes much stronger shaking on soft ground than on rock. EN 1998-1 therefore distinguishes seven ground types according to seismic behaviour. The classification is based on the <b>upper 30 m</b> below the structure. Three properties are examined: the shear wave velocity (<i>v</i><sub>s,30</sub>), the SPT blow count (<i>N</i><sub>SPT</sub>) and the undrained shear strength of the soil (<i>c</i><sub>u</sub>). In Hungary most soils belong to ground types <b>C and D</b>.
+eae75b7	Type
+b6ca9fb	Description of the stratigraphic profile
+75f0a95	<i>N</i><sub>SPT</sub> [blows/30&nbsp;cm]
+d2f5948	=
+8921203	rock or other rock-like formation, with at most 5 m of weaker material at the surface
+f3ca42f	<span class="tl"><i>N</i><sub>SPT</sub> [blows/30&nbsp;cm]</span>–
+d32c0e9	=
+12854ce	deposits of very dense sand, gravel or very stiff clay, at least several tens of metres thick, with a gradual increase of properties with depth
+a2763eb	<span class="tl"><i>N</i><sub>SPT</sub> [blows/30&nbsp;cm]</span>&gt; 50
+5861168	=
+e68fb45	deep deposits of dense or medium-dense sand, gravel or stiff clay, from several tens to many hundreds of metres thick
+e90954f	<span class="tl"><i>N</i><sub>SPT</sub> [blows/30&nbsp;cm]</span>15–50
+842f577	=
+bcae6b4	deposits of loose-to-medium cohesionless soil (with or without some soft cohesive layers), or of predominantly soft-to-firm cohesive soil
+44f6e08	<span class="tl"><i>N</i><sub>SPT</sub> [blows/30&nbsp;cm]</span>&lt; 15
+c7170d2	=
+61886c6	a surface alluvium layer of type C or D, 5–20 m thick, underlain by stiffer material with a shear wave velocity above 800 m/s
+8d4f074	deposits consisting of, or containing a layer at least 10 m thick of, soft clays/silts with a high plasticity index (<i>I</i><sub>p</sub> &gt; 40) and high water content
+7d93984	<span class="tl"><i>v</i><sub>s,30</sub> [m/s]</span>&lt;&nbsp;100 (indicative)
+552a921	=
+689b67f	deposits of liquefiable soils, of sensitive clays, or any other profile not included in types A–E or S<sub>1</sub>
+784525a	Ground type finder
+6167150	Elastic response spectrum
+10c7191	Outlook: what changes in the new Eurocode 8?
+f83767c	The second-generation EN 1998-1-1 uses consequence classes (CC1, CC2, CC3a, CC3b) instead of importance classes, requires checks for several return periods, and assigns the ground categories (A–F) on the basis of the shear wave velocity v<sub>s,H</sub> and the depth at which the velocity reaches 800 m/s. This is for information: current design follows the first-generation standard.
+633eaaa	<span class="k">05 · site effects</span>Resonance and liquefaction – what the ground adds
+bcf3d76	The greatest earthquake damage often occurs not near the focus but where the ground amplifies the vibration or loses its bearing capacity. If the natural period of a thick, soft soil layer (<i>T</i><sub>0</sub> = 4·<i>H</i>/<i>v</i><sub>s</sub>) coincides with the natural period of the buildings (approximately <i>T</i> ≈ 0.1·<i>N</i> s, where <i>N</i> is the number of storeys), resonance occurs. And in loose, saturated sand cyclic shearing increases the pore water pressure, the pressure between the grains disappears, and the soil behaves like a dense liquid: this is <b>liquefaction</b>.
+d37bf35	Mexico City simulator
+cc0d68b	Liquefaction
+a7bc7d6	<b>1985</b><span>Mexico City<br>Mw 8.0</span>
+7daf836	The lake bed amplified the earthquake
+e3f051d	The focus was more than 350 km away, yet buildings collapsed in the city. On the lake-bed clay the acceleration was 4–5 times greater than on firm ground, and the motion was dominated by a period of about 2 s. Buildings with 6–15 storeys were hit hardest: 412 buildings collapsed and 3124 were severely damaged.
+5449f20	<b>1964</b><span>Niigata<br>M 7.5</span>
+910da7b	The houses toppled over intact
+29a9f1b	The loose sand along the river liquefied, and 340 reinforced concrete buildings tilted or settled; the structure of about two thirds of them remained intact. In the Kawagishi-cho housing estate the buildings settled by more than half a metre and tilted severely, and a four-storey building overturned completely.
+2c91eb6	<b>2011</b><span>Christchurch<br>New Zealand</span>
+dd13068	Half a million tonnes of ejected sand
+fbfcc51	Liquefaction during the 2010–2011 earthquake sequence damaged utilities over about a third of the city area. More than 500 000 t of sand that had erupted to the surface was carted away; the state bought up and demolished more than 8000 properties.
+5d8ec2f	<b>1999</b><span>Adapazarı<br>Turkey</span>
+88f3e9b	Up to 1.1 m of settlement
+57341bc	On low-plasticity silts hundreds of buildings settled, slid or tilted; some houses settled by 1.1 m. In 2023 in İskenderun, settlements of 0–740 mm caused by liquefaction were measured at 26 buildings.
+ad05877	<span class="ch-no">CH3</span><span>cellar · mine · tunnel</span>
+d8864bf	Underground <em>cavities</em>
+a7373a3	There is a direct risk of settlement if an artificial cavity – a tunnel, a mine, a cellar – has to be excavated beneath existing surface structures, or if an old, forgotten cavity begins to fail. The cavity changes the original state of stress: the soil masses above and beside it move towards the cavity, and a settlement trough forms at the surface.
+68694aa	<span class="k">01 · mechanism</span>What happens around the cavity?
+6bb759d	Before the cavity is opened, the stresses in the ground are in equilibrium. Excavating the cavity removes this equilibrium: the load is redistributed around the cavity (arching), and the walls and the crown move towards the free space. If the cavity is not supported, or the support fails (for example when the tuff wall of a cellar becomes soaked), the soil squeezes into the cavity – and exactly this volume is “missing” at the surface too. The magnitude of settlement can therefore <span class="hl">be estimated from the soil mass squeezed into the cavity</span>.
+c2da7d3	The moving soil mass above the cavity is bounded by rupture surfaces: these run up from the lower corners of the cavity to the surface at an angle of about <b>45° + φ/2</b> to the horizontal, and they mark the width over which the surface settles. <b>The deeper the cavity and the stronger the soil, the smaller and the later the displacement.</b> It is important that the cavity is supported (or backfilled) and dewatered as soon as possible.
+a68e9f4	Trough above the cavity
+2679acf	Depth, strength, time
+393aecf	<span class="k">02 · cellar towns</span>Cellars under the towns
+2c86165	Many Hungarian towns – Eger, Pécs, Szekszárd, Szentendre, Ostoros, Velence, Nagymaros, Hőgyész, Budafok, Kőbánya – have extensive cellar systems beneath them. They are often of considerable size: there are also interconnected systems on two, three or four levels, with branches 50–300 m long. The old wine cellars and quarries were often dug before the towns spread over them, their records are incomplete, and the owners of the houses built above them often do not even know about them. The wall and vault of a cellar become dangerous when they get soaked: in Eger, for example, the strength of rhyodacite tuff drops to a third to a fifth when saturated with water. The economic impact of building damage in undermined areas is not negligible either.
+dea24d6	Cellar register
+3e769a4	=
+bfa0002	A ten-thousand-cubic-metre collapse
+0e9af22	About 10 000 m³ of rock collapsed over an area of 35 × 40 m. During the later remediation, 105 flats and 21 public buildings had to be given up in Eger, and 25.4 km of cellars were backfilled.
+7e23d5e	<span class="chip c">rhyodacite tuff</span><span class="chip">soaking</span><span class="chip">backfilling</span>
+838b775	=
+58995b6	1300 cellars under the town centre
+01837a4	About 50 km of cellars run beneath the town centre. Collapses became regular from the late 1960s because of traffic and rainwater from the Mecsek hills; the cellars were backfilled with fly-ash concrete and cement mortar, or strengthened with shotcrete and mesh.
+8c21123	<span class="chip c">rainwater</span><span class="chip">shotcrete</span><span class="chip">fly-ash concrete</span>
+4016a65	=
+79e6147	Abandoned limestone quarries
+c9937b8	The cavities of old limestone quarries extend beneath Budapest’s 10th district over a length of 32–33 km and an area of about 180–195 thousand m². In 1992 a hazard mitigation programme worth several hundred million forints was launched.
+4a590b8	<b>2007</b><span>nationwide</span>
+1a31a33	About 300 settlements affected
+a1fff82	Nationwide there are dangerous cellars in about 300 settlements. The state programme for mitigating cellar and bank-wall hazards ran for 30–35 years and was stopped in 2007; since then the municipalities have had to protect themselves from their own funds.
+7988b0a	<span class="k">03 · tunnels, mines</span>Tunnelling under the houses
+7bb09da	Urban tunnelling is also cavity excavation: behind the shield tunnelling machine, because of the gap between the lining ring and the soil and the movement of the soil ahead of the face, a settlement trough travels along the tunnel alignment at the surface. The shape of the trough is well approximated by a Gaussian curve: the maximum settlement is above the tunnel axis, and the inflection point, where the trough is steepest, lies at a distance <i>i</i> = <i>K</i>·<i>z</i><sub>0</sub> from the axis. The volume of the trough can be calculated from the <b>volume loss</b> (a few tenths of a per cent of the tunnel cross-section) – for modern face-supported shields it is typically 0.3–0.5 %.
+98049e4	=
+e2f2442	<b>i = K · z<sub>0</sub></b> – K ≈ 0.5 in clay, 0.25–0.35 in sand; z<sub>0</sub> is the depth of the tunnel axis
+04b4beb	<b>V<sub>s</sub> = √(2π) · i · S<sub>max</sub> ≈ 2.5 · i · S<sub>max</sub></b> – trough volume = volume loss · πD²/4
+f6a1cac	Tunnel under the house
+b944d71	<b>2008</b><span>Budapest, BME building Ch</span>
+c6b5567	4–6 cm in half a year
+503ea8c	The tunnel of metro line M4 and Szent Gellért tér station were built beneath building Ch of the Technical University. The building settled by 4–6 cm in half a year (about 1 mm/week), and the main walls, columns and vaults cracked; at 6.5 cm an emergency plan would have come into force.
+08d9303	<b>2009</b><span>Cologne</span>
+9d05423	The city archive collapsed
+7ef29ee	A 0.6 m gap was left in the diaphragm wall of the 26.5 m deep excavation for the metro because of a boulder. Through it about 5000 m³ of soil flowed into the pit with the groundwater, the neighbouring archive building collapsed, and two people died.
+667d28d	Mining deep below
+35dedf8	Above deep mines the surface can settle for years. In the Oroszlány Basin, above the Márkushegy mine worked at a depth of 400–500 m, satellite radar measurements recorded about 10 cm of settlement in 2014–15; after the mine closed in 2015, a heave of about 5 cm appeared at the edge of the trough.
+8f9afbc	<span class="k">04 · protection</span>What to do if there is a cavity under the building?
+7a1798e	01 · investigation
+f30ad7b	Find it
+4b86b51	Archive maps, site walkover, boreholes, probing, ground-penetrating radar. An unknown cavity is the most dangerous.
+50d25e7	02 · support

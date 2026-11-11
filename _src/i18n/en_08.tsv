@@ -1,0 +1,160 @@
+6241719	In Hungarian practice 0.8 m; for sand and gravel, if the groundwater is deeper than 2 m, 0.5 m; above 300 m above sea level 0.8/1.0 m.
+bb22d6a	Why is it dangerous to leave the basement window open in winter?
+eb60650	The basement cools down, the ground below the basement floor freezes, and the floor heaves
+1275b50	Because snow falls in
+b155435	Because the humidity rises
+518399d	The ground below the basement floor is normally frost-free; but cold air can freeze it as well.
+b290072	What happens beneath a cold store with poor insulation?
+61f4564	The zero isotherm penetrates deeper year by year, down to 6–12 m, and the floor and the building heave
+f3099a0	The soil dries out and shrinks
+d11b153	Nothing, the soil absorbs the cold
+a06b87a	The groundwater warms up
+0740228	The frost moves downwards until the heat loss of the soil is made up by the heat flowing from the Earth’s interior.
+3110293	What protects against frost beneath a cold store?
+b37d4ff	A thermal insulation layer and underfloor heating below the insulation
+9c6c2bb	A thicker reinforced concrete floor on its own
+e3f5664	Compacting the soil
+b9e16cf	Waterproofing
+80cc670	The insulation slows the heat loss and the underfloor heating keeps the ground above freezing – the two together are the safe solution.
+3004672	=
+5494da5	=
+0dd7860	Vibration
+0017e93	Cavity
+1b36f3d	Erosion
+e3c0e29	Frost
+936752f	Clay
+2b293cf	On an infill plot in the city centre, sheet piles are being driven with a vibrator. The street wall of the neighbouring house, built around 1900, cracked within two weeks, and 2 cm of settlement was measured at the plinth. Beneath it there is saturated fine sand.
+9e5300a	The vibration of the vibrator compacts the saturated, loose fine sand. Within the 20–30 m zone of influence of the source, vibration must be measured in the neighbouring building.
+17ef332	A corner of a warehouse built on sandy gravel on the bank of the Danube settled after the rapid passing of the spring flood wave. Tiny sand cones were visible at the toe of the slope.
+65bda1b	During rapid drawdown the groundwater beneath the bank stays high, a strong flow starts towards the river, and this carries away the fine grains – the sand cones are the washed-out material.
+5629963	A round, three-metre hole opened overnight in the yard of a house in Eger, and the back wall of the house tilted. An old wine cellar cut into tuff runs beneath the plot.
+b728917	In the soaked tuff the vault of the cellar collapsed and the ground moved towards the cavity. A trough or a collapse appears at the surface.
+a40eed3	The floor of the new cold store (−28 °C) began to bulge from the third year, the storage racks tilted and the doors jammed.
+d338793	Below the floor the frost penetrates deeper year by year, and ice lenses grow in the silty layer. Thermal insulation and underfloor heating are needed.
+f25639e	At dawn, shaking woke the town’s residents. Several chimneys fell, and diagonal cracks appeared in the walls of old adobe houses.
+f961c57	Fallen chimneys, wall cracks: an intensity of at least VII. The effect of the earthquake decreases with distance from the focus, and soft ground amplifies it.
+fcc5427	Diagonal cracks opened in the wall of a single-storey house with 0.6 m deep foundations at the end of a dry summer, and by winter they had almost closed. The house stands on high-plasticity clay, with large poplars growing in the garden.
+2e7ab42	Expansive clay: it shrinks when it dries and swells when it gets wet, and the cracks open and close with the seasons. In detail: <a href="https://kedvezotlen-altalaj.vercel.app/#terfogatvaltozo" target="_blank" rel="noopener">Foundations on unfavourable ground ↗</a>
+4aaa586	The basement window was left open all winter. The basement floor heaved and cracked, and in spring it settled back.
+59c1646	Through the open window the cold froze the ground below the basement floor too. Frost heave is followed by settlement on thawing.
+0ab9455	When an excavation was being dewatered, the water pumped from the sump was cloudy and sandy for days. The soil beneath the foundation of the neighbouring house loosened, and the house settled.
+6cbe822	From quicksand the pump draws out the sand along with the water. Cloudy water is a warning sign: dewater with filtered wells or a filter layer.
+563503c	The new metro tunnel passed beneath the building. In half a year the building settled by 5 cm, and the main walls and vaults cracked.
+8caae68	A tunnel is a cavity too: the ground moves inwards around the excavation, and a settlement trough travels along at the surface. Continuous building monitoring is needed in such cases.
+3e3116d	Next to a high-performance machine in a printing works, the floor of the factory hall settled over time. As the machine spun up, the machine foundation vibrated conspicuously strongly at one speed.
+5aedb33	A machine foundation is a dynamically loaded foundation. If the speed of the machine falls close to the natural frequency of the system, resonance occurs.
+61966c6	A farmstead on the Great Plain, with loose, saturated sand beneath the house. After an earthquake the house tilted, and sand bubbled up from cracks in the yard.
+c29e640	Liquefaction: cyclic shearing in loose, saturated sand raises the pore water pressure, and the soil loses its bearing capacity. The sand boil is its sign.
+d9c07f7	Game
+269731d	Result
+4ebe14b	Site ${String(i + 1).padStart(2, '0')}
+42525a1	Hint
+bf5601a	The traces on site tell a lot: sand cone – erosion or liquefaction; round collapse – cavity; floor rising in winter and settling back in spring – frost; cracks opening at the end of summer and closing by winter on high-plasticity clay – swelling and shrinking clay.
+c404dfd	medium-coarse sand
+0c628e3	uniform fine sand
+74a1b10	Duration of the drawdown
+e4d405e	Fall in water level
+04cc6b9	=
+a6fb48b	Soil of the bank
+6c7ac62	▶ Flood wave passes
+cb760f9	Exit gradient at the bank
+25796d3	Material washed out from under the footing
+5781a4f	water table
+ee70d2c	river
+295bc39	${fmt(t, 1)} days
+85aa43a	${fmt(t, 1)}<small>days</small>
+6186d9c	${fmt(washed, 2)} m³/m
+8f5a9d0	${fmt(washed, 2)}<small>m³/m</small>
+74045a0	Erosion: the grains start to move
+4b9fbf5	Strong flow towards the bank
+0999ed4	Slow flow
+af69f61	The water flowing towards the bank is strong enough to tear out the fine grains; a cavity grows under the footing.
+069fbd5	Gravelly soil is highly permeable: the groundwater follows the river quickly, and the level difference is small.
+cd99204	With a slower drawdown the groundwater can follow the river – the gradient stays smaller.
+0db2e1c	One-dimensional groundwater model towards the bank (according to the permeability of the soil); the threshold for the start of erosion and the mass balance are illustrative. The lesson: the faster the drawdown and the less permeable the soil, the greater the gradient towards the bank.
+e24f0ad	Head difference
+3c647bf	Length of the sample
+705ef3d	Submerged unit weight
+48277ea	=
+bff4448	<i>i</i><sub>cr</sub> = γ′/γ<sub>w</sub>
+5ad478f	Effective stress at the bottom of the sample
+a38ab57	porous stone
+06862eb	=
+ea40b92	=
+b589367	=
+b5ee3ac	=
+75dc86c	Boil: the sand “boils”
+44e8f9e	Close to critical
+5bf4da8	The sample is stable
+a6e8200	The force of the upward-flowing water reaches the submerged weight of the grains: the effective stress is zero, and the sand loses its bearing capacity.
+517ee45	σ′ = (γ′ − i·γ<sub>w</sub>)·L – as the gradient increases, the effective stress becomes smaller and smaller.
+ce3f633	silty sand
+2b86153	medium sand
+1eeb427	sandy gravel 0/4
+95b2247	gravel 4/8
+1f97bd9	coarse gravel 16/32
+c150b99	coarse sand 1/2
+fc87408	Protected soil
+4ec54d6	Filter material
+5a54a2b	Retention: <i>D</i><sub>15F</sub>/<i>d</i><sub>85B</sub> ≤ 4–5
+439922d	Permeability: <i>D</i><sub>15F</sub>/<i>d</i><sub>15B</sub> ≥ 4–5
+5f62eaa	filter
+4bfb06f	Good filter
+af0a3d1	The filter lets the soil through
+09b4544	The filter is too fine
+28cef9a	The voids of the filter retain the soil grains, and the water flows through freely.
+90df0b5	The pores of the filter are too large: the fine grains pass through it – erosion continues. An intermediate, graded filter layer is needed.
+ca3c478	The filter itself would clog and would not drain the water fast enough – pressure would build up behind it.
+f7b721c	The two conditions of Terzaghi’s filter rule: D<sub>15</sub> (filter) ≤ 4–5 · d<sub>85</sub> (soil) – retention; D<sub>15</sub> (filter) ≥ 4–5 · d<sub>15</sub> (soil) – permeability. The curves are illustrative grading curves.
+d3d4926	Flood velocity
+e89871b	Water depth in front of the pier
+486ee52	Pier width
+2a7f3fb	Pier nose
+6068cd0	square
+94b5f10	rounded
+353eaf2	Depth of the foundation below the bed
+0b8cfde	Froude number
+8819810	Estimated scour depth <i>y</i><sub>s</sub>
+528031c	Undermining: the scour reaches the foundation
+9c90d4a	The foundation is below the scour depth
+50a636d	The soil is washed out from under the pier – this is how the Schoharie Creek and the Hintze Ribeiro bridges collapsed. Deeper foundations (piles, caissons) and riprap are needed.
+2e09575	Scour increases with the water velocity and the width of the pier; after a flood the surroundings of the pier must be inspected.
+94cae7e	Estimate of local scour around the pier (CSU equation, pier aligned with the flow, plane bed): y<sub>s</sub>/a = 2.0 · K<sub>1</sub> · K<sub>2</sub> · K<sub>3</sub> · (y<sub>1</sub>/a)<sup>0.35</sup> · Fr<sup>0.43</sup>, K<sub>2</sub> = 1.0; K<sub>3</sub> = 1.1. General degradation of the bed adds to the total scour.
+f3b7f66	Pumped discharge
+7d49baf	filter around the sump (filter gravel + filter fabric)
+a2b4a0d	▶ Start the pump (30 days)
+8884728	Sand content of the pumped water
+3050ff5	Sand pumped out
+26bfe47	Settlement of the neighbouring footing
+5be7fac	neighbouring house
+4d4349a	excavation
+50bb1c6	clear water
+5e20374	With a filter: the water is clear
+d41f97f	The soil is running out from under the neighbouring footing
+8ef26be	Cloudy, sandy water – a warning sign
+f8c8f41	The filter retains the grains and only the water leaves. The sand content must still be checked regularly with a settling vessel.
+8ac3b4e	Even a few tenths of a cubic metre of sand a day leaves a significant cavity under the neighbouring house’s footing within weeks.
+a4310b2	Illustrative mass balance: the amount of sand pumped out is the product of the discharge, the sand content and the time. Even a sand content of 0.5 ‰ at 12 m³/h means about 0.15 m³ of sand a day.
+bf30197	Quiz – erosion by groundwater
+32d3015	When is erosion most dangerous for a building on a riverbank?
+345b022	During rapid drawdown, when the groundwater stays higher than the river
+2c8aa83	During a slow, steady rise
+fd168b3	In winter, when the river is frozen
+e6e66a2	When the river level is constant
+15fef7e	During rapid drawdown the groundwater beneath the bank cannot follow the river; the strong flow towards the river carries the grains away.
+3f26940	What is the critical hydraulic gradient (for upward flow)?
+4b60a03	<i>i</i><sub>cr</sub> = γ′/γ<sub>w</sub> ≈ 1
+f073f1b	<i>i</i><sub>cr</sub> ≈ 0.01
+367972a	<i>i</i><sub>cr</sub> ≈ 10
+3fc5850	There is no such value
+187d54b	Then the force of the upward-flowing water equals the submerged weight of the grains, and the effective stress is zero – a boil, quicksand.
+b85caf1	What does it indicate if the water pumped from an excavation is cloudy and sandy?
+5cdb3b1	That the soil is being drawn out together with the water – the soil loosens and cavities form
+b329e73	That the pump is working well
+5224136	That the groundwater will soon run out
+9b6989a	Nothing, this is natural
+588c0f2	In quicksand, sump pumping also draws out the sand; dewater with filtered wells or a filter layer.
+a85a03f	What are the two conditions for a good filter layer?
+0b79aff	It retains the grains of the protected soil and lets water through freely
+8fed96c	The finer, the better
+f97b4f7	The coarser, the better

@@ -41,7 +41,7 @@ const RAG3 = (() => {
 
 export const LAYOUT = (() => {
   const EXCL = '.vcard, .ytc, .ytm, .w, .w-body, .w-ctrls, .seg, .seg-btns, .lab, .game, svg, table, [data-nobal], header, nav, footer, .topbar, .menu, .vmodal, .modal, .lightbox, .quiz, .q-opts, .tf-btns, .chips, .sim, .rail, .strip, .stats, .hero-stats, .facts-mini';
-  const RAGSEL = 'main p, main li, main .note, main .verdict, footer p, .hero-lead, main .lead, main .ch-lead';
+  const RAGSEL = 'main p, main li, main dd, main .note, main .verdict, footer p, .hero-lead, main .lead, main .ch-lead';
   const vis = (e) => e.offsetParent !== null || getComputedStyle(e).position === 'fixed';
   const tracks = (cs) => cs.gridTemplateColumns.split(' ').filter((x) => parseFloat(x) > 0);
   const kidsOf = (g) => [...g.children].filter((k) => vis(k) && !['absolute', 'fixed'].includes(getComputedStyle(k).position));

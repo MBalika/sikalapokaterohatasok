@@ -1,7 +1,7 @@
 // Hős: „Egy ház, öt hatás” – 3D metszet egy sávalapos házzal; a választott hatás szerint deformálódik a talaj és a ház,
 // a ház két sarkának függőleges (földrengésnél vízszintes) mozgását egy regisztráló „toll” rajzolja.
 import * as THREE from 'three';
-import { $, h, cssVar, clamp, smooth, onTheme } from './core.js';
+import { $, h, cssVar, clamp, smooth, onTheme, EN } from './core.js';
 
 const X0 = -18, X1 = 18, YB = -14, ZB = -11;           // a talajtömb: x, alsó sík, hátsó sík (elöl a z = 0 metszet)
 const HOUSE = { x0: -5, x1: 5, z0: -8, z1: 0, h: 6.2, roof: 2.6 };
@@ -10,7 +10,7 @@ const RIVER = { x0: 11.5, x1: 13.6, bed: -3.4 };       // jobb oldalon folyó (r
 const LAYERS = [ // y felső, név, szín-változó
   { top: 0, bot: -0.9, key: '--soilE', name: 'feltöltés' },
   { top: -0.9, bot: -6.2, key: '--soilA', name: 'iszapos finom homok' },
-  { top: -6.2, bot: YB, key: '--soilB', name: 'agyag' },
+  { top: -6.2, bot: YB, key: '--soilB', name: EN ? 'clay' : 'agyag' },
 ];
 const EX = 10; // torzítás (a süllyedés tízszeresen látszik)
 

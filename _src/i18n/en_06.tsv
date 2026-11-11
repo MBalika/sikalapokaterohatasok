@@ -1,0 +1,160 @@
+87cf780	Felt indoors by most, sleepers wake up.
+5e0ba76	Hanging objects swing strongly, small objects move.
+8e7852c	Hairline cracks in some buildings.
+9667397	slightly damaging
+9065e18	Many are frightened and run outdoors.
+1857730	Small objects fall from shelves.
+7b8e6a3	Slight non-structural damage in many buildings: hairline cracks, falling plaster.
+fd09f7f	damaging
+04a0ede	Most are frightened; it is difficult to stand.
+707ef6f	Furniture moves, objects fall from shelves in large numbers.
+084c071	Moderate damage in many buildings: wall cracks, fallen chimneys.
+1445cb9	heavily damaging
+7c31170	Difficult to stand, many fall over.
+68e1fe5	Furniture overturns.
+efd628d	Many old buildings are severely damaged, some partly collapse.
+e56840f	destructive
+2a7e028	General panic.
+f914762	Monuments and statues topple.
+8e32ba2	Many weak buildings collapse, and even better ones are severely damaged.
+9f50255	very destructive
+2825293	Most weak buildings collapse, and many well-built ones are severely damaged.
+6f1eca7	devastating
+ba12fde	Most well-designed buildings collapse too.
+6bbe5bb	=
+af64db5	completely devastating
+fc9bd25	The surface and the landscape change.
+2edcc92	Practically all buildings are destroyed.
+aafd8bd	measurable only by instruments
+b1218d3	wakes people, window glass cracks
+e4b1770	fright – the same as the maximum wind force
+5fa0edf	chimneys collapse
+f8e17a9	severe damage to 25 % of houses
+2bcaeea	general destruction of buildings
+3462fdd	catastrophe, everything is destroyed
+4b8fa80	objects fly up, the landscape changes
+237cc2c	Intensity (EMS-98)
+5cbda3f	<table class="tbl" style="font-size:13px"><thead><tr><th>MSK</th><th class="num">a [m/s²]</th><th>effect</th></tr></thead><tbody>
+584178b	Acceleration bands of the old MSK table
+0dc7bff	Degrees 6–8 mark the onset of structural damage (degrees 2–4 and 9 are not in the table). The acceleration bands are old, empirical values; today’s measurements assign much larger accelerations to the damaging degrees (degree VII ≈ 1 m/s², degree VIII ≈ 2 m/s²).
+c1bbcb9	EMS-98 determines intensity from three factors: the effect on people, on objects and on nature, and the damage to buildings.
+20632bc	People
+d878c2e	Objects, nature
+eca3e25	Buildings
+5dad7a2	=
+19053c6	=
+4971d5a	No damage
+a47e9c2	Onset of damage
+691522f	Severe damage
+a436340	May be felt, but no damage to buildings.
+14b6c43	From degree VI–VII, non-structural and then structural damage appears – old houses with weak masonry are the vulnerable ones.
+55bf4ad	Buildings partly or completely collapse.
+a3361ac	=
+e7c06c9	=
+efc0057	=
+4639350	Epicentral intensity
+7316056	Absorption coefficient
+3b40784	=
+7b79b87	Radius of damage (≥ VI)
+6ab68bd	Radius of perceptibility (≥ III)
+bdb1700	=
+34800d2	distance from the epicentre, km
+9594727	damage (≥ VI)
+9e82042	Kövesligethy’s relationship: <span class="nw fline">I<sub>0</sub> − I = 3·lg(r/h) + 1.3·α·(r − h)</span>Here <span class="nw">r = √(R² + h²)</span> is the hypocentral distance. For the same epicentral intensity, an earthquake with a deeper focus is felt over a much larger area.
+20dad65	Year
+ad51983	Click an earthquake
+8942078	=
+94bee32	What does the map show?
+46b6699	The large Hungarian earthquakes cluster along the Komárom–Mór–Berhida line (towards the northern end of Lake Balaton), along the Danube, and in the eastern border region of the country.
+b17b496	Design working life
+c6d598b	years
+e240d64	Probability of exceedance
+a5a0fb4	Importance class (γ<sub>I</sub>)
+71db8fa	I minor · 0.8
+515c468	II ordinary · 1.0
+570f86c	III large occupancy · 1.2
+f23de34	IV vital · 1.4
+f782b47	Zone, <i>a</i><sub>gR</sub>
+013215e	Design <i>a</i><sub>g</sub> = γ<sub>I</sub>·<i>a</i><sub>gR</sub>
+aeff9d6	Return period <i>T</i><sub>R</sub>
+9ea9cb1	=
+a65e93c	zone ${k}
+f30551a	zone ${zone} · ${fmt(ZONES[zone], 2)} g
+9225871	${fmt(T, 0)} years
+ac6f93e	${fmt(T, 0)}<small>years</small>
+48b37ef	T<sub>R</sub> = −t<sub>L</sub> / ln(1 − P): 50 years and 10 % → 475 years. The zone boundaries are schematic; the value for a given settlement must be read from the map in the National Annex of the standard. A value of a<sub>g</sub>·S ≤ 0.10 g counts as low seismicity, in which case a simplified procedure is also acceptable.
+06b59a0	Pest side: sand, sandy gravel
+6cfb73b	Great Plain cohesive soil
+5849845	Loose floodplain sand, silt
+20c4ff3	Thin fill on marl
+b28cfc5	Soft deposit on rock (E)
+32ad42b	Sample profile
+d05f013	Ground type
+e4e4901	Arithmetic mean (wrong!)
+01f4a35	Layer ${i + 1}
+7482413	thickness
+9131d8a	shear wave velocity, m/s (log)
+71dc0b4	Type ${C}
+99b5eb1	At least 10 m of very soft (v < 100 m/s) layer: classification as S<sub>1</sub> must also be examined. 
+1780aa7	A thin soft deposit on a stiff base: the wave bounces back and forth in the layer, strong local amplification.
+9e51db1	Loose, soft soil: large amplification (S = 1.35).
+6b97617	Medium-dense soil – the most common in Hungary.
+c3a82d0	Stiff soil or rock: small amplification.
+2b9ccdc	v<sub>s,30</sub> = 30 / Σ(h<sub>i</sub>/v<sub>i</sub>): an average calculated from the travel time of the wave, so the slow layers dominate. The row of the table is highlighted according to the classification.
+4b582c5	Spectrum type
+f54837b	Type 1
+7b7cd0f	Type 2
+0a3b1f6	Reference acceleration
+71fc5cf	=
+bc1a185	Number of storeys (RC frame)
+257942a	The Hungarian National Annex prescribes the Type 1 spectrum; according to some studies Type 2 fits the local Hungarian spectra better.
+7fcc1cb	Acceleration <i>S</i><sub>e</sub>(<i>T</i><sub>1</sub>)
+a2480f8	Compared with rock (A)
+18cddfb	period T, s
+f335e9a	=
+dab3606	${cl.v}: plateau 2.5·S·a
+7d5414b	5 % damping (η = 1). The fundamental period of the building is estimated with the approximate formula of the standard (T<sub>1</sub> = C<sub>t</sub>·H<sup>3/4</sup>, C<sub>t</sub> = 0.075 for an RC frame, H = 3 m/storey).
+56b565f	Thickness of the soft layer
+bd81463	Shear wave velocity
+ff919ff	Preset
+9e9d422	Mexico City, lake bed
+bd0d576	Great Plain deposit
+c2c1664	Thin layer on rock
+f1ffb9b	Resonating number of storeys (<i>T</i> ≈ 0.1·<i>N</i>)
+1ffef86	=
+9712ad9	building period T ≈ 0.1·N, s
+f10520b	amplification
+33664d1	=
+b6c0811	Long-period ground
+bdb3791	Medium period
+ab2565a	Short period
+cdfafcc	Taller, slender buildings go into resonance. In Mexico City the period of the damaged buildings lengthened during the shaking, so the 6–15-storey buildings came close to the motion of about 2 s.
+e0bc259	Medium-rise (3–8 storeys) buildings are at risk.
+9c8c92d	Low, stiff buildings are at risk; tall buildings are shaken less.
+3346519	Shaking intensity (cyclic stress ratio)
+b8a8f8f	=
+07a4ad4	Density of the sand
+62a23fb	saturated (high groundwater)
+ece539c	▶ Start shaking
+ca4e1a8	Number of cycles to liquefaction
+39e5294	Pore pressure ratio <i>r</i><sub>u</sub>
+5c761df	number of cycles
+af915fe	does not liquefy
+5db400c	Dry sand does not liquefy
+b483e14	Liquefaction!
+6e81566	A few dozen cycles of a strong earthquake may be enough
+352f46c	Low risk
+a68e060	Liquefaction requires saturated soil: the water cannot escape, which is why its pressure rises.
+58a9053	The pore water pressure has reached the effective stress: the soil has lost its shear strength, the house settles and tilts, and sand boils erupt at the surface.
+8882376	Denser sand or weaker shaking requires more cycles – an earthquake may not provide that many.
+7718153	Illustrative model: the pore water pressure increases with the number of cycles in the shape known from laboratory tests; the number of cycles needed for liquefaction depends on the density of the sand and the intensity of shaking.
+6c0d4b5	Quiz – earthquakes
+b069505	What is the hypocentre?
+b7ac78a	The point deep in the Earth where the rupture of the rock begins
+bf10db8	The point on the surface above the focus
+c8cb0eb	The place of greatest damage
+5369b2b	The nearest recording station
+c53b9f9	The hypocentre (focus) is the starting point of the rupture; the epicentre is the point on the surface above it, and the distance between the two is the focal depth.
+2f28819	How deep are the vast majority of earthquakes?
+d146947	At most 30 km
+dd5b271	=

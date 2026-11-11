@@ -1,0 +1,225 @@
+1c358dd	=
+989c438	Drava
+fbd5feb	=
+1f4daef	=
+1d88e48	=
+c9bd591	=
+46164d9	=
+6f03d85	=
+8462e92	=
+4c1706f	Layout
+1d9f19e	Hero error
+82fdb9b	Layout error
+8397024	=
+d48808b	Settlement due to static load can be calculated relatively accurately, but movement caused by vibration, cavities, erosion and frost rarely can.
+7e9dfbf	These effects have to be prevented by recognition, detailing and preventive measures.
+b8a77c1	Dynamic effects typically act for a long time with a constant magnitude.
+a204179	They typically act for a short time, cyclically.
+199e205	Saturated, uniformly graded fine sand is particularly sensitive to vibration.
+eb67042	Steeply graded, fine-grained soils are the most sensitive, especially when saturated.
+a486897	Cohesive soils are more sensitive to vibration than loose sands.
+4bf5937	Cohesive and coarse-grained soils are less sensitive.
+d400f01	If the excitation frequency falls within the resonance range, sudden, collapse-like settlement may occur.
+923baf2	Resonance – which is why the natural frequency of the soil mass must not coincide with the excitation frequency.
+1f8af09	Vibrations during construction (piling, sheet piling) typically travel at most 20–30 m.
+a5f54b4	Within this zone of influence they also affect neighbouring buildings.
+5f22ba1	According to DIN 4150-3, the same vibration limit applies to residential and industrial buildings.
+7e03cca	The short-term limit below 10 Hz is 5 mm/s for a residential building, 20 mm/s for an industrial building and 3 mm/s for a sensitive building.
+5178ab7	Vibration can cause damage directly to the superstructure and also through compaction of the subsoil.
+0224f68	The second is often more dangerous: on loose sand even a small vibration causes permanent settlement.
+349b5d0	The machine foundation must be rigidly connected to the floor of the building so that the vibration spreads out.
+1c7b7c6	Quite the opposite: it must be separated by a movement joint so that the vibration does not pass on.
+9a3a6c7	Around a pile driven into loose sand, the radius of the settlement crater is roughly 3D + L/2.
+9110890	Compaction occurs in a zone of radius about 3D; the surface crater is much wider.
+0af9a60	The focus (hypocentre) of an earthquake is at the surface and the epicentre is deep down.
+6f82b5e	The other way round: the hypocentre is deep down, and the epicentre is above it, at the surface.
+c95e61c	The vast majority of earthquakes have a focal depth of at most 30 km.
+538a0d6	Focal depth can range from a few km to 600–700 km, but most earthquakes are shallow.
+47e7a1d	An earthquake has a single intensity, which is the same everywhere.
+fb6f041	It has one magnitude; the intensity differs from place to place and decreases with distance from the focus.
+db1e991	An increase of one unit of magnitude means about 32 times the energy.
+621e62e	10^1.5 ≈ 32; the amplitude is ten times larger.
+2e89e9d	EMS-98 determines the degree of intensity from the effects: on people, on objects and nature, and on buildings.
+2172d5a	The scale has 12 degrees: I not felt … XII completely devastating.
+c7fc338	Hungary has never had a damaging earthquake.
+ecd8f47	The earthquakes of Komárom (1763), Érmellék (1834), Kecskemét (1911), Dunaharaszti (1956) and Berhida (1985) all caused severe damage.
+8af6280	In the 1763 Komárom earthquake about a third of the town was destroyed.
+d6ccc94	Of the 1169 houses, 279 collapsed completely; the relatively small number of victims is explained by the light rammed-earth houses.
+8eef213	The design earthquake according to EC8 has a 10 % probability of exceedance in 50 years.
+1d46c49	This corresponds to a return period of about 475 years; it is treated as an accidental action.
+1e4dd8b	The reference peak ground acceleration in Hungary is between 0.5 and 1.0 g.
+c5b17a1	The Hungarian map gives values between 0.08 and 0.15 g.
+f4baa84	The EC8 ground types are assigned on the basis of the shear wave velocity of the upper 30 m, the <i>N</i><sub>SPT</sub> blow count and the shear strength <i>c</i><sub>u</sub>.
+94cd0b8	There are seven types: A, B, C, D, E, S<sub>1</sub> and S<sub>2</sub>; in Hungary mainly C and D.
+de6b84f	Soft ground damps the earthquake, so the shaking is less than on rock.
+ffb5101	Soft ground amplifies the vibration (S = 1.35 for type D); in Mexico City the amplification was 4–5 times.
+e3c8f61	Liquefaction requires loose, saturated sand and cyclic shearing.
+4814ef7	Because of the increased pore water pressure the effective stress drops to zero, and the soil loses its shear strength.
+3139eaa	In Niigata in 1964 many houses tilted with their superstructure remaining intact.
+8ed7b16	The structure of about two thirds of the 340 tilted or settled RC buildings remained intact – the soil liquefied beneath the foundations.
+b516c4b	Excavating a cavity does not change the original state of stress in the ground.
+2f70cd2	It does: the soil masses above and beside it move towards the cavity.
+18b3c7d	The deeper the cavity and the stronger the soil, the smaller and the later the displacement.
+e7834b5	In deep, strong ground an arch forms above the cavity.
+634799a	The rupture surface of the trough above a cavity runs at about 45° − φ/2 to the horizontal.
+ac77f41	It runs up from the lower corner of the cavity to the surface at 45° + φ/2.
+7ac80c8	The magnitude of settlement above a cavity can be estimated from the soil mass squeezed into the cavity.
+e431e71	The volume of the surface trough is approximately equal to the volume of soil squeezed in.
+6e56184	There are more than 100 km of explored cellars beneath Eger.
+61b140c	130–150 km in Eger, 55–65 km beneath the centre of Pécs.
+dc7287a	The tuff wall of a cellar keeps its strength even when soaked.
+f6b92c0	The strength of rhyodacite tuff drops to a third to a fifth when soaked – this is why the cavity must be kept dry.
+c548fe8	At the inflection point of the Gaussian trough above a tunnel the surface is steepest.
+237b6a6	Tilt and tensile strain are greatest here; a building located here is the most at risk.
+7752581	During rapid drawdown the groundwater beneath the bank falls faster than the river level.
+d28ab36	Slower: it stays higher, which is why a strong flow starts towards the river.
+e4b5d53	The critical hydraulic gradient for upward flow is about 1.
+7f2f350	<i>i</i><sub>cr</sub> = γ′/γ<sub>w</sub> ≈ 1: then the effective stress is zero and a boil forms.
+770f218	Cloudy, sandy water pumped from a sump indicates that the soil is being drawn out too.
+e67ccce	In quicksand this leads to cavities and significant settlement; filtered wells are needed.
+926d0eb	The finer a filter layer, the better.
+5c68b80	Two conditions are needed: it must retain the soil but also let water through freely (Terzaghi’s filter rule).
+53bb5e0	The most common cause of bridge collapses is scour of the piers.
+78a5877	According to an American survey, about 60 % of documented collapses.
+d810d2f	Frost heave is caused mainly by the 9 % volume increase when water freezes.
+682d56d	The large heave is caused by ice lenses growing from the water supply.
+c6d5314	Silt is more frost-susceptible than sandy gravel.
+dde91ec	Silts belong to the most dangerous class (F4); clean gravel is not frost-susceptible.
+1196900	In Hungarian practice the frost depth is generally 0.8 m.
+e49f9b5	For sand and gravel, with groundwater deeper than 2 m, 0.5 m; above 300 m above sea level 0.8 m and 1.0 m instead.
+6064154	Beneath a poorly insulated cold store the ground can freeze to a depth of as much as 6–12 m.
+627413b	The zero isotherm penetrates downwards until the heat flowing from the Earth’s interior makes up the loss.
+f301138	To prevent frost beneath a cold store it is enough to thicken the reinforced concrete floor slab.
+45e0765	Thermal insulation and underfloor heating are needed; thicker concrete does not stop the frost.
+2267359	Dynamic action
+35a5601	A load that changes suddenly or continuously over time, typically acting for a short time, cyclically (blasting, piling, traffic, earthquakes, wind gusts).
+668080b	The frequency at which a system (soil mass, foundation, structure) responds to the smallest excitation with the largest amplitude.
+db66425	Resonance
+73dda15	The excitation frequency falls within the resonance range; the amplitude is amplified, and collapse-like settlement may occur on loose soil.
+b534165	Zone of influence
+a47711d	The distance to which the vibration of a source travels harmfully in the subsoil; for construction vibration typically 20–30 m.
+a4eda0f	Peak particle velocity
+b417e17	The maximum velocity of motion of the particles of the soil or the structure (mm/s); the main measure of vibration damage.
+3b7efce	Machine foundation
+0f3b08d	A dynamically loaded foundation carrying machines; it is separated from the building by a movement joint, and the machine speed is detuned from the natural frequency.
+0dc393b	Settlement crater
+3d3a8c7	A funnel-shaped settlement forming around a driven pile because of soil compaction; its radius is roughly 3D + L/2.
+f3c99b4	Hypocentre (focus)
+ae1731c	The point deep in the Earth where the rupture or slip of the rock begins.
+7f7269b	Epicentre
+333eebd	The point on the surface above the focus.
+0c388c4	The distance between the hypocentre and the epicentre; for the vast majority of earthquakes at most 30 km.
+259a6f1	A logarithmic measure of the energy released at the focus; one unit ≈ 32 times the energy.
+1b009b5	Intensity
+830f234	The strength of the effect of the earthquake at a given place (MSK-64, EMS-98: 12 degrees).
+bbd92e1	Isoseismal
+726ef04	A line on the earthquake map connecting points of equal intensity.
+b4833f9	P-wave, S-wave
+3e543be	The faster compressional (P) and the slower shear (S) wave; the distance to the focus can be calculated from the difference in their arrival times.
+39c9c65	Reference peak ground acceleration
+71888be	The basic design input according to EC8: a<sub>gR</sub> is the horizontal ground acceleration exceeded by an earthquake with a 10 % probability in 50 years; 0.08–0.15 g in Hungary.
+e2f501f	Return period
+e82dc07	The average time within which an earthquake of a given size occurs once. If the probability of exceedance is 10 % in 50 years, this is about 475 years.
+b0b760f	The classification according to EC8 (A, B, C, D, E, S<sub>1</sub>, S<sub>2</sub>) on the basis of the shear wave velocity, N<sub>SPT</sub> value and c<sub>u</sub> of the upper 30 m.
+70dc9a8	The maximum acceleration of single-degree-of-freedom oscillators as a function of their natural period; its shape depends on the ground type.
+008403f	In loose, saturated sand, cyclic shearing raises the pore water pressure to the effective stress, and the soil loses its shear strength.
+c9ee44d	Cavity excavation
+d4efeb6	Formation or failure of a tunnel, mine or cellar beneath existing structures; the ground moves towards the cavity.
+310f9a7	Settlement trough
+665561c	The settlement forming at the surface above a cavity or tunnel; its shape is well approximated by a Gaussian curve.
+d98f422	Rupture surface
+fadd33b	The slip surface bounding the moving soil mass above a cavity; it runs up from the lower corner of the cavity at about 45° + φ/2.
+ef2cc45	The volume of the surface trough as a percentage of the tunnel cross-section; typically 0.3–0.5 % for modern shields.
+edfc8b9	Inflection point
+37d7f7c	The steepest point of the trough (x = i = K · z<sub>0</sub>); tilt and tensile strain are greatest here.
+91cf116	Backfilling
+cd94c5d	Filling a redundant cavity with fly-ash concrete, cement mortar or by grouting.
+5d9f0f5	Undermined area
+ccdea8e	An area above working or abandoned mines, where the surface may settle for years.
+807480a	Erosion by water
+4f0b843	Flowing water tears away the fine grains of the soil, and cavities form under the foundations.
+dd24be5	Rapid drawdown
+b8f3cee	The river level falls faster than the groundwater beneath the bank; a strong flow starts towards the river.
+8863088	Hydraulic gradient
+aa268d2	The fall in water level per unit length of flow path (i = Δh/L); the seepage force is proportional to it.
+a0c9882	Critical gradient
+b5853ca	i<sub>cr</sub> = γ′/γ<sub>w</sub> ≈ 1; for upward flow the effective stress is then zero and a boil forms.
+9071d10	Quicksand
+1e6cc01	Sand that has lost its bearing capacity because of upward-flowing water and behaves like a liquid.
+33a7e63	Dewatering by pumping from a sump formed at the lowest point of the pit; in quicksand it may also draw out the soil.
+f565b7a	Filter rule
+5aa3b03	Terzaghi’s conditions for the grain size of a filter layer: the filter must retain the protected soil and let water through freely.
+4857a44	Scour
+32e6dc7	The funnel dug into the bed by the vortex around a pier; if it reaches the foundation, the pier settles.
+c1b76bc	separate page
+2b07c95	High-plasticity clay that swells when it takes up water and shrinks when it dries; it lifts and lowers a lightly loaded house in a seasonal cycle. In detail: <a href="https://kedvezotlen-altalaj.vercel.app/#terfogatvaltozo" target="_blank" rel="noopener">Foundations on unfavourable ground ↗</a>.
+040aabd	In-situ freezing
+f332a23	The pore water freezes in place; the volume increase of water of about 9 % gives only a small heave.
+791fec8	Ice lens
+0b193e1	A horizontal ice layer growing from water flowing by capillarity to below the frost front; the cause of large frost heave.
+60bccb2	Frost depth
+f994479	The depth to which frost penetrates the ground; the foundation must go below it (generally 0.8 m in Hungary).
+78e9df7	The sum of the daily mean temperatures of the frost period (°C·day); the main determinant of frost penetration.
+1714805	Frost-susceptible soil
+f4cd047	A soil in which ice lenses can form – mainly silts and very fine silty sands (F4).
+93fcff5	Zero isotherm
+23b4837	The surface of points at 0 °C in the ground; beneath cold stores it can penetrate deeper year by year.
+1cb64a4	Underfloor heating (cold stores)
+f5222ad	Heating pipes, cables or ventilation ducts placed below the thermal insulation, which keep the ground above freezing.
+d638893	Light theme
+b2e0db5	Dark theme
+d07c11d	=
+2832986	pause
+942e31a	P-wave
+3a22791	S-wave
+c111b5b	decay
+ec8ad58	=
+ab08121	collapse
+7ac72cd	erosion
+ba76370	frost: heaving
+6cb965c	In detail on the Foundations on unfavourable ground page
+328cae4	Expansive clay ↗
+a6dfba1	Monitoring station · standby
+e879254	=
+dc92e6e	=
+79dddf2	img/thumb/en/${v.n}.jpg
+35436a1	=
+1027e1a	=
+f9fad51	 · music: ${v.g} · Esc: close
+3c4fd30	=
+13a6c48	Animated video · ${order.indexOf(v.n) + 1} / ${order.length}
+1feeb2f	Play video: ${v.t}
+a0078fc	Video: 
+3adfdbc	=
+7f2fd36	BME Faculty of Civil Engineering · ${y.dur} · in Hungarian
+2e0b231	=
+ab71156	BME Faculty of Civil Engineering · YouTube
+1158623	=
+ab52c3f	YouTube video: 
+8a39b17	=
+b4cfe1f	=
+5add24f	=
+4580830	=
+82a44f4	No quiz:
+ed11cb6	Flawless! The instrument shows calm.
+6c00709	Nice result – it is worth going through the wrong ones again.
+466d994	It is worth going through the chapter (and the video) again.
+d65a779	Again
+3951bcb	Next →
+7f06a6d	=
+7be07aa	=
+d962c52	<b>Correct.</b> 
+726a1c8	<b>Not quite.</b> 
+4f5d20d	Question ${i + 1} / ${qs.length}
+f63c783	<span>Answered: <b>${done}\u00a0/\u00a0${TF.length}</b></span><span>Correct: <b>${ok}</b></span>
+47ab8d7	Excellent!
+fa50020	Good result!
+4a41774	Worth repeating.
+015daff	Start again
+2306d01	True
+e7676db	False
+6888643	True.
+1337f76	False.
+2259aa1	Search among the ${GL.length} terms…
+221e52f	Search the glossary
+1dfdd48	Formatting guard error

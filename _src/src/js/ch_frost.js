@@ -1,11 +1,11 @@
 // CH5 – Fagyhatás: jéglencse-labor, fagyveszélyességi besorolás, fagybehatolás-számító, családi ház, hűtőház-szimulátor, kvíz
-import { register, shell, slider, seg, toggle, stat, verdict, h, svg, figure, clear, fmt, clamp, lerp, smooth, loop, fitCanvas, cssVar, onTheme, $, $$ } from './core.js';
+import { register, shell, slider, seg, toggle, stat, verdict, h, svg, figure, clear, fmt, clamp, lerp, smooth, loop, fitCanvas, cssVar, onTheme, $, $$, EN } from './core.js';
 import { chart, pd, samp } from './plot.js';
 import { defineQuiz } from './ui.js';
 
 const SOIL = {
   kavics: { n: 'homokos kavics', k: 2.0, w: 0.08, rd: 1900, near: 0.004, far: 0.002, col: '--soilD' },
-  homok: { n: 'homok', k: 1.8, w: 0.14, rd: 1700, near: 0.012, far: 0.006, col: '--soilA' },
+  homok: { n: EN ? 'sand' : 'homok', k: 1.8, w: 0.14, rd: 1700, near: 0.012, far: 0.006, col: '--soilA' },
   iszap: { n: 'iszap, iszapos finom homok', k: 1.5, w: 0.24, rd: 1600, near: 0.16, far: 0.05, col: '--soilC' },
   agyag: { n: 'kövér agyag', k: 1.3, w: 0.3, rd: 1500, near: 0.06, far: 0.02, col: '--soilB' },
 };
@@ -79,7 +79,7 @@ register('frost-lens', (root) => {
 const FCLS = { NFS: ['nem fagyérzékeny', 'ok'], PFS: ['átmeneti, lehetséges fagyveszély', 'warn'], F1: ['F1 · enyhén fagyérzékeny', 'warn'], F2: ['F2 · közepesen fagyérzékeny', 'warn'], F3: ['F3 · erősen fagyérzékeny', 'bad'], F4: ['F4 · a legveszélyesebb', 'bad'] };
 register('frost-class', (root) => {
   const { ctrls, viz, out } = shell(root);
-  const g = seg(ctrls, { label: 'Talajcsoport', vert: true, options: [{ v: 'kav', t: 'kavicsos talaj' }, { v: 'hom', t: 'homok' }, { v: 'fhom', t: 'nagyon finom, iszapos homok' }, { v: 'isz', t: 'iszap' }, { v: 'agyN', t: 'agyag, I<sub>p</sub> > 12' }, { v: 'agyK', t: 'agyag, I<sub>p</sub> < 12' }, { v: 'var', t: 'réteges (varvás) agyag' }], value: 'hom' });
+  const g = seg(ctrls, { label: 'Talajcsoport', vert: true, options: [{ v: 'kav', t: 'kavicsos talaj' }, { v: 'hom', t: EN ? 'sand' : 'homok' }, { v: 'fhom', t: 'nagyon finom, iszapos homok' }, { v: 'isz', t: EN ? 'silt' : 'iszap' }, { v: 'agyN', t: 'agyag, I<sub>p</sub> > 12' }, { v: 'agyK', t: 'agyag, I<sub>p</sub> < 12' }, { v: 'var', t: 'réteges (varvás) agyag' }], value: 'hom' });
   const f = slider(ctrls, { label: 'A 0,02 mm-nél finomabb rész', sym: '', min: 0, max: 40, step: 0.5, value: 8, unit: '%', d: 1 });
   const fig = figure(viz, 640, 210);
   const sC = stat(out, { label: 'Fagyveszélyességi osztály' });
@@ -257,7 +257,7 @@ register('frost-cold', (root) => {
   const B = slider(ctrls, { label: 'Az épület szélessége', sym: 'B', min: 10, max: 60, step: 2, value: 30, unit: 'm' });
   const ins = slider(ctrls, { label: 'Hőszigetelés (XPS) vastagsága', sym: 't', min: 0, max: 20, step: 1, value: 2, unit: 'cm' });
   const heat = toggle(ctrls, { label: 'padlófűtés a szigetelés alatt (+4 °C)', value: false });
-  const soil = seg(ctrls, { label: 'Talaj', options: [{ v: 'iszap', t: 'iszap' }, { v: 'agyag', t: 'agyag' }, { v: 'homok', t: 'homok' }], value: 'iszap' });
+  const soil = seg(ctrls, { label: 'Talaj', options: [{ v: 'iszap', t: EN ? 'silt' : 'iszap' }, { v: 'agyag', t: EN ? 'clay' : 'agyag' }, { v: 'homok', t: EN ? 'sand' : 'homok' }], value: 'iszap' });
   const go = h('button', { class: 'btn', type: 'button' }, '▶ 30 év futtatása'); ctrls.append(go);
   const cv = h('canvas', { style: 'width:100%;display:block;border-radius:10px;border:1px solid var(--line)' });
   viz.append(cv);

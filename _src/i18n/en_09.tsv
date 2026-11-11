@@ -1,0 +1,160 @@
+0091f6c	It should be watertight
+92e6410	According to Terzaghi’s filter rule, retention requires <span class="nw">D<sub>15</sub> ≤ 4–5 · d<sub>85</sub></span> and permeability <span class="nw">D<sub>15</sub> ≥ 4–5 · d<sub>15</sub></span> (D is the grain size of the filter, d that of the protected soil).
+18d63ca	What causes scour around bridge piers?
+7fad613	The swirling water turning downwards in front of the pier scours the bed
+6527dc1	The weight of the pier
+fd8331c	The traffic on the bridge
+b872223	Frost
+943f105	The vortex around the pier digs a funnel in the bed; if it reaches the foundation, the pier settles or tilts – the most common cause of bridge collapses.
+11c3cb7	Why is a leaking water pipe next to a building dangerous?
+8c92b57	The escaping water carries away the soil, and a cavity grows under the footing or the surfacing
+0ccbc94	Because it increases the strength of the soil
+bb82d72	Because it cools the foundation
+21fd06e	The leaking water washes out the soil invisibly; the surfacing bridges the cavity for a while, then suddenly collapses.
+1a9f2c8	Which soil is the most prone to erosion?
+fc4effd	Uniform fine sand, silty sand
+c4649b3	Hard clay
+c7f0d85	Dense gravel
+3a07eda	Flowing water easily tears out fine, cohesionless grains; cohesive soil is protected by cohesion, gravel by the weight of its grains.
+983a6aa	 driven
+8c5071e	Interactive
+92d946b	=
+4d588e3	=
+954fc2f	=
+a4c4e08	=
+2e71b65	=
+f573563	=
+5187e63	=
+816eb0f	=
+004e8e1	=
+93cc56f	=
+ea5c994	=
+a08bca0	=
+f25312d	=
+f840976	=
+3ce8a70	=
+f64ddac	=
+e4ab0e3	=
+69434f6	=
+be2b9f7	=
+75b6e6e	=
+460f4d2	=
+225b3cb	=
+474babe	=
+44bd3a0	=
+af9a3ed	=
+29ec158	=
+b08937c	=
+a9feb9d	=
+25286a1	=
+b69419e	=
+3afbcfb	=
+f6ca896	=
+9230bb7	=
+92f2f9b	=
+ff05c39	=
+44893c2	=
+23477cc	=
+ef35c46	=
+ed60607	=
+3848ed0	=
+f4234eb	=
+218ab79	=
+d8f0ec4	=
+9784c7e	=
+451d738	=
+2e9b9fb	=
+e045456	=
+b027c32	=
+2f752f0	=
+1b19ca5	=
+1424911	=
+952ea2e	=
+a0e3d44	=
+41b44fb	=
+b1f375b	=
+fe1e33f	=
+0c4b93a	=
+e9fcbce	=
+9a37318	=
+fd9878b	=
+021601f	=
+53a3c18	=
+4fbd9af	=
+2469391	=
+8d57636	=
+a9c96c9	=
+70729e9	=
+227c1f7	=
+8595843	=
+3d21ae2	=
+c7b3335	=
+0c6a6f3	=
+6adf3d4	=
+ef38f08	=
+baaff0e	=
+5d23233	=
+0422a19	=
+d10f958	=
+c0daebc	Overview
+efea40c	What acts on the foundation?
+1f499d1	vibration · resonance · compaction
+ac5d13f	Earthquakes
+a403895	focus · intensity · EC8
+51068a3	Cavities
+45678eb	cellar · mine · tunnel
+9849f38	Erosion by groundwater
+c833308	drawdown · grains · sump
+409fe6f	ice lens · frost depth · cold store
+09ebb92	=
+536b3f8	Videos
+2ea4c4d	Video library
+c69bf96	six animations
+984816f	=
+b11706e	Test
+1b1da6e	Self-check
+8db1a2b	true/false · glossary
+6f4af5e	The ground vibrates
+e4a1a24	Dynamic effects: sources, sensitive soils, natural frequency, zone of influence, machine foundations
+4a4afab	Focus and epicentre, magnitude and intensity, Hungarian earthquakes, design to EC8
+7982ffd	=
+9585982	A cavity under the building
+856ce4a	Cellars, mines, tunnels: settlement trough, rupture surface, protection
+f1988ad	Carried away by water
+f095334	Rapid drawdown, washout of grains, bridge piers, sump pumping in quicksand
+8e9b2e2	Lifted by frost
+cc2defa	Ice lens formation, external walls, basement windows, cold stores
+d648009	=
+b7cdbb9	Summary and quiz
+c28239b	One town, five effects – six questions on the chapter
+3dd90a6	3D modelling of scour around a bridge pier
+dbf8836	Scour around the bridge pier
+97f4275	Scour around the pier
+776150d	4.5 min
+2c31e9c	15 min
+5ebad9d	28.5 min
+e9d2187	38.5 min
+75ab37c	fill
+e1650b8	silty fine sand
+e0d1500	CH1 · vibration
+02b7ccc	<b>Sheet piling 9 m away.</b> The vibration of the vibrator compacts the saturated, loose fine sand: the nearer corner settles more and the wall cracks.
+27daa03	CH2 · earthquake
+a08149f	<b>An earthquake deep down.</b> The waves starting from the focus shake the building horizontally at the surface – soft ground amplifies the motion.
+1306c4a	CH3 · cavity
+59c84c0	<b>The old cellar collapses.</b> The ground moves towards the cavity, a settlement trough opens at the surface; the house tilts towards the trough.
+3f2ba67	CH4 · erosion
+ed181c4	<b>The river falls rapidly.</b> The groundwater beneath the bank flows towards the river, washes out the fine grains, and a cavity grows under the footing.
+006724c	CH5 · frost
+caa8796	<b>Three weeks of frost.</b> Ice lenses grow in the silty soil; the frost lifts the left-hand footing, which stands above the frost depth.
+c8826c1	<b>The 3D view needs WebGL.</b> The browser does not support it right now.
+444f0a6	Monitoring station · <b>${F.tag}</b> · exaggerated ×${EX}
+825b1ea	horizontal ${mm(Math.abs(ux(0)))} mm
+2538bc4	left ${mm(yL) > 0 ? '+' : ''}${mm(yL)} · right ${mm(yR) > 0 ? '+' : ''}${mm(yR)} mm
+ea06dab	=
+e9e23dc	=
+af2ea5e	=
+26703e8	=
+4b1167e	=
+b7095e7	=
+76162dd	=
+0671def	=

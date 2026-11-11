@@ -1,0 +1,160 @@
+3c81441	distance, m
+d810de8	vibration velocity, mm/s
+96dc525	limit ${fmt(lim, 1)} mm/s
+4e0643c	=
+3b6d4a1	Exceeds the limit
+8cff166	Close to the limit
+cf06325	Satisfied
+e9f6fd4	A lower-vibration technique (e.g. bored piles, jacking) or moving the plant further away is needed; vibration monitoring at the neighbour.
+0e7ff4a	During construction, vibration must be monitored with a vibration meter on the foundation of the neighbouring building – the calculation is only an estimate.
+39fe9cf	Estimate of the decrease of vibration velocity with distance: v = v<sub>7.6 m</sub> · (7.6 / r)<sup>n</sup>, where n is an exponent depending on the soil. The yellow band is the typical 20–30 m zone of influence. The limit applies at the characteristic frequency of the plant (impact driving ≈ 15 Hz, vibratory driving ≈ 30 Hz).
+c8acc6d	Pile diameter
+ac85719	Pile length
+26d9eba	Distance of the neighbouring footing
+3df2af5	Radius of the compaction zone ≈ 3·<i>D</i>
+0e7dc33	Radius of the crater ≈ 3·<i>D</i> + <i>L</i>/2
+cde3ba1	crater ${fmt(rk, 1)} m
+3414b3d	settlement exaggerated
+0ea4913	The neighbouring footing stands within the crater
+077c551	Outside the crater, but within one pile length
+a0d2450	More than one pile length away
+0d1fdb6	Significant differential settlement is expected. In loose sand, bored or jacked piles should be chosen instead of driven ones.
+4745ad8	Moderate risk: driving sequence, vibration monitoring and settlement monitoring are recommended.
+c491e7d	The risk of settlement from compaction is small.
+87be17e	In a worked example (D = 0.3 m, L = 10 m, medium-dense sand, impact driving) the settlement was 118 mm next to the pile and 39 mm on average within the crater, and the crater radius was 5.9 m.
+72d28b4	Block width
+969a3c4	Block length
+419c6e3	Block height
+9ce4786	Machine mass
+82b2f7a	Speed
+c9a773f	=
+622491d	Shear wave velocity in the soil
+9f59a08	Natural frequency <i>f</i><sub>n</sub>
+7ff0379	Operating frequency <i>f</i>
+a18fa3f	floor (separated by a movement joint)
+64e0b7a	dynamic amplification
+709243b	Risk of resonance
+c186f02	Close to the natural frequency – but heavily damped
+96a2d87	Little margin
+4458c45	Adequate detuning
+2101b22	The operating frequency falls within ±20 % of the natural frequency, and the amplification is significant. Change the mass or the base area of the block – or improve the soil.
+4748647	For vertical vibration the energy radiated into the soil gives high damping (now ${fmt(c.Dz * 100, 0)} %), so the amplification is small. For rocking vibration this damping is much smaller – there resonance really is dangerous, which is why practice asks for a difference of at least 20–30 % here too.
+81485a0	The practical rule of thumb asks for a difference of at least 20–30 % from the natural frequency.
+21f338d	The machine runs above the natural frequency (tuned “soft” foundation): at start-up and shutdown it briefly passes through resonance.
+833a956	The machine runs below the natural frequency (rigid foundation).
+6dc73d1	 Damping ratio: ${fmt(c.Dz * 100, 0)} %.
+44f4595	Simplified model: vertical vibration of a rigid foundation converted to an equivalent circle (r<sub>0</sub> = √(BL/π)) on an elastic half-space; k = 4·G·r<sub>0</sub>/(1 − ν), G = ρ·v<sub>s</sub><sup>2</sup>, ρ = 1900 kg/m³, ν = 0.33. Design requires a detailed dynamic analysis based on the machine manufacturer’s data and the relevant regulations.
+261a7a8	Quiz – dynamic effects
+b316c9e	Which soil is the most sensitive to vibration?
+5071364	Saturated, loose, uniformly graded fine sand
+7039d79	Hard, high-plasticity clay
+d48be92	Well-graded, dense sandy gravel
+6fb919b	Dry, dense gravel
+9161890	Steeply graded, fine-grained soils are the most sensitive, especially when saturated. Cohesive and coarse-grained soils are less sensitive.
+72289be	What happens if the excitation frequency falls within the resonance range of the soil mass beneath the structure?
+136ed51	Resonance: sudden, collapse-like settlement may occur
+3e2c2d3	The vibration cancels out
+8a7dad1	The soil hardens and settlement stops
+c7408d9	Only the superstructure vibrates, not the foundation
+e18c1aa	The natural frequency must not coincide with the excitation frequency, because that can lead to sudden, collapse-like settlement.
+fdbb70f	How far do vibrations during construction (piling, sheet piling) typically travel?
+27f1f0d	At most 20–30 m from the source
+a6580aa	At most 2–3 m
+1b51d8f	About 200–300 m
+232b692	Several kilometres
+658d35c	These vibrations typically travel at most 20–30 m, but they also affect neighbouring structures – the zone of influence must always be assessed.
+b049d9a	What two kinds of damage can vibration cause?
+7c16ac8	Direct damage to the superstructure, and damage due to compaction of the subsoil
+4121e70	Only cracking of the plaster
+7b0e9c5	Only a rise in the groundwater level
+bfd4223	Only failure of the machines
+6d24297	Vibration can cause damage directly, and damage can also arise from compaction and deformation of the soil beneath the structure.
+e6ddc98	According to DIN 4150-3, what is the permissible peak particle velocity on the foundation of a residential building for short-term vibration below 10 Hz?
+7718b21	=
+d83fd62	=
+afc5921	=
+e82505e	0.5 mm/s
+df55584	For a residential building 5 mm/s below 10 Hz (20 mm/s for industrial, 3 mm/s for sensitive buildings); at higher frequencies the limit increases.
+3c57a93	Why is a high operating frequency (≈ 30–40 Hz) chosen for vibratory driving?
+8d899c7	To work well above the natural frequency of the soil–machine system, so that the vibration of the surroundings is smaller
+61ea9b6	To warm the soil up faster
+3a0dcc1	Because it increases resonance
+3c174ea	Because a low frequency does not compact
+03459a6	Above the natural frequency the vibration is not amplified; it is recommended that the operating frequency be at least one and a half times the resonance frequency.
+2a4e690	Approximately what is the radius of the settlement crater around a pile driven into loose sand?
+dead78e	Compaction occurs in a zone of radius about 3D, and the surface crater has a radius of roughly 3D + L/2 – this is why it is dangerous if a neighbouring footing is within one pile length.
+10c6264	What is one of the basic rules of machine foundation design?
+e7b1715	The operating frequency should differ from the natural frequency of the system by at least 20–30 %
+6e12341	The operating frequency should equal the natural frequency
+a304d1f	The machine foundation must be rigidly connected to the floor
+1bedd83	The mass of the machine foundation does not matter
+fd317ad	Resonance must be avoided; the machine foundation is separated from the floor and the building structure by a movement joint.
+7baa0ce	=
+77256ce	The first known earthquake in Hungary (7 September). The magnitude reconstructed from descriptions is about 6.1 – one of the two known earthquakes larger than 6 in the area of today’s country.
+a097943	=
+c475971	At dawn on 28 June. Of the 1169 houses, 279 collapsed completely and 353 partly, seven churches collapsed, and 63 people died in Komárom.
+7a15ea8	=
+5b88cf9	On 14 January. More than a thousand aftershocks; at Veleg a ground crack 113 m long and 40–50 cm wide opened. The earthquake was the subject of what is perhaps the world’s first isoseismal map.
+d5e9014	=
+4a584b6	On 15 October, near today’s Hungarian–Romanian border. Its focal depth was 23–28 km; traces of the damage can still be seen in the church of Máriapócs.
+6c911b9	=
+01ef57d	At dawn on 8 July. There were no fatalities, but 1269 of the 4569 houses in the town centre were damaged and about 3000 farm buildings were severely damaged; it was felt in 23 counties.
+499d2d2	More than 200 buildings were damaged.
+5b26f6a	=
+8985afb	=
+6ccbcfa	On the morning of 12 January. In Dunaharaszti 3144 of 3500 buildings were damaged, two people died, and about 500 were left homeless.
+a85c23e	=
+0ea48fa	=
+10b46d9	On the morning of 15 August. In Berhida 72 houses had to be demolished.
+0a076e6	=
+d3a8770	On the evening of 29 January, about 9 km deep. More than 280 aftershocks, hairline cracks and chimney damage; no one was injured.
+d5332a2	=
+0975ca1	On the night of 23 April. 4557 insurance damage claims, about 600 million forints of damage – the largest Hungarian earthquake of the instrumental era.
+f1a1e22	=
+dea809d	On 19 August, two magnitude 4.0 earthquakes three minutes apart; no damage claims were received.
+2ffe452	Focal depth
+f8aa1cf	▶ Start the earthquake
+41995b5	P-wave ≈ ${fmt(VP, 1)} km/s, S-wave ≈ ${fmt(VS, 1)} km/s. From this the distance: <b>d ≈ ${fmt(KSP, 1)} · Δt</b> (km, with Δt in seconds).
+8a45cde	${s.n} station: S–P time → distance
+2b46022	hypocentre (focus)
+2e748e7	=
+b177e4e	=
+ba14a39	time →  0 … 30 s
+e70203d	=
+917dd44	=
+7e207c7	=
+6db0f13	Error of your guess
+eb4fe9a	The earthquake
+5e2b0b7	New earthquake →
+36474c5	Distance circles
+dc76238	Three circles, one intersection
+16654b1	A single station only gives the distance (a circle). The common point of the circles of three stations is the epicentre – this is also how the seismological network works.
+e96bdc9	Where was the earthquake?
+e33c927	From the S–P time: d ≈ 8.4 · Δt km. Estimate the three distances and click on the map!
+4b8c99d	over 8
+6c12a9c	Magnitude
+1bb9bed	Comparison
+8ed1c67	Komárom 1763 (6.2–6.3)
+ddcd9a7	Dunaharaszti 1956 (5.6)
+bb58d24	Heves 2013 (≈ 4.7)
+f35df98	Niigata 1964 (7.5)
+de08a7a	Mexico City 1985 (8.0)
+e906efc	Released energy
+ccffe87	Hiroshima bomb (≈ 6.3·10¹³ J)
+1d99506	Compared with the earthquake chosen for comparison
+1908a78	Hiroshima
+df931cc	earthquakes per year on Earth (average)
+598eabe	${fmt(r, r < 10 ? 1 : 0)}× more
+a734e39	1/${fmt(1 / r, 1 / r < 10 ? 1 : 0)} of it
+4218596	log<sub>10</sub>E = 1.5·M + 4.8 (E in joules) – one unit of magnitude means 10<sup>1.5</sup> ≈ 32 times the energy. The frequency data are annual averages calculated since 1900; the number of small earthquakes grows with better instrumentation.
+e8d9176	not felt
+944a463	Recorded by instruments only.
+364fe14	scarcely felt
+5e2a3f0	Felt only by a few people at rest, mainly on the upper floors of tall buildings.
+a6178c5	=
+2a3e7b9	Felt indoors by a few people, a slight trembling.
+ce3c171	Hanging objects swing slightly.
+52dc949	largely observed
+38140e6	Felt indoors by many, outdoors by few.
+d73f4ed	Windows, doors and dishes rattle.
+81c1b9c	strongly felt

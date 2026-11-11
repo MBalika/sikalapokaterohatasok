@@ -1,0 +1,160 @@
+0875608	Diameter
+f765065	Volume loss
+55125f8	Soil
+b208ec3	clay · K = 0.5
+f89901e	sand · K = 0.35
+c5973af	Centre of the house from the axis
+2572743	Length of the house
+35ecf71	Trough depth <i>S</i><sub>max</sub>
+7b6ea33	Inflection point <i>i</i>
+6856371	Tensile strain under the house
+e698a01	=
+429f886	Damage category ${cat[1]} – ${cat[2]}
+b7ff040	Expected crack width: ${cat[3]}. 
+d47d9b7	The house stands at the edge of the trough, on the steep part – this is where the tensile strain is greatest.
+f7181a3	Peck’s Gaussian trough; the horizontal displacement points towards the tunnel axis (u = x·S/z<sub>0</sub>). The damage category is estimated from the limiting strain derived from the maximum tensile strain and the relative deflection under the house. Category limits: 0.05, 0.075, 0.15 and 0.3 %. Illustrative, simplified calculation.
+33ed8f4	Quiz – underground cavities
+39f9ae8	Why does excavating an artificial cavity cause settlement?
+be7439d	The original state of stress changes, and the ground above and beside it moves towards the cavity
+9de103f	Because the soil warms up
+e323fa7	Because the groundwater level rises
+49355e0	Because the air in the cavity compresses the soil
+87386ec	Excavating a cavity changes the state of stress; the ground moves towards the cavity, and a settlement trough forms at the surface.
+9b15cf9	At what angle to the horizontal does the rupture surface run up from the lower corner of the cavity?
+b8d2d96	The rupture surfaces run up to the surface at about 45° + φ/2 to the horizontal, and they mark the width of the trough.
+0634af6	What does the magnitude of settlement approximately depend on?
+c8f63bc	On the volume of soil squeezed into the cavity
+82807a6	On the colour of the building
+081f12d	Only on the groundwater level
+2d90721	On the age of the cavity
+751693f	The volume of the surface trough is approximately equal to the volume of soil squeezed into the cavity.
+a264794	How do depth and soil strength affect the displacement?
+328ac8d	With a deeper cavity and stronger soil, the displacement is smaller and occurs later
+aab01b0	A deeper cavity always gives more settlement
+cfbca60	Strength does not matter
+09a02b3	In stronger soil it collapses at once
+3d87618	The deeper the cavity and the stronger the soil, the smaller and the later the displacement.
+2e5cbfc	What should be done if a cavity is found under a building?
+739bebd	Support or backfill it as soon as possible, and keep it dry by dewatering
+eb63d33	Wait until it collapses by itself
+cc527ff	Fill it with water
+724cb2c	Strengthen the roof of the building
+84eb841	The cavity must be supported (or backfilled) and dewatered as soon as possible.
+1ad4b06	What does volume loss mean in tunnelling?
+dce168b	The volume of the surface trough as a percentage of the tunnel cross-section
+d926569	The mass of soil carted away
+e012b66	The shrinkage of the concrete
+1e68815	The evaporation of the groundwater
+09b49dc	V<sub>L</sub> = V<sub>s</sub> / (πD²/4); for modern face-supported shields typically 0.3–0.5 %.
+74eb06a	Where does a house tilt the most in a settlement trough?
+a9ef80c	At the edge of the trough, near the inflection point
+835c141	Exactly in the middle of the trough
+c62aa9a	Outside the trough
+55247a6	Equally everywhere
+fccfa1e	At the inflection point (x = i) the trough is steepest; this is where tilt and tensile strain are greatest.
+18fa642	Why is it dangerous if a cellar cut into tuff becomes soaked?
+8fe8fe0	The strength of the tuff drops to a fraction when saturated, and the vault may collapse
+afc4397	Because the water freezes in it in summer
+a0c5ed4	Because tuff dissolves in water like salt
+4d3a922	It is not dangerous
+1f613f4	In Eger the strength of rhyodacite tuff drops to a third to a fifth when soaked – this is why rainwater and utility pipes must be routed away.
+5fd48ad	Blasting
+5cb3ef1	individual shocks < 1 s, in delayed sequences
+24c59e9	up to 100 mm/s near the source
+aa80f65	A short, sharp shock with a wide frequency band. In quarries and demolition; its effect is governed by the charge mass and the distance.
+b04c966	Pile driving (impact)
+74541ea	repeated impulses
+3e6c729	blows of about 0.2 s, every second
+dfdee45	typically ≈ 16 mm/s at 7.6 m
+b7d8370	Each blow is a short impulse. It compacts loose sand around the pile; for the neighbouring building it is the many thousands of repetitions that are dangerous.
+f6a864f	Vibratory driving
+628fd6f	steady for minutes
+8f7a268	typically ≈ 4 mm/s at 7.6 m (upper ≈ 19)
+be49e0b	Driving sheet piles and piles with a vibrator. At start-up and shutdown the system passes through its natural frequency – that is when the vibration is strongest.
+0e69714	Traffic
+e41c2e5	random, repeated
+85cd6f5	a few seconds per vehicle
+c81c5b6	rarely > 2 mm/s in buildings
+27884e1	Heavy vehicles, trams, railways. Small-amplitude vibration, but repeated for decades; stronger on uneven surfacing and loose ground.
+22f69b7	Earthquake
+c52aa78	transient, long
+ceb2dd7	ten to sixty seconds of strong shaking
+ea886f1	several hundred mm/s in a strong earthquake
+4bb5cb2	Low-frequency, large-amplitude motion – right at the natural frequencies of buildings and soil layers. That is why it is the most dangerous dynamic effect.
+3ee6f8e	Wind gusts
+c67a050	slow, cyclic
+a5fd4a4	a few seconds per gust
+613d4c2	Very low-frequency, slow gusts. They move tall, slender structures such as towers and wind turbines, and apply a cyclically alternating overturning moment to the foundation.
+c731271	Source
+ec3087e	Frequency
+833e08e	Character
+11904d9	Duration
+bc36ee1	Typical vibration velocity
+76d82a6	vibration velocity – time (illustrative)
+6b0a452	frequency, Hz (logarithmic scale)
+fa07d64	natural frequency of buildings
+4ba1b0d	soil layers (f = v/4H)
+bcb0b99	=
+8f37473	very low
+b98d293	No numerical band is given for wind vibration. The frequency ranges are typical values; earthquakes fall right in the band of the natural frequencies of buildings and soil layers.
+d6011f9	Uniform fine sand
+27dca9f	Silty sand
+29200e9	Sandy gravel
+a34641b	Medium clay
+1ae85f6	Density
+78c7d94	dense
+8e856dd	saturated
+eb547ac	▶ Shake
+1171fdb	Uniformity coefficient <i>U</i> = <i>d</i><sub>60</sub>/<i>d</i><sub>10</sub>
+2ce1b6e	Sensitivity to vibration
+e765224	Surface settlement in the box
+6241305	=
+8649eef	grain size, mm
+7fcdbe0	passing, %
+70b3173	Dangerous: collapses under vibration
+b9b082a	Moderately sensitive
+6e0c318	Slightly sensitive
+77c8b85	Cohesive soil is held together by cohesion; vibration hardly rearranges it.
+5d4c4a2	Well-graded grains interlock, and the skeleton is dense to begin with.
+721e47e	Vibration rearranges the grains of the loose skeleton of uniform grains into a denser arrangement; the water pressure rises in the saturated pores.
+c87d56d	When dry the risk is smaller, but loose, uniform sand still compacts.
+0672ff5	Excitation frequency
+96a955e	Natural frequency
+ca9ff4c	Damping
+1c9734f	▶ Sweep 1 → 50 Hz
+0e2a140	The sweep changes the excitation like a vibrator starting up or a machine spinning up.
+e6c3549	Frequency ratio <i>f</i>/<i>f</i><sub>0</sub>
+726570e	Amplification
+f8add1c	excitation frequency, Hz
+379b382	amplification
+9ea4cc5	frequency, Hz
+91b97c2	settlement ↓
+b1d5948	resonance range
+1127b18	Resonance: within the resonance range
+517d152	Even a small excitation causes a large amplitude. On loose, saturated soil sudden, collapse-like settlement is expected – the excitation must be detuned.
+84f1884	Close to resonance
+4f6762a	When vibrators start up and shut down, the system passes through this band – that is when the vibration is briefly stronger.
+ad3186c	Well below the natural frequency
+d4ef368	Well above the natural frequency
+c7425ae	The system follows the excitation almost as a rigid body; there is no amplification.
+9cf8c37	The mass “cannot keep up” with the rapid excitation, and the amplitude is smaller than the static one. This is why a high frequency (≥ 1.5 × f0) is chosen for vibratory driving.
+fcb9491	Impact hammer, typical
+daac509	=
+a578e2c	Impact hammer, high energy
+70e75f3	Vibratory, typical
+b3a1208	=
+2c25c6f	Vibratory, upper value
+0fa87e7	Plant (vibration velocity at 7.6 m)
+b8834be	=
+01f0661	Soil (attenuation exponent)
+8fd5b29	hard
+056a4af	Neighbouring building
+41523b5	Distance
+84dc793	Vibration velocity at the foundation
+413957e	Limit
+d9cb083	Required distance
+138d9b7	=
+c09f1c5	pile driving
+c8ac5ae	=
+dad7985	=
+ba2ce9a	⟷ drag

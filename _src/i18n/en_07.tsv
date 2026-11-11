@@ -1,0 +1,160 @@
+d3872d0	Always 600–700 km
+ac09c91	A few metres
+4846bfd	The focal depth can range from a few km to 600–700 km, but the vast majority of earthquakes are at most 30 km deep.
+5950e9f	What is the difference between magnitude and intensity?
+e1ca40d	Magnitude is the energy released, intensity is the strength of the effect at a given place
+55286bc	They mean the same thing
+0f1798c	Intensity is a measure of focal depth
+c9fd04b	Magnitude is the amount of damage in forints
+6ae4c72	An earthquake has one magnitude but a different intensity at different places; intensity decreases with distance from the focus.
+31b1dc8	How many times more energy is released in a magnitude 6 earthquake than in a magnitude 5 one?
+e757aac	About 32 times
+0d2415a	Twice
+43a639c	Ten times
+041d0a7	The same
+6422c45	One unit of magnitude means ten times the amplitude and 10^1.5 ≈ 32 times the energy.
+9560f65	What earthquake must be designed for according to EC8?
+17ba0be	The one with a 10 % probability of exceedance in 50 years (≈ 475-year return period)
+747e281	The largest ever
+05bfbd5	The one that occurs every year
+de13605	Design is needed only above magnitude 7
+10d6b79	The design earthquake has a 10 % probability of exceedance in 50 years – a return period of about 475 years – and counts as an accidental action.
+f989f74	In what range is the reference peak ground acceleration (<i>a</i><sub>gR</sub>) in Hungary?
+3e7ae58	The five zones of the Hungarian ground acceleration map are 0.08, 0.10, 0.12, 0.14 and 0.15 g.
+4c6a80b	On what basis is the ground classified into the EC8 ground types?
+6ff56f2	On the basis of the shear wave velocity of the upper 30 m (<i>v</i><sub>s,30</sub>), <i>N</i><sub>SPT</sub> and <i>c</i><sub>u</sub>
+ad36560	On the basis of the depth of the water table
+c4e051e	On the basis of the height of the building
+eb09659	Only on the basis of the colour of the surface layer
+b945945	The classification is based on the 30 m zone below the structure; in Hungary most soils are of types C and D.
+73f865d	Why was it mainly medium-rise buildings that collapsed in Mexico City in 1985?
+c39a5f5	The natural period of the soft lake-bed clay (≈ 2 s) was close to that of the buildings – resonance
+a92373b	Because the focus was directly beneath the city
+6848651	Because there was a landslide there
+1078125	Because they were built of timber
+5904841	The lake bed amplified the shaking 4–5 times, and the motion with a period of about 2 s brought the 6–15-storey buildings into resonance.
+50e1d52	What is the condition for liquefaction?
+8d4b33a	Loose, saturated sand and cyclic shearing that increases the pore water pressure
+633a0ff	Hard clay and dry weather
+5827193	Rocky subsoil
+556d537	Frozen ground
+fac75a5	In saturated loose sand the pore water cannot escape; its pressure reaches the effective stress and the soil loses its strength (ground type S<sub>2</sub>).
+230e044	sandy gravel
+20cb2bb	silt, silty fine sand
+d9468e7	high-plasticity clay
+9e3e5e2	Depth to groundwater
+8c5d4fb	Mean temperature of the frost period
+fa12cfd	Duration
+9d689e5	▶ Start winter
+ada774f	Frost penetration
+3bd12ac	Frost heave Δ<i>f</i>
+b7e270e	Of which ice lenses
+3f75bcb	groundwater
+556b97a	Δf = ${fmt((m.block + m.lens) * 100, 1)} cm (exaggerated 4×)
+5f9dd3c	Strong frost heave: all three conditions are met
+7a8e36c	Moderate frost heave
+578434f	Not frost-susceptible
+712227b	Frost-susceptible soil, frost and nearby groundwater: the ice lenses grow fast. On thawing the soil gets soaked and settles back.
+3dbb586	There is no capillary rise between coarse grains, so no ice lenses form.
+907b1ab	The groundwater is far from the frost front, so the ice lenses have no water supply.
+f842b74	The soil is less frost-susceptible, and the ice lenses grow slowly.
+69d15bc	Frost penetration by the modified Berggren formula (λ ≈ 0.75 · Stefan depth); the amount of frost heave is illustrative, with ratios typical of the soil type and the water supply.
+013666e	not frost-susceptible
+24b256e	transitional, possible frost risk
+f46a2d2	F1 · slightly frost-susceptible
+6c0111d	F2 · moderately frost-susceptible
+f6a82ef	F3 · highly frost-susceptible
+dc6014b	F4 · the most dangerous
+bad613e	Soil group
+78e2a06	gravelly soil
+e61ed56	very fine, silty sand
+8f29ee3	=
+afec785	=
+4e65e50	clay, I<sub>p</sub> < 12
+e31b4ba	layered (varved) clay
+577b433	Fraction finer than 0.02 mm
+4f36cb9	Frost susceptibility class
+db12186	=
+5160676	=
+20bc3cd	less dangerous →  → → → →  most dangerous
+2cef575	NFS: not frost-susceptible · F1–F4: increasingly frost-susceptible
+419ece2	Silts, very fine silty sands, low-plasticity clays and layered clays are the most dangerous: fine enough for capillary rise, but permeable enough for a rapid water supply.
+1ba57f2	Few fine grains: no capillary rise, no ice lenses – suitable as frost protection layer material.
+677916b	The frost risk increases rapidly with the fines content.
+2c2a3de	Freezing index
+221e786	=
+45b1173	the groundwater is deeper than 2 m
+c8769bd	the ground level is above 300 m above sea level
+eb8dc21	Depth of the foundation level
+eea2466	Stefan depth
+06aad5e	Modified Berggren (λ = 0.75)
+4fc340e	Specified frost depth
+8930355	=
+36f0f73	frost front ≈ ${fmt(zB, 2)} m
+3d94bf2	specified frost depth ${fmt(zr, 1)} m
+30c0192	The foundation level is below the frost depth
+697238d	The foundation level is above the frost depth
+8258006	In this winter the calculated frost front reaches deeper – in a hard winter, in moist, frost-susceptible soil, even the Hungarian value may be too little.
+57bdb5a	It meets the requirement, and the calculated frost front does not reach it either.
+593b395	The footing must be taken deeper, or the soil must be replaced with frost-protective (non-frost-susceptible) material, or it must be protected with thermal insulation.
+67482a8	Stefan formula: z = √(2·k·F/L), where F is the freezing index (°C·s), k is the thermal conductivity of the frozen soil, and L = 334 kJ/kg · w · ρ<sub>d</sub> is the latent heat of the freezing water. The Stefan formula considers only the latent heat and therefore overestimates; the modified Berggren formula reduces it by a factor λ of about 0.75.
+37ee057	the basement window was left open
+9e237d7	snow accumulates next to the wall (melts, refreezes)
+b9861ca	unheated building (winter construction)
+37ca867	Depth of the right-hand external wall footing
+c0b45b3	frost front ≈ ${fmt(fz, 2)} m
+52d9e11	cold air
+8c8e8aa	melting snow
+f8ca1d3	=
+c189a4b	cold basement
+7f222f6	basement (heated)
+da41c8a	unheated ground floor
+e64db60	heated ground floor
+5de0783	unheated extension
+4eb52bc	heated extension
+79892d1	Frost heave and cracks
+1417f64	No frost damage
+050fa72	The right-hand footing is above the frost front: the frost penetrates below it and lifts the wall.
+3319efb	The ground also freezes under the unheated building, and the floors heave.
+f62b6e9	Cold air entering through the open basement window freezes the ground below the basement floor too.
+2eeebb9	Snow that melts and refreezes keeps the soil moist and lets the frost go deeper – this does not endanger a footing below the frost front.
+53f5933	The external wall footings are below the frost depth, the basement is closed, and the building is heated.
+abe1b34	Cold room temperature
+ca49b6a	Width of the building
+3395dcb	Thickness of the thermal insulation (XPS)
+9f14bf0	underfloor heating below the insulation (+4 °C)
+64dbf25	▶ Run 30 years
+fafaceb	The 0 °C line below the middle of the floor
+a481c5f	Floor heave (estimate)
+3d6d06c	${fmt(year, 1)} years
+faae7fe	time, years
+58b4dc6	frost depth, m
+1ab7c64	${fmt(year, 1)}<small>years</small>
+ed547b1	The underfloor heating keeps the ground above freezing
+071e5aa	The frost penetrates deeper year by year
+b4a69a2	The frost is moving down slowly but surely
+d077f08	No frost below the floor yet
+0447455	The heating below the insulation keeps the ground below the floor a few degrees above freezing; the insulation reduces the heating demand.
+e3fd4f1	Thick insulation slows the penetration of frost but does not stop it on its own: over decades the ground cools down even under a well-insulated cold store. That is why underfloor heating is needed too.
+4d385a8	With poor insulation the zero isotherm moves down quickly, ice lenses grow in the frost-susceptible layer – the floor and the building heave.
+5ad39e1	Half cross-section (from the middle of the building to 40 m, down to 30 m), 0.5 m grid, with the latent heat of the freezing water; outside, a mean annual temperature of 11 °C, at depth the heat arriving from the Earth’s interior. The floor heave estimate is illustrative (from the thickness of the frozen frost-susceptible layer).
+1f7e5af	Quiz – frost action
+d4d71c6	What causes large frost heave?
+740b696	Ice lenses: water flowing to below the frost front freezes on in layers
+9741f17	The thermal expansion of the soil grains
+b9545a1	The freezing of air in the pores
+e45f66c	The weight of the snow
+104a487	In-situ freezing gives only about 9 % expansion of the water; the large heave is caused by ice lenses growing from the capillary water supply.
+23db0d5	What are the three conditions for frost heave?
+be2f62a	Frost-susceptible soil, frost penetrating the ground and a water supply
+91d3950	Sand, sunshine and wind
+05c76ea	Gravel, dry soil and snow
+25e2230	Only severe cold
+e62aaa5	If any of them is missing – for example gravel, or deep groundwater – no significant frost heave develops.
+895b717	Which soil is the most frost-susceptible?
+fc463d4	Silt, very fine silty sand
+b84ee47	Clean sandy gravel
+ac08432	Coarse gravel
+4052cb9	Rock
+55636c7	Silts (F4) are fine enough for capillary rise and permeable enough for a rapid water supply.
+07518e2	What is the frost depth in Hungary in general?

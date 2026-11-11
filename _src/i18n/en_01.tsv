@@ -1,0 +1,120 @@
+b08e4a2	External effects on shallow foundations – top of page
+796d83e	<b>External effects on shallow foundations</b><small>Foundation Engineering · Lecture 7</small>
+6bec538	Chapters
+be9013d	Chapters menu
+a23fb86	=
+f7e4d5c	=
+17b4871	Theme
+6562aa1	CH0 · Overview
+8b4c0a7	Measuring channels
+5afa6bb	Foundation Engineering · interactive module
+79c9447	External effects <em>on shallow</em> foundations
+c703e0a	We can calculate the settlement caused by static load well. But a foundation is also subject to other, often unexpected effects: the ground beneath it vibrates, the earth moves, a cavity opens below it, water washes it out, or frost lifts it – and expansive clay moves it in a similar way. These are not to be calculated but recognised and prevented.
+34b6d34	<b id="statW">40+</b><span>interactive elements</span>
+49ea3fd	<b>6</b><span>animated videos</span>
+d493255	<b id="statC">20+</b><span>real cases</span>
+bc4c63b	Monitoring station · <b>choose an effect</b>
+6ffb1d9	<b>One house, five effects.</b> Choose below what acts on the foundation – on the strip at the bottom the “pen” records the movement of the two corners of the house (exaggerated).
+718da93	Corner movement
+e944a36	External effects on shallow foundations
+c1eb810	Interactive module for the Foundation Engineering course at the BME Faculty of Civil Engineering: dynamic effects, earthquakes, underground cavities, erosion by groundwater and frost action. The simulators are simplified, illustrative models – not suitable for design.
+cb1185d	Related pages
+b923b6e	Design of shallow foundations ↗
+bfc34f5	Settlement of shallow foundations ↗
+d06a295	Foundations on unfavourable ground ↗
+43a50b1	Protection against harmful settlement ↗
+18a5920	Deep foundations (in Hungarian) ↗
+6a9e6cb	Previous video
+f0534ef	Next video
+eaf070b	Close ✕
+c612a45	Animated video
+6927d01	Open on YouTube ↗
+87ca126	YouTube video
+cbf28f4	hyphenation
+cedb527	<span class="ch-no">CH0</span><span>Overview</span>
+48c4504	What acts on <em>the foundation?</em>
+d9b919f	Of the factors that cause building movement and settlement, it is the deformation due to static load that we can calculate relatively accurately. Many other – often unexpected – effects can also cause settlement: against these we protect ourselves not by calculation but by recognition, detailing and preventive measures.
+821cdb9	Apart from static loads, shallow foundations can be subject to four further effects. Each of them can cause <span class="hl">settlement or deformation</span>, and each has a different source: vibration through rearrangement of the soil grains, a cavity through movement of the ground, water through carrying away grains, and frost through the growth of ice lenses. Of the dynamic effects, the earthquake is the least predictable and causes the most damage – so it has its own channel.
+f3f0d75	<b>Expansive (swelling and shrinking) clay</b> also belongs here. High-plasticity clay swells or shrinks as its water content changes, and so – like frost action – it lifts and lowers a lightly loaded building standing on it in a seasonal cycle. This effect is covered in detail on the <a href="https://kedvezotlen-altalaj.vercel.app/#terfogatvaltozo" target="_blank" rel="noopener">Foundations on unfavourable ground</a> page; here we only show its place among the other effects.
+5750993	=
+29ac46a	Dynamic effects
+1400e92	blasting, piling
+3d31b85	traffic, earthquakes
+ea7db14	wind gusts
+575f02d	=
+23a6bc8	Underground cavities
+7d65e3a	tunnels, mines
+b8fcef5	cellar systems
+b948629	undermined areas
+72bfc6f	=
+72b76a6	Erosion by groundwater
+f6fe6c4	rapid drawdown
+8762fcc	quicksand
+8d8f722	sump pumping
+c9e2e5c	=
+a8225fa	Frost action
+8d293d6	ice lens formation
+635d6e3	external walls, basement windows
+696219b	cold store floors
+f99d10d	ON A SEPARATE PAGE
+610f3a1	Expansive clay
+88cb82b	shrinks when it dries
+6004249	swells when it gets wet
+cc4bc4d	seasonal heave and settlement
+417788d	In detail: Foundations on unfavourable ground ↗
+8e868ef	<span class="k">Comparison</span>The effects in one table
+5245fb1	Effect
+d91035e	What happens in the soil?
+0ac49b1	Most sensitive
+f241f7c	Main protection
+f0e51ec	<b>Vibration</b>
+6a22ad9	the grains rearrange and loose soil compacts; at resonance it suddenly collapses
+db2cff9	saturated, uniformly graded fine sand
+6faaeae	assessing the zone of influence, vibration monitoring, keeping the excitation frequency away from the natural frequency
+d1e23c8	<b>Earthquake</b>
+a48b177	the waves shake the ground and the building; they are amplified on soft ground, and loose saturated sand can liquefy
+66f8e83	soft, thick deposits (D, S<sub>1</sub>), liquefiable sand (S<sub>2</sub>)
+d9eb353	design to EC8: ground type, response spectrum, structural detailing
+68708ba	<b>Cavities</b>
+45e2a01	the state of stress changes, the ground moves towards the cavity, a trough forms at the surface
+c948859	shallow cavity in loose or soaked soil
+61ce9af	immediate support or backfilling, dewatering, building monitoring
+7b9a06d	<b>Erosion</b>
+3028922	flowing water carries away the fine grains, and a cavity forms under the foundation
+63b3b7a	granular soil on a riverbank, quicksand
+43abac0	filter layer, filtered wells, deeper foundations, bed protection
+cd41ab8	<b>Frost</b>
+09c267d	ice lenses grow below the frost front, the ground heaves, and it settles back on thawing
+c8d4f5a	silt, silty fine sand with a water supply
+24c927e	foundations below the frost depth, thermal insulation, underfloor heating
+962daf6	<b>Expansive clay</b>
+907fa7d	high-plasticity clay shrinks when it dries and swells when it gets wet; the building rises and settles in a seasonal cycle
+b193085	high-plasticity (montmorillonitic) clay, lightly loaded house on shallow foundations, large trees nearby
+ef7d943	deeper foundations, using the bearing capacity of the soil – <a href="https://kedvezotlen-altalaj.vercel.app/#terfogatvaltozo" target="_blank" rel="noopener">in detail on the other page ↗</a>
+370a11f	Effect detective
+2022eee	These are prevented, not calculated
+e06ee68	Unlike static settlement, the magnitude of movement caused by vibration, cavities, erosion and frost can rarely be predicted reliably. The designer’s task is to recognise the hazard already at the design stage: through ground investigation, by mapping the surroundings (neighbouring construction, cellars, riverbank, groundwater), and with detailing that keeps the effect away from the foundation.
+4e5ca02	<span class="ch-no">CH1</span><span>vibration · resonance · compaction</span>
+d7f7e4b	Dynamic <em>effects</em>
+4b3bcc0	Industrial buildings in particular may carry, in addition to static loads, dynamic loads that change suddenly or continuously over time. This effect can also spread to the foundations and the subsoil – machine foundations, for example, are dynamically loaded foundations. The dynamic behaviour of soils is covered in detail in the MSc programme; here we summarise the most important points.
+86727eb	<span class="k">01 · sources</span>Where does the vibration come from?
+dcb263b	The sources of dynamic effects on structures: <b>blasting</b>, <b>piling</b> (and sheet piling), <b>traffic</b>, <b>earthquakes</b> and <b>wind gusts</b>. What they have in common is that they typically act <span class="hl">for a short time, cyclically</span> – not as a permanent load. Their frequency, duration and magnitude, however, differ greatly: an earthquake is a slow, large-amplitude movement, vibratory pile driving is a steady, rapid vibration, and blasting is a single short shock.
+bbea023	Catalogue of vibration sources
+d39a38e	<span class="k">02 · sensitivity</span>Which soil is sensitive to vibration?
+150eb7a	<b>Fine-grained, steeply (uniformly) graded</b> soils are particularly sensitive – especially when <b>saturated with water</b>. In loose sand made of uniform grains, vibration makes the grains rearrange, their skeleton collapses into a denser arrangement and the surface settles. In saturated soil the pore water cannot escape immediately: the water pressure rises, and the pressure between the grains, and with it the shear strength, drops. Cohesive soils are protected by cohesion, well-graded coarse soils by the “interlocking” of the grains – these are less sensitive.
+1f2bf68	Shaking table: four soils, one vibration
+d21c531	<span class="k">03 · resonance</span>Natural frequency and excitation
+42dd89c	The soil mass beneath a structure – together with the foundation and the structure – has a <b>natural frequency</b> at which it responds to the smallest excitation with the largest amplitude. If the excitation frequency (for example the speed of a machine or the frequency of a vibrator) falls close to it, within the <b>resonance range</b>, resonance develops, and this can lead to <span class="hl">sudden, collapse-like settlement</span>. The practical conclusion is simple: the natural frequency of the soil mass must not coincide with the excitation frequency.
+50ede61	Resonance lab
+0ddcb12	<span class="k">04 · damage</span>Two kinds of damage
+73b0ced	01 · structure
+cce160e	Direct damage to the superstructure
+a7c8a63	Vibration directly damages the structural elements of the building: cracks appear in the masonry, the plaster and at floor connections, and chimneys and cornices work loose. The limiting values therefore refer to the vibration velocity measured on the foundation and on the top floor.
+4646dd2	02 · soil
+c1e80ed	Damage from soil compaction
+fab77d7	The soil beneath the structure compacts and deforms – this causes settlement, often differential settlement. On loose sand this is the more dangerous: even a small vibration velocity can cause permanent settlement, even if it is not yet directly dangerous to the structure.
+128a78e	<span class="k">05 · zone of influence</span>How far does the vibration reach?
+0a2c99b	The <b>zone of influence</b> of the vibration source must always be assessed: how far the vibrations can travel through the subsoil. Often the construction itself generates the vibration (piling, sheet piling), and this also affects neighbouring structures. Such vibrations typically travel <span class="hl">no more than 20–30 m</span> from the source. Vibration attenuates with distance for two reasons: the wave spreads over an ever larger area (geometric damping), and friction in the soil absorbs its energy (material damping). The permissible vibration velocity at a neighbouring building is set by a standard – the widely used German DIN 4150-3, for example, by type of building and vibration frequency.
+de4704d	Zone-of-influence planner
+e5823c9	industrial, commercial
+616b201	=

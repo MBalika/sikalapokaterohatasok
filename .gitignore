@@ -1,3 +1,7 @@
 _src/node_modules
 _src/dist
 dev-*.html
+_src/.en/
+_src/i18n/node_modules/
+_src/i18n/ws.tsv
+_src/i18n/missing.tsv

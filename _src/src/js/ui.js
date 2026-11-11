@@ -1,6 +1,6 @@
 // Oldalkeret: téma, csatorna-navigáció, szeizmogram-csík, fejezetfejek, videók, BME-kártya, galéria, fülek, kvíz,
 // igaz/hamis, fogalomtár, megjelenés görgetéskor, formázás-őr
-import { $, $$, h, fireTheme, GUARD, cssVar, clamp, onTheme } from './core.js';
+import { $, $$, h, fireTheme, GUARD, cssVar, clamp, onTheme, EN } from './core.js';
 import { CHAPTERS, VIDEOS, YT } from './data.js';
 
 /* ---------------------------------------------------------------- téma */
@@ -183,7 +183,7 @@ function openVideo(n) {
   curIdx = order.indexOf(n);
   const m = $('#vmodal');
   $('#vmTitle', m).textContent = v.t;
-  $('#vmFrame', m).src = `video/${n}.html#autoplay`;
+  $('#vmFrame', m).src = `video/${EN ? 'en/' : ''}${n}.html#autoplay`;
   $('#vmInfo', m).textContent = `${curIdx + 1} / ${order.length}` + (v.d ? ` · ${v.d}` : '') + ` · zene: ${v.g} · Esc: bezárás`;
   m.hidden = false; document.body.style.overflow = 'hidden';
   dispatchEvent(new Event('sims:pause'));
@@ -377,7 +377,7 @@ function initGloss() {
   const box = $('#gloss'); if (!box || !GL.length) return;
   const inp = h('input', { class: 'gloss-search', type: 'search', placeholder: `Keresés a ${GL.length} fogalom között…`, 'aria-label': 'Keresés a fogalomtárban' });
   const dl = h('dl', { class: 'gloss' });
-  const items = GL.slice().sort((a, b) => a.t.localeCompare(b.t, 'hu')).map((g) => { const d = h('div', {}, h('dt', { html: g.t + (g.ch ? `<small>${g.ch}</small>` : '') }), h('dd', { html: g.d })); dl.append(d); return [d, (g.t + ' ' + g.d).toLowerCase()]; });
+  const items = GL.slice().sort((a, b) => a.t.localeCompare(b.t, EN ? 'en' : 'hu')).map((g) => { const d = h('div', {}, h('dt', { html: g.t + (g.ch ? `<small>${g.ch}</small>` : '') }), h('dd', { html: g.d })); dl.append(d); return [d, (g.t + ' ' + g.d).toLowerCase()]; });
   inp.addEventListener('input', () => { const q = inp.value.trim().toLowerCase(); items.forEach(([d, s]) => { d.hidden = !!q && !s.includes(q); }); });
   box.append(inp, dl);
 }
@@ -389,9 +389,24 @@ function initReveal() {
 }
 
 export function initUI() {
-  initTheme(); initNav(); initStrip(); initHeads(); initVideos(); initYT(); initGallery(); initTabs(); initQuiz(); initTF(); initGloss(); initReveal();
+  initTheme(); initLang(); initNav(); initStrip(); initHeads(); initVideos(); initYT(); initGallery(); initTabs(); initQuiz(); initTF(); initGloss(); initReveal();
   const n = $$('[data-w]').length; const s = $('#statW'); if (s && n) s.textContent = n;
   const nc = $$('.case').length; const sc = $('#statC'); if (sc && nc) sc.textContent = nc;
 }
 export function startGuard() { try { GUARD.start(); } catch (e) { console.error('Formázás-őr hiba', e); } }
 export { clamp };
+
+// nyelvváltó: a választás megmarad (alap-lang), a másik nyelvű oldal ugyanott nyílik meg (alap-pos)
+function initLang() {
+  const sw = $('#langSw'), KEY = 'alap-pos'; const hh = () => { const tb = $('.topbar'); return tb ? tb.offsetHeight : 0; };
+  if (sw) sw.addEventListener('click', () => {
+    try { localStorage.setItem('alap-lang', EN ? 'hu' : 'en'); } catch (e) { }
+    const H0 = hh(); let best = null; document.querySelectorAll('main [id]').forEach((n) => { if (n.closest('svg')) return; const r = n.getBoundingClientRect(); if (r.height && r.top <= H0 + 1 && r.bottom > H0) best = n; });
+    try { sessionStorage.setItem(KEY, JSON.stringify({ id: best ? best.id : '', off: best ? H0 - best.getBoundingClientRect().top : 0, y: scrollY, t: Date.now() })); } catch (e) { }
+    sw.setAttribute('href', (EN ? './' : 'en') + (best ? '#' + best.id : ''));
+  });
+  let p = null; try { p = JSON.parse(sessionStorage.getItem(KEY) || 'null'); sessionStorage.removeItem(KEY); } catch (e) { }
+  if (p && Date.now() - p.t < 20000) { if ('scrollRestoration' in window.history) window.history.scrollRestoration = 'manual';
+    const go = () => { const n = p.id && document.getElementById(p.id); const y = n ? n.getBoundingClientRect().top + scrollY - hh() + p.off : p.y; scrollTo({ top: Math.max(0, y), behavior: 'instant' }); };
+    requestAnimationFrame(go); addEventListener('load', () => { go(); setTimeout(go, 600); }, { once: true }); }
+}

@@ -1,6 +1,6 @@
 // CH2 – Földrengések: kéregmetszet, epicentrum-kereső, magnitúdó-mérleg, intenzitás-szoba, izoszeiszták, hazai rengések,
 // talajgyorsulási térkép, altalajosztály, válaszspektrum, Mexikóváros, folyósodás, kvíz
-import { register, shell, slider, seg, toggle, stat, verdict, select, h, svg, figure, clear, fmt, clamp, lerp, smooth, loop, fitCanvas, cssVar, onTheme, $, $$ } from './core.js';
+import { register, shell, slider, seg, toggle, stat, verdict, select, h, svg, figure, clear, fmt, clamp, lerp, smooth, loop, fitCanvas, cssVar, onTheme, $, $$, EN } from './core.js';
 import { chart, pd, samp } from './plot.js';
 import { defineQuiz } from './ui.js';
 import { MAP, P, km, PX_PER_KM, borderD, baseMap, overlays } from './hu_map.js';
@@ -424,7 +424,7 @@ register('eq-spec', (root) => {
     const v = Se(T1, ag, P[cl.v]), vA = Se(T1, ag, P.A);
     svg('line', { x1: c.X(T1), y1: c.B, x2: c.X(T1), y2: c.Y(v), stroke: 'var(--ink)', 'stroke-dasharray': '4 3' }, fig);
     svg('circle', { cx: c.X(T1), cy: c.Y(v), r: 6, fill: 'var(--c2)', stroke: 'var(--surface)', 'stroke-width': 2 }, fig);
-    svg('text', { x: c.X(T1) + 8, y: c.Y(v) - 8, class: 't-num t-b halo', text: `${N.v} szint` }, fig);
+    svg('text', { x: c.X(T1) + 8, y: c.Y(v) - 8, class: 't-num t-b halo', text: `${N.v} ${EN ? (N.v === 1 ? 'storey' : 'storeys') : 'szint'}` }, fig);
     svg('text', { x: c.X(P[cl.v][2]) + 6, y: c.Y(ag * P[cl.v][0] * 2.5) - 8, class: 't-s halo', text: `${cl.v}: plató 2,5·S·a`, style: 'fill:var(--c2)' }, fig);
     sT.set(`${fmt(T1, 2)} s`, null, `${fmt(T1, 2)}<small>s</small>`);
     sS.set(`${fmt(v, 3)} g`, null, `${fmt(v, 3)} g <small>= ${fmt(v * 9.81, 2)} m/s²</small>`);
@@ -460,7 +460,7 @@ register('eq-site', (root) => {
       const sway = Math.sin(t * 2 * Math.PI / T0 - 0.6) * a * 2.2;
       g.fillStyle = a > 3 ? cssVar('--bad') : a > 1.8 ? cssVar('--warn') : cssVar('--building2');
       g.beginPath(); g.moveTo(x - bw / 2, gy); g.lineTo(x + bw / 2, gy); g.lineTo(x + bw / 2 + sway, gy - bh); g.lineTo(x - bw / 2 + sway, gy - bh); g.closePath(); g.fill();
-      g.fillStyle = cssVar('--ink2'); g.font = '600 11px Manrope, sans-serif'; g.textAlign = 'center'; g.fillText(`${n} szint`, x, hh - 6); g.textAlign = 'left';
+      g.fillStyle = cssVar('--ink2'); g.font = '600 11px Manrope, sans-serif'; g.textAlign = 'center'; g.fillText(`${n} ${EN ? (n === 1 ? 'storey' : 'storeys') : 'szint'}`, x, hh - 6); g.textAlign = 'left';
     });
   }
   const draw = () => {
@@ -469,7 +469,7 @@ register('eq-site', (root) => {
     svg('path', { d: pd(samp((T) => Math.min(amp(T, T0), 5), 0.02, 4, 300).map(([x, y]) => [c.X(x), c.Y(y)])), fill: 'none', stroke: 'var(--c2)', 'stroke-width': 2.4 }, fig);
     for (const n of BLD) { const T = 0.1 * n; if (T > 4) continue; svg('circle', { cx: c.X(T), cy: c.Y(Math.min(amp(T, T0), 5)), r: 4.5, fill: 'var(--ink)' }, fig); }
     const Nres = T0 / 0.1;
-    sT.set(`${fmt(T0, 2)} s`, null, `${fmt(T0, 2)}<small>s</small>`); sN.set(`≈ ${fmt(Nres, 0)} szint`, null, `≈ ${fmt(Nres, 0)}`);
+    sT.set(`${fmt(T0, 2)} s`, null, `${fmt(T0, 2)}<small>s</small>`); sN.set(`≈ ${fmt(Nres, 0)} ${EN ? 'storeys' : 'szint'}`, null, `≈ ${fmt(Nres, 0)}`);
     vd.set(T0 > 1 ? 'bad' : T0 > 0.4 ? 'warn' : 'ok', T0 > 1 ? 'Hosszú periódusú talaj' : T0 > 0.4 ? 'Közepes periódus' : 'Rövid periódus', T0 > 1 ? 'A magasabb, karcsú épületek kerülnek rezonanciába. Mexikóvárosban a sérülő épületek periódusa a rázás közben megnyúlt, így a 6–15 szintes házak a 2 s körüli mozgás közelébe kerültek.' : T0 > 0.4 ? 'A közepes (3–8 szintes) épületek a veszélyeztetettek.' : 'Az alacsony, merev épületek a veszélyeztetettek; a magas épületeket kevésbé rázza.');
     drawB();
   };

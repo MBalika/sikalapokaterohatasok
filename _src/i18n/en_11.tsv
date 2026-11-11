@@ -1,0 +1,32 @@
+3df91d8	Eleven damage sites, eleven short site descriptions. Which effect caused the settlement or the heave? Choose, and read the explanation.
+e5f3326	Choose a source: the upper strip shows its typical waveform, below it its frequency range – compared with the natural frequencies of buildings and soil layers.
+4e8a030	Choose a soil, a density and a water content, then shake the box. The steepness of the grading curve and the water together decide how much it collapses.
+fce2e1a	Set the excitation frequency and the natural frequency of the system. On the left the displacement of a mass on a spring, top right the amplification curve, bottom the settlement–frequency relationship with the resonance range.
+9561de2	Piling next door: choose the plant, the soil and the type of neighbouring building, then move the house. The peak particle velocity on the foundation is compared with the DIN 4150-3 limit for short-term vibration.
+4e68f08	The diameter and length of the pile give the size of the settlement crater. Move the neighbouring strip footing and watch whether it stands inside or outside the crater.
+9bcfb6d	A rigid reinforced concrete block on an elastic half-space (vertical vibration, Lysmer’s analogue). Resize the block and change the soil so that the machine speed avoids the natural frequency.
+9a1febc	Set the focal depth and start the earthquake. Three surface stations record the waves: the distance to the focus can be calculated from the time between the arrival of the P- and the S-wave.
+5b0aa85	The waves of an earthquake in Hungary were recorded by three stations. Click on the map where you think the earthquake was, then see where the three distance circles intersect.
+7a004b6	Drag the magnitude: how much energy is released, and how many times more is this than another earthquake? Below, the number of earthquakes per year on Earth by size.
+dc13b6b	Step through the degrees: what people feel, what happens to objects and to buildings. Next to it, the acceleration bands of the old MSK table.
+d85595d	Intensity decreases with distance from the focus. Set the epicentral intensity and the focal depth: a shallow earthquake destroys a small area, a deep one is felt over a large area.
+0937f42	The size of the dots grows with magnitude. Click an earthquake for details, or drag the timeline.
+ae8101b	Hover over (or tap) a point: which zone is it in, and what is the reference peak ground acceleration? Below, the calculation of the return period from the design working life and the probability.
+23c5f1c	Enter the layers of the upper 30 m (thickness and shear wave velocity). &lt;i&gt;v&lt;/i&gt;&lt;sub&gt;s,30&lt;/sub&gt; is not a simple average of the velocities: the slow layers count much more.
+a1e31e7	The EC8 elastic acceleration response spectrum depends on the ground type. Choose the soil and the number of storeys of the building: what acceleration must be designed for?
+27610c0	The soft clay of the lake bed amplified the earthquake and “filtered” it at its natural period. Set the thickness and shear wave velocity of the layer, and see which buildings, by number of storeys, go into resonance.
+65ab857	Loose, saturated sand under a house. Start the shaking: the pore water pressure grows cycle by cycle, and when it reaches the full effective stress, the soil liquefies.
+ec1714e	Set the depth and size of the cavity, the angle of internal friction of the soil, and the fraction of the cavity volume that has been squeezed in. Move the house within the trough: where does it tilt the most?
+4ac1dda	Two cellars of the same size: one shallow, in loose soil, the other deep, in strong soil. Start the clock – above which one, and when, does the trough appear?
+5641326	The explored length of the larger Hungarian cellar systems. Click a bar for details.
+99316cd	Shield tunnelling: set the depth, the diameter, the soil and the volume loss, then move the house. The tilt and the tensile strain are calculated from the part of the trough under the house, and from these the expected damage category.
+da0ca41	After the flood wave the river level falls. Set how fast it falls and what the soil of the bank is: the groundwater follows slowly, and the water flowing towards the bank washes out the fine grains.
+7d53f57	A sand sample in water flowing upwards. Raise the upstream water level: when does the gradient reach the critical value, and when does the sand start to “boil”?
+ba30de6	Erosion can be stopped with a filter layer: the voids of the filter are small enough to retain the grains of the protected soil, but large enough for the water to flow through freely. Choose a soil and a filter.
+8a10673	Set the flood water depth, the velocity and the size of the pier. The estimated scour depth is compared with the depth of the pier foundation.
+41290f9	An excavation next to the neighbouring house, in quicksand. Switch the pump on with and without a filter, and follow how much sand leaves with the water – and what happens to the neighbour’s foundation.
+0a11528	A soil column in winter frost. Choose a soil, a depth to groundwater and a coldness, then start the winter: the frost front moves down, the ice lenses grow, the surface heaves.
+beae8ca	The frost susceptibility of a soil is decided mainly by the proportion of grains finer than 0.02 mm. Set the soil and the fines content.
+e2016bb	From the freezing index (the sum of the mean temperatures of the frost days) and the properties of the soil we estimate how deep the frost penetrates – and check whether the footing is below the Hungarian frost depth.
+e6310e3	Switch on the hazards, and see where the ground freezes and where the frost lifts the structure (Δf).
+777d755	A two-dimensional heat conduction model of half the cross-section of a cold store. Set the cold room temperature, the insulation and the underfloor heating, then run the years: how deep does the 0 °C line go?

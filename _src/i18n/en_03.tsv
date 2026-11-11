@@ -1,0 +1,140 @@
+eeb9338	Support it
+1d01447	Masonry or reinforced concrete vault, shotcrete with mesh – as soon as possible, before movement starts.
+b55ec26	03 · backfilling
+d9344a6	Fill it
+6ff631a	A redundant cavity is filled with fly-ash concrete, cement mortar or by grouting.
+a5a27a0	04 · water
+e17da46	Keep it dry
+fa87a31	Rainwater and utility pipes must be routed away from the cavity: soaking is the main cause of failure.
+9d8fd36	<span class="ch-no">CH4</span><span>drawdown · grains · sump</span>
+b1ac344	<em>Erosion</em> by groundwater
+d847974	Flowing water exerts not only pressure but also a force on the soil grains. If this force is large enough, it tears the finer grains out of the soil skeleton and carries them away: cavities form under the foundations and the building settles. Riverbanks, bridge piers, poorly dewatered excavations and the surroundings of leaking utility pipes are particularly at risk.
+e871be7	<span class="k">01 · rapid drawdown</span>When the river falls faster than the groundwater
+341543a	For structures built on granular soil on the banks of rivers, during <b>rapid drawdown</b> the groundwater beneath the bank cannot follow the river level fast enough: it stays higher in the ground. The level difference starts a strong flow towards the river, and this <span class="hl">carries the grains away with it</span>. Cavities form under the foundations. The same process is also very important for the foundations of river bridges. In Budapest it caused damage under the old Customs House – today the main building of Corvinus University.
+4819516	Drawdown at the embankment
+d26b0db	<span class="k">02 · grains</span>When does a grain start to move?
+c4103fd	Flowing water exerts a <b>seepage force</b> on the soil skeleton in the direction of flow, proportional to the <b>hydraulic gradient</b> (<i>i</i> = Δ<i>h</i>/<i>L</i>, the fall in water level per unit length of flow path). For upward flow, at the <b>critical gradient</b>, <i>i</i><sub>cr</sub> = γ′/γ<sub>w</sub> ≈ 1, the effective stress drops to zero: the soil loses its weight and behaves like a dense liquid – this is a boil, “quicksand”. A much smaller gradient is enough to wash the fine grains out of a loose skeleton (suffusion) – especially in gap-graded, uniform fine sand and silt.
+dcf7a9e	Boil lab
+a2b4002	Filter test
+85c8251	<span class="k">03 · bridges</span>Scour around the bridge pier
+266219a	On the upstream side of a pier standing in a river, the water turns downwards, a vortex forms around the pier, and this digs a funnel-shaped <b>scour hole</b> in the riverbed. During a flood, the scour can reach below the pier foundation: the pier settles or tilts. Bridge foundations must therefore be taken below the expected scour depth, the bed must be protected with riprap, and the surroundings of the piers must be checked regularly after floods.
+4fcb651	Scour estimator
+9b54d32	<b>2001</b><span>Hintze Ribeiro Bridge, Portugal</span>
+23be638	59 victims
+f583dd1	The pier of the bridge over the Douro settled because of scour caused by decades of riverbed dredging and the winter floods; the bridge fell into the river together with a bus and three cars.
+4656a53	=
+11bf7c0	A shallow foundation in the scoured bed
+bcdbafd	The spring flood washed out the soil from beneath the shallow foundation of one pier of the motorway bridge; the riprap was inadequate. The bridge collapsed and ten people died.
+b7398d9	<b>60 %</b><span>bridge collapses</span>
+e3f0838	The most common cause
+fdcbd72	According to an American survey covering four decades, about 60 % of documented bridge collapses were caused by scour of the piers.
+302ce34	<span class="k">04 · sump</span>Quicksand and sump pumping
+529d89d	Dewatering of basements and excavations is often done by pumping from a <b>sump</b> formed at the lowest point of the pit. If the structure is built on <b>quicksand</b>, the pump draws out the sand together with the water: the soil beneath the structure – and the neighbouring building – loosens and cavities form, which can lead to significant settlement. A warning sign is if the pumped water is cloudy and sandy. The solution: dewatering with filtered wells or a filter layer, and continuous monitoring of the sand content of the pumped water.
+cfab7af	Sump pumping
+ba12ac2	<span class="k">05 · utilities</span>Burst pipe: washout beneath the road
+b170933	Water escaping from a leaking water main or sewer carries away the soil in the same way – only below the surface, invisibly. The road or pavement surfacing bridges the growing cavity for a while, then suddenly collapses. Leaking utility pipes next to buildings can therefore also wash out cavities under the foundations; utilities must be connected to the building with flexible joints that tolerate movement, and leaks must be stopped as soon as possible.
+7bcb70c	=
+60d3007	A car sank into Veres Péter út
+bc69431	A 60 cm cast-iron trunk main from 1949 sprang a leak because of corrosion and the dynamic load of traffic. The escaping water washed out the soil beneath the road, the surfacing collapsed and swallowed a car; about 500 m² was damaged. Budapest has more than a thousand burst pipes a year.
+34aa8f7	<b>2010</b><span>Guatemala City</span>
+4117324	A circular collapse in the city
+67c3b54	After a tropical storm, a circular, vertical-walled hole about 18–20 m in diameter opened at a road junction. The probable cause: a leaking sewer had been washing out the loose pumice fill for a long time.
+a2c1e61	<span class="ch-no">CH5</span><span>ice lens · frost depth · cold store</span>
+93b1c46	Frost <em>action</em>
+6b28dde	Water freezing in the ground lifts the ground and the foundation on it – and on thawing the loosened, soaked soil settles back. Foundation depth, thermal insulation and heating protect against frost action. It is particularly dangerous if frost acts continuously over a long time: such is the soil beneath the floor of cold stores.
+f196dec	<span class="k">01 · mechanism</span>In-situ freezing and ice lenses
+ce0421f	If the water in the soil simply freezes in place (<b>in-situ freezing</b>), its volume increases by about 9 % – compared with the volume of pore water this gives only a small heave. Large frost heave is caused by <b>ice lenses</b>: water flows from the still unfrozen soil below the frost front through the capillaries towards the frozen zone, where it freezes into horizontal ice layers one above another. The ice lenses thicken in the direction of heat flow, and their total thickness can be measured in centimetres, in severe cases in decimetres.
+6513bcb	Frost heave requires <b>three conditions together</b>: frost-susceptible (fine-grained) soil, frost penetrating the ground, and a water supply. The most susceptible are silts and very fine, silty sands: they are fine enough for water to rise by capillarity, but permeable enough for it to be replenished quickly. Gravel is not frost-susceptible, and high-plasticity clay conducts water so slowly that ice lenses grow slowly.
+839fd7d	Ice lens lab
+bac2da7	Frost susceptibility classification
+495ee05	A related phenomenon: swelling and shrinking clay
+4b4418a	Like frost action, the water content of the soil also lifts and lowers the building on <b>expansive clays</b> – but here no ice forms. High-plasticity clay swells when it takes up water and shrinks when it dries: in winter and spring it lifts a lightly loaded house, and by late summer and autumn it lowers it again; the cracks open and close with the seasons. This effect is covered in detail on another page.
+e1d4803	Foundations on unfavourable ground – expansive clay ↗
+d86b828	<span class="k">02 · frost depth</span>The foundation must go below the frost depth
+809ca83	One consideration in setting the foundation level is that the footing must be <b>below the frost depth</b>. In Hungarian practice the frost depth is 0.8 m: a smaller depth (0.5 m) is acceptable only for sand and gravel if the groundwater is deeper than 2 m; for ground levels above 300 m above sea level the frost depth is 0.8 or 1.0 m. The depth of frost penetration depends on the severity and duration of the frost (the freezing index), on the thermal conductivity and on the water content of the soil: in moist soil the latent heat of the freezing water slows the frost front down.
+e833026	Frost penetration calculator
+89098cf	<span class="k">03 · buildings</span>Where does the ground freeze under a building?
+5914b67	In normal, heated buildings it is mainly the foundation of the <b>external walls</b> and the <b>basement floor</b> that are exposed to frost. Next to the external wall, the intermittent melting of accumulated snow keeps the soil moist, and if the foundation is above the frost depth, the frost penetrates below it too. If the basement window is left open in winter, the air in the basement cools down and the soil below the floor freezes as well: the floor heaves and the walls crack. The same threatens half-finished buildings left unheated in winter and open excavations, where the already excavated foundation level can freeze.
+ac7d715	Frost risk at a family house
+2a81c55	<span class="k">04 · cold store</span>The soil beneath a cold store
+e44576d	After a cold store is put into service, the “<b>zero isotherm</b>” – the surface of points at 0 °C – penetrates deeper until the heat loss of the soil is made up by the heat flowing from the Earth’s interior. With poor insulation the soil below the floor can freeze to a depth of <b>6–12 m</b>, and over the years this causes <span class="hl">heave of the floor and the building</span>. To prevent frost damage, a <b>thermal insulation layer</b> must be built in (formerly e.g. bituminous cork, today extruded polystyrene), and instead of or together with the insulation, <b>underfloor heating</b> – heating pipes, heating cables or ventilation ducts below the insulation – may also be used to keep the soil below the floor above freezing.
+883891b	Cold store simulator
+1862014	<b>15 / 41 cm</b><span>two refrigerated buildings</span>
+b77514f	A floor that humps up over the years
+712a045	Floor heaves of 15 and 41 cm were measured in two refrigerated buildings. The cause was frost heave of the natural soil 2–4 m below the floor, as the frost slowly penetrated deeper year by year.
+d5bd99e	<b>a few months</b><span>a cold store</span>
+51a6c32	The underfloor heating failed
+fcaaaea	The soil beneath the floor of a cold store was kept above freezing by electric heating. The heating, which had been added later, failed after a few months, and severe frost damage occurred. Underfloor heating is therefore not a “fit and forget” solution: it has to be operated and checked.
+17a5086	Today’s solution in brief
+f273f70	Cold store floors today typically have 10–15 cm of extruded polystyrene insulation, below which glycol heating pipes or heating cables placed every 60–120 cm keep the soil a few degrees above freezing. The heating power required is small, about 10–20 W/m² – much cheaper than the damage caused by frost heave.
+3da79c0	<span class="ch-no">REC</span><span>six animations</span>
+3a13dfb	Video <em>library</em>
+ae91c72	The chapter’s six animated videos in one place. Each presents one effect through an invented but realistic situation – the sixth sums up and tests your knowledge with six questions. In the player Esc closes and the arrow keys step through.
+33ab7d1	<span class="k">real footage</span>See it in real life!
+ac5437e	A short video from the BME Faculty of Civil Engineering shows the development of scour around a bridge pier on a three-dimensional model – minute by minute, as the water digs an ever deeper funnel around the pier.
+167ccc7	<span class="ch-no">TEST</span><span>true/false · glossary</span>
+2581956	Self-<em>check</em>
+459c3fa	Forty statements covering the whole chapter. Decide for each whether it is true – you get the explanation straight after answering. Below it is the glossary: the most important terms in one place, searchable.
+baa28c9	<span class="k">glossary</span>Terms from A to Z
+2524fcf	Depth of the top of the cavity
+6230887	Width of the cavity
+4eca42f	Height of the cavity
+0fe9577	Angle of internal friction
+cc4b5bc	Squeezed-in fraction
+3fa5df6	The fraction of the cavity cross-section filled with collapsing soil.
+a0cb771	Position of the centre of the house
+b3e0e12	Maximum settlement Δ<i>s</i>
+eaece85	Trough width at the surface
+7999524	Tilt of the house
+baf4a20	rupture surface
+b6b2b9d	=
+7c49061	=
+b08af3c	settlement exaggerated ${fmt(EXd, 0)}×
+7c2be06	Severe damage expected
+7c9c613	Cracks expected
+d08be3f	The tilt of the house is small
+c2f7404	The house stands outside the trough.
+6fac307	At the edge of the trough, near the inflection point, the surface is steepest – this is where the house tilts the most; in the middle of the trough the settlement is large but more uniform.
+44d3e9f	Approximation: the volume of the surface trough equals the volume of soil squeezed into the cavity; the trough is a Gaussian curve whose edge (≈ ±2.5·i) is given by where the rupture surfaces meet the surface. Illustrative calculation.
+f7a3154	Elapsed time
+dca1c67	▶ Play
+d7b3ef0	Both cellars have a 4 × 3 m cross-section and the same amount of soil squeezes in – the only difference is the depth and the soil.
+faf4437	Shallow, loose: Δs
+85dbe61	Deep, strong: Δs
+60d5782	shallow cellar, loose soil
+d319f4b	deep cellar, strong soil
+5bbfa6b	=
+b79499a	no movement yet
+2307b70	Illustrative model: the trough volume is the same in both cases; above the deeper cavity the trough is wider and flatter, and because of arching in the strong soil it develops later.
+888f1d9	=
+5da562a	Wine cellars cut into rhyodacite tuff, on several levels; 130–150 km of explored cellars under the town. In 1957, 10 000 m³ collapsed.
+c6c8beb	Pécs (town centre)
+8b04442	About 1300 cellars under the town centre; collapses became regular from the late 1960s.
+b4a263e	=
+3d3bfda	Abandoned limestone quarries under the 10th district, about 180–195 thousand m² of cavity floor area.
+1806c4e	=
+d2e2eed	Cellars cut into tuff beneath the village, next to Eger.
+6df5832	=
+ba0dd21	Sparkling wine and wine cellars in the limestone of the Budafok hills.
+d26ac66	=
+d4341d3	Wine cellars cut into loess – soaked loess collapses.
+c0ebca6	Buda Castle
+1fb527e	The cave and cellar system of Castle Hill.
+ffed412	=
+0ebb016	Wine cellars beneath the town.
+1438245	=
+729fe07	Cellars beneath the town centre.
+fde8796	=
+5b5b5c9	explored cellar length, km
+3b6a3a6	=
+8fe2156	=
+b9ade38	negligible
+034943b	hairline crack < 0.1 mm
+362adf7	very slight
+4deb0b9	< 1 mm, repairable by redecoration
+12627cd	< 5 mm, repairable by replastering
+9d418e2	moderate
+6324a72	5–15 mm, masonry repair
+331f53e	severe – very severe
+5fef6e7	> 15 mm, structural intervention
+5c83d3d	Depth of the tunnel axis
