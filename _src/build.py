@@ -23,7 +23,7 @@ ALT = f'<link rel="alternate" hreflang="hu" href="{SITE}/">\n<link rel="alternat
 REDIR = "<script>/*nyelv*/try{if(localStorage.getItem('alap-lang')==='en'&&!/[?&]hu\\b/.test(location.search))location.replace('en'+location.hash)}catch(e){}</script>\n"
 # az angolul is elérhető tananyagok: az angol oldal ezek /en változatára mutat
 EN_SITES = ['bme-alapozas', 'talajfelderites', 'sikalapoktervezese', 'sikalapok-teherbirasszamitasa', 'sikalapokallekonysagvizsgalata',
-            'sikalapok-sullyedesszamitasa', 'vedekezesakarossullyedesekellen', 'kedvezotlen-altalaj']
+            'sikalapok-sullyedesszamitasa', 'vedekezesakarossullyedesekellen', 'kedvezotlen-altalaj', 'melyalapozasok']
 POST = []   # (részlet, csere) a kész angol HTML-ben – ahol a fordítókészlet nem elég
 META = {
   'hu': ('Síkalapokat érő hatások',
