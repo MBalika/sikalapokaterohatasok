@@ -579,3 +579,5 @@ main .card .rag, main .callout .rag, main .case .rag, main .fx .rag, main .q-exp
 .tf-item .e { text-align: center; }
 .tf-btns { justify-content: center; }
 .vtile { align-items: stretch; }
+.grid3 .case { grid-template-rows: auto 1fr; }   /* egyforma magas kártyáknál a többletmagasság a szövegrészé, ne az évszámsávé */
+@media (max-width: 1100px) { .case { grid-template-rows: auto 1fr; } }
