@@ -600,6 +600,26 @@ main .rag, footer .rag, .hero-lead.rag { text-align: left !important; }
 /* angol márkanév keskeny kijelzőn: a hosszabb cím két sorba törhet */
 @media (max-width: 600px) { html[lang^=en] .brand b { white-space: normal; font-size: 16px; line-height: 1.05; } html[lang^=en] .brand { min-width: 0; flex: 1 1 auto; } }
 
+/* ---------- szövegdobozok: cím és szöveg középen (2026-11-20) ----------
+   Kártya, kiemelő doboz, esetkártya, képletdoboz, eszközfejléc, kijelző, értékelés, kvíz, igaz–hamis, fogalomtár, videó- és
+   hivatkozáskártya: a cím (a díszítőivel) és a szöveg középen; a több soros, sorkizárt bekezdés utolsó sora is középen áll.
+   Balra zárt marad: felsorolás, táblázat, a szimulátorok kezelőpanele, a hős fő szövege. */
+.card, .callout, .case .bd, .case .yr, .eq, .eq .w, .w-head, .stat, .verdict, .sim-cap, .q-n, .q-t, .q-exp, .tf-item .s, .tf-item .e, .gloss div, .vtile, .vmeta, .ytm .m, .fx .bd, .hero-stats div, .w-foot { text-align: center; }
+main .card h4, main .case h4, main .fx h4, main .callout > b, .w-title, .quiz-head b { text-align: center; }
+main .card p, main .callout p, main .case p, main .fx p, main .q-exp, main .verdict, main .w-foot, main .tf-item .s, main .tf-item .e, main .gloss dd, main .card .note, main .eq .w > div { text-align-last: center; }
+main .card .rag, main .callout .rag, main .case .rag, main .fx .rag, main .q-exp.rag, main .verdict.rag, main .tf-item .rag, main .gloss .rag, main .w-foot.rag { text-align: center !important; }
+.card ul, .card ol, .card li, .callout ul, .callout li, .case li { text-align: left; text-align-last: auto; }
+.case .yr { align-items: center; justify-content: center; }
+.grid3 .case .yr { justify-content: center; }
+@media (max-width: 1100px) { .case .yr { justify-content: center; } }
+.case .bd .chips, .card .btnrow, .card .chips { justify-content: center; }
+.eq, .w-head { justify-content: center; }
+.quiz-head b { flex: 1; }
+.q-opts button { text-align: center; grid-template-columns: 30px 1fr 30px; }   /* a betűjel bal oldalon, a válasz a gomb közepén */
+.tf-item .e { text-align: center; }
+.tf-btns { justify-content: center; }
+.vtile { align-items: stretch; }
+
 </style>
 </head>
 <body>
