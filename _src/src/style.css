@@ -397,7 +397,7 @@ svg.fig .t-c { fill: var(--wc); }
 svg.fig .sb { baseline-shift: sub; font-size: 75%; }
 svg.fig .halo { paint-order: stroke; stroke: var(--surface); stroke-width: 4px; stroke-linejoin: round; }
 .s-ink { stroke: var(--ink); } .s-muted { stroke: var(--muted); } .s-line { stroke: var(--line2); } .s-acc { stroke: var(--wc); } .s-water { stroke: var(--water); } .s-bad { stroke: var(--bad); } .s-ok { stroke: var(--ok); } .s-warn { stroke: var(--warn); } .s-ice { stroke: var(--ice); }
-.f-soilA { fill: var(--soilA); } .f-soilB { fill: var(--soilB); } .f-soilC { fill: var(--soilC); } .f-soilD { fill: var(--soilD); } .f-soilE { fill: var(--soilE); } .f-rock { fill: var(--rock); }
+.f-soilA { fill: url(#tx-soilA) var(--soilA); } .f-soilB { fill: url(#tx-soilB) var(--soilB); } .f-soilC { fill: url(#tx-soilC) var(--soilC); } .f-soilD { fill: url(#tx-soilD) var(--soilD); } .f-soilE { fill: url(#tx-soilE) var(--soilE); } .f-rock { fill: var(--rock); }
 .f-water { fill: var(--water-fill); } .f-conc { fill: var(--concrete); } .f-bld { fill: var(--building); } .f-sky { fill: var(--sky); } .f-acc { fill: var(--wc); } .f-surf { fill: var(--surface); } .f-ice { fill: var(--frost); }
 .dim text { fill: var(--ink2); }
 
@@ -599,3 +599,33 @@ main .card .rag, main .callout .rag, main .case .rag, main .fx .rag, main .q-exp
 :root[data-theme="dark"] .series a.next b { color: #b56d00; }
 /* fejléc: az app teljes neve keskeny kijelzőn is (két sorba törhet, nem vágjuk le) */
 @media (max-width: 600px) { .brand { flex: 1 1 auto; min-width: 0; } .brand b { white-space: normal; font-size: 16px; line-height: 1.05; } }
+
+/* ---- 2026-11-21 átnézés ---- */
+/* talajtextúrák: a csempe a paletta színére ül, így a téma színeit követi */
+.txdefs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.tximg { opacity: 0.5; mix-blend-mode: multiply; }
+:root[data-theme="dark"] .tximg { opacity: 0.4; mix-blend-mode: luminosity; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .tximg { opacity: 0.4; mix-blend-mode: luminosity; } }
+/* videósáv a bevezető alatt: PC-n hat kártya egy sorban, keskenyebben oldalra húzható sor */
+section.vstrip { padding: 34px 0 26px; }
+.ch-head.slim { margin-bottom: 16px; }
+.ch-head.slim h2 { font-size: clamp(28px, 3.4vw, 40px); margin: 8px 0 4px; }
+.ch-head.slim .ch-lead { font-size: 16px; }
+.vstrip .vgrid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+.vstrip .vtile b { font-size: 15.5px; padding: 0 10px; }
+.vstrip .vtile .vk { padding: 4px 10px 0; font-size: 10.5px; }
+.vstrip .vtile > span:last-child { font-size: 12.5px; padding: 0 10px; line-height: 1.35; }
+.vstrip .vplay { width: 44px; height: 44px; margin: -22px 0 0 -22px; }
+.vstrip .vplay::after { left: 17px; top: 13px; border-left-width: 13px; border-top-width: 9px; border-bottom-width: 9px; }
+.vstrip .vdur { display: none; }
+@media (max-width: 1100px) {
+  .vstrip .vgrid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding: 4px 2px 12px; margin: 0 -2px; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+  .vstrip .vtile { flex: 0 0 min(300px, 74vw); scroll-snap-align: start; }
+  .vstrip .vtile b { font-size: 17px; }
+  .vstrip .vtile > span:last-child { font-size: 13.5px; }
+}
+.case .yr b.long { font-size: 19px; letter-spacing: -0.01em; white-space: nowrap; }
+.grassln { fill: none; stroke: var(--grass, #6f9a4a); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+:root { --grass: #6f9a4a; --wall: #efe6d4; --glass: #b9d3e2; }
+:root[data-theme="dark"] { --grass: #4f7436; --wall: #b9ae98; --glass: #5c7f96; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --grass: #4f7436; --wall: #b9ae98; --glass: #5c7f96; } }

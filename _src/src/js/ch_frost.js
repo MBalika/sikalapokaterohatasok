@@ -117,8 +117,8 @@ register('frost-depth', (root) => {
   const { ctrls, viz, out } = shell(root);
   const F = slider(ctrls, { label: 'Fagyindex', sym: 'F', min: 50, max: 700, step: 10, value: 250, unit: '°C·nap' });
   const soil = seg(ctrls, { label: 'Talaj', vert: true, options: Object.entries(SOIL).map(([k, s]) => ({ v: k, t: s.n })), value: 'iszap' });
-  const gwDeep = toggle(ctrls, { label: 'a talajvíz 2 m-nél mélyebben van', value: false });
-  const hi = toggle(ctrls, { label: 'a terepszint 300 mBf felett van', value: false });
+  const gwDeep = toggle(ctrls, { label: 'a téli talajvíz legalább 2 m-rel az alapsík alatt van', value: false });
+  const hi = toggle(ctrls, { label: 'a terepszint 500 mBf fölött van', value: false });
   const df = slider(ctrls, { label: 'Az alapsík mélysége', sym: 'D', min: 0.3, max: 1.5, step: 0.05, value: 0.6, unit: 'm', d: 2 });
   const fig = figure(viz, 640, 330);
   const sS = stat(out, { label: 'Stefan-mélység' }), sB = stat(out, { label: 'Módosított Berggren (λ = 0,75)' }), sR = stat(out, { label: 'Előírt fagyhatár' });
@@ -344,7 +344,7 @@ defineQuiz('frost', 'Kvíz – fagyhatás', [
   { q: 'Mi okozza a nagy fagyemelést?', a: ['A jéglencsék: a fagyfront alá áramló víz rétegesen ráfagy', 'A talajszemcsék hőtágulása', 'A levegő megfagyása a pórusokban', 'A hó súlya'], c: 0, e: 'A tömbfagyás csak kb. 9 %-os vízduzzadást ad; a nagy emelést a kapilláris vízutánpótlásból növő jéglencsék okozzák.' },
   { q: 'Melyik a fagyemelés három feltétele?', a: ['Fagyérzékeny talaj, a talajba hatoló fagy és vízutánpótlás', 'Homok, napsütés és szél', 'Kavics, száraz talaj és hó', 'Csak a nagy hideg'], c: 0, e: 'Ha bármelyik hiányzik – például kavics, vagy mélyen fekvő talajvíz –, jelentős fagyemelés nem alakul ki.' },
   { q: 'Melyik talaj a legfagyérzékenyebb?', a: ['Iszap, nagyon finom iszapos homok', 'Tiszta homokos kavics', 'Durva kavics', 'Szikla'], c: 0, e: 'Az iszapok (F4) elég finomak a kapilláris vízemeléshez, és elég áteresztők a gyors vízutánpótláshoz.' },
-  { q: 'Mekkora a hazai fagyhatár általában?', a: ['0,8 m', '0,2 m', '2,0 m', '5 m'], c: 0, e: 'A hazai gyakorlatban 0,8 m; homok és kavics esetén, ha a talajvíz 2 m-nél mélyebben van, 0,5 m; 300 mBf felett 0,8/1,0 m.' },
+  { q: 'Mekkora a hazai fagyhatár általában?', a: ['0,8 m', '0,2 m', '2,0 m', '5 m'], c: 0, e: 'Kötött talajban 0,8 m, 500 mBf fölött 1,0 m. Szemcsés talajban 500 mBf alatt 0,5 m-re csökkenthető, ha a téli talajvíz legalább 2,0 m-rel az alapsík alatt marad.' },
   { q: 'Miért veszélyes télen nyitva hagyni a pinceablakot?', a: ['A pince lehűl, a pincepadló alatt átfagy a talaj, és a padló megemelkedik', 'Mert beesik a hó', 'Mert nő a páratartalom', 'Nem veszélyes'], c: 0, e: 'A pincepadló alatti talaj normálisan fagymentes; a hideg levegő azonban alatta is átfagyaszthatja.' },
   { q: 'Mi történik egy hűtőház alatt rossz szigetelés esetén?', a: ['A nullizoterma évről évre mélyebbre hatol, akár 6–12 m-ig, a padló és az épület megemelkedik', 'A talaj kiszárad és összezsugorodik', 'Semmi, a talaj elnyeli a hideget', 'A talajvíz felmelegszik'], c: 0, e: 'A fagy addig halad lefelé, amíg a talaj hőveszteségét a Föld belseje felől áramló hő nem pótolja.' },
   { q: 'Mi véd a hűtőház alatti fagy ellen?', a: ['Hőszigetelő réteg és a szigetelés alatti padlófűtés', 'Vastagabb vasbeton padló önmagában', 'A talaj tömörítése', 'Vízzáró szigetelés'], c: 0, e: 'A szigetelés lassítja a hőveszteséget, a padlófűtés pedig fagypont fölött tartja a talajt – a kettő együtt a biztos megoldás.' },

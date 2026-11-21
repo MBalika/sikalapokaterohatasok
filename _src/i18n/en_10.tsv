@@ -29,8 +29,6 @@ a5f54b4	Within this zone of influence they also affect neighbouring buildings.
 0224f68	The second is often more dangerous: on loose sand even a small vibration causes permanent settlement.
 349b5d0	The machine foundation must be rigidly connected to the floor of the building so that the vibration spreads out.
 1c7b7c6	Quite the opposite: it must be separated by a movement joint so that the vibration does not pass on.
-9a3a6c7	Around a pile driven into loose sand, the radius of the settlement crater is roughly 3D + L/2.
-9110890	Compaction occurs in a zone of radius about 3D; the surface crater is much wider.
 0af9a60	The focus (hypocentre) of an earthquake is at the surface and the epicentre is deep down.
 6f82b5e	The other way round: the hypocentre is deep down, and the epicentre is above it, at the surface.
 c95e61c	The vast majority of earthquakes have a focal depth of at most 30 km.
@@ -38,13 +36,10 @@ c95e61c	The vast majority of earthquakes have a focal depth of at most 30 km.
 47e7a1d	An earthquake has a single intensity, which is the same everywhere.
 fb6f041	It has one magnitude; the intensity differs from place to place and decreases with distance from the focus.
 db1e991	An increase of one unit of magnitude means about 32 times the energy.
-621e62e	10^1.5 ≈ 32; the amplitude is ten times larger.
 2e89e9d	EMS-98 determines the degree of intensity from the effects: on people, on objects and nature, and on buildings.
 2172d5a	The scale has 12 degrees: I not felt … XII completely devastating.
 c7fc338	Hungary has never had a damaging earthquake.
 ecd8f47	The earthquakes of Komárom (1763), Érmellék (1834), Kecskemét (1911), Dunaharaszti (1956) and Berhida (1985) all caused severe damage.
-8af6280	In the 1763 Komárom earthquake about a third of the town was destroyed.
-d6ccc94	Of the 1169 houses, 279 collapsed completely; the relatively small number of victims is explained by the light rammed-earth houses.
 8eef213	The design earthquake according to EC8 has a 10 % probability of exceedance in 50 years.
 1d46c49	This corresponds to a return period of about 475 years; it is treated as an accidental action.
 1e4dd8b	The reference peak ground acceleration in Hungary is between 0.5 and 1.0 g.
@@ -56,7 +51,6 @@ ffb5101	Soft ground amplifies the vibration (S = 1.35 for type D); in Mexico Cit
 e3c8f61	Liquefaction requires loose, saturated sand and cyclic shearing.
 4814ef7	Because of the increased pore water pressure the effective stress drops to zero, and the soil loses its shear strength.
 3139eaa	In Niigata in 1964 many houses tilted with their superstructure remaining intact.
-8ed7b16	The structure of about two thirds of the 340 tilted or settled RC buildings remained intact – the soil liquefied beneath the foundations.
 b516c4b	Excavating a cavity does not change the original state of stress in the ground.
 2f70cd2	It does: the soil masses above and beside it move towards the cavity.
 18b3c7d	The deeper the cavity and the stronger the soil, the smaller and the later the displacement.
@@ -86,7 +80,6 @@ d810d2f	Frost heave is caused mainly by the 9 % volume increase when water freez
 c6d5314	Silt is more frost-susceptible than sandy gravel.
 dde91ec	Silts belong to the most dangerous class (F4); clean gravel is not frost-susceptible.
 1196900	In Hungarian practice the frost depth is generally 0.8 m.
-e49f9b5	For sand and gravel, with groundwater deeper than 2 m, 0.5 m; above 300 m above sea level 0.8 m and 1.0 m instead.
 6064154	Beneath a poorly insulated cold store the ground can freeze to a depth of as much as 6–12 m.
 627413b	The zero isotherm penetrates downwards until the heat flowing from the Earth’s interior makes up the loss.
 f301138	To prevent frost beneath a cold store it is enough to thicken the reinforced concrete floor slab.
@@ -103,7 +96,6 @@ b417e17	The maximum velocity of motion of the particles of the soil or the struc
 3b7efce	Machine foundation
 0f3b08d	A dynamically loaded foundation carrying machines; it is separated from the building by a movement joint, and the machine speed is detuned from the natural frequency.
 0dc393b	Settlement crater
-3d3a8c7	A funnel-shaped settlement forming around a driven pile because of soil compaction; its radius is roughly 3D + L/2.
 f3c99b4	Hypocentre (focus)
 ae1731c	The point deep in the Earth where the rupture or slip of the rock begins.
 7f7269b	Epicentre
@@ -185,7 +177,6 @@ dc92e6e	=
 79dddf2	img/thumb/en/${v.n}.jpg
 35436a1	=
 1027e1a	=
-f9fad51	 · music: ${v.g} · Esc: close
 3c4fd30	=
 13a6c48	Animated video · ${order.indexOf(v.n) + 1} / ${order.length}
 1feeb2f	Play video: ${v.t}

@@ -1,0 +1,28 @@
+9bcfb6d	Merev vasbeton tömb rugalmas féltéren (függőleges rezgés, Lysmer-féle analógia). Méretezd át a tömböt és a talajt úgy, hogy a gép fordulatszáma elkerülje a saját frekvenciát.	# chapters/01_dinamikus.html:58
+4e68f08	A cölöp átmérője és hossza adja a süllyedési kráter méretét. Told el a szomszéd sávalapját, és figyeld, a kráteren belül vagy kívül áll-e.	# chapters/01_dinamikus.html:52
+9561de2	Cölöpözés a szomszédban: válaszd ki a gépet, a talajt és a szomszéd épület fajtáját, majd mozgasd a házat. A csúcs-rezgéssebességet az alaptesten vetjük össze a DIN 4150-3 rövid idejű rezgésre vonatkozó határértékével.	# chapters/01_dinamikus.html:40
+fce2e1a	Állítsd be a gerjesztő rezgésszámot és a rendszer önrezgésszámát. Balra a rugón ülő tömeg kitérése, jobbra fent a nagyítási görbe, lent a süllyedés–rezgésszám kapcsolat az önrezgési környezettel.	# chapters/01_dinamikus.html:28
+4e8a030	Válassz talajt, tömörséget és víztartalmat, majd rázd meg a dobozt. A szemeloszlási görbe meredeksége és a víz együtt dönti el, mennyit roskad.	# chapters/01_dinamikus.html:22
+e5f3326	Válassz forrást: a felső sávon a jellemző jelalak, alatta a frekvenciatartománya – összevetve az épületek és a talajrétegek saját frekvenciájával.	# chapters/01_dinamikus.html:16
+65ab857	Laza, telített homok egy ház alatt. Indítsd a rázást: ciklusról ciklusra nő a pórusvíznyomás, és amikor eléri a teljes hatékony feszültséget, a talaj elfolyósodik.	# chapters/02_foldrenges.html:85
+27610c0	A tómeder puha agyagja a rengést felerősítette és a saját periódusán „szűrte”. Állítsd be a réteg vastagságát és nyíróhullám-sebességét, és nézd meg, melyik szintszámú házak kerülnek rezonanciába.	# chapters/02_foldrenges.html:84
+a1e31e7	Az EC8 rugalmas gyorsulási válaszspektruma a talajosztálytól függ. Válaszd ki a talajt és az épület szintszámát: mekkora gyorsulásra kell számolni?	# chapters/02_foldrenges.html:74
+23c5f1c	Add meg a felső 30 m rétegeit (vastagság és nyíróhullám-sebesség). A &lt;i&gt;v&lt;/i&gt;&lt;sub&gt;s,30&lt;/sub&gt; nem a sebességek egyszerű átlaga: a lassú rétegek sokkal jobban számítanak.	# chapters/02_foldrenges.html:73
+ae8101b	Vidd az egeret (vagy koppints) egy pontra: melyik zónában van, és mekkora a referencia-talajgyorsulás? Alul a visszatérési idő számítása a tervezési élettartamból és a valószínűségből.	# chapters/02_foldrenges.html:53
+0937f42	A pontok mérete a magnitúdóval nő. Kattints egy rengésre a részletekért, vagy húzd az idővonalat.	# chapters/02_foldrenges.html:42
+d85595d	Az intenzitás a fészektől távolodva csökken. Állítsd be az epicentrális intenzitást és a fészekmélységet: a sekély rengés kis területen pusztít, a mély rengés nagy területen érezhető.	# chapters/02_foldrenges.html:32
+dc13b6b	Lépkedj végig a fokozatokon: mit érez az ember, mi történik a tárgyakkal és az épületekkel. Mellette a régi MSK-táblázat gyorsulássávjai.	# chapters/02_foldrenges.html:31
+7a004b6	Húzd a magnitúdót: mennyi energia szabadul fel, és hányszor nagyobb ez egy másik rengésnél? Alul a Földön évente előforduló rengések száma nagyság szerint.	# chapters/02_foldrenges.html:30
+5b0aa85	Egy hazai rengés hullámait három állomás rögzítette. Kattints a térképre oda, ahol szerinted a rengés volt, majd nézd meg, hol metszi egymást a három távolságkör.	# chapters/02_foldrenges.html:18
+9a1febc	Állítsd be a fészekmélységet, és indítsd el a rengést. Három felszíni állomás rögzíti a hullámokat: a P- és az S-hullám beérkezése közötti időből kiszámítható a fészek távolsága.	# chapters/02_foldrenges.html:17
+99316cd	Pajzsos alagútépítés: állítsd be a mélységet, az átmérőt, a talajt és a térfogatveszteséget, majd told el a házat. A ház alatti teknőrészből számoljuk a dőlést és a megnyúlást, és ebből a várható kárkategóriát.	# chapters/03_ureg.html:37
+5641326	A nagyobb hazai pincerendszerek feltárt hossza. Kattints egy sávra a részletekért.	# chapters/03_ureg.html:24
+4ac1dda	Két ugyanakkora pince: az egyik sekélyen, laza talajban, a másik mélyen, szilárd talajban. Indítsd el az időt – melyik felett és mikor jelenik meg a teknő?	# chapters/03_ureg.html:18
+ec1714e	Állítsd be az üreg mélységét, méretét, a talaj belső súrlódási szögét és azt, hogy az üreg térfogatának hányad része nyomódott be. Told el a házat a teknőben: hol dől meg a legjobban?	# chapters/03_ureg.html:17
+41290f9	Munkagödör a szomszéd ház mellett, folyós homokban. Kapcsold be a szivattyút szűrővel és szűrő nélkül, és kövesd, mennyi homok távozik a vízzel – és mi történik a szomszéd alapjával.	# chapters/04_kimosas.html:41
+8a10673	Állítsd be az árvízi vízmélységet, a sebességet és a pillér méretét. A becsült kimélyülést összevetjük a pillér alapjának mélységével.	# chapters/04_kimosas.html:29
+ba30de6	A kimosást szűrőréteggel lehet megállítani: a szűrő hézagai elég kicsik ahhoz, hogy a védett talaj szemcséit visszatartsák, de elég nagyok ahhoz, hogy a víz akadálytalanul átfolyjon. Válassz talajt és szűrőt.	# chapters/04_kimosas.html:23
+7d53f57	Homokminta alulról felfelé áramló vízben. Emeld a felvízszintet: mikor éri el a gradiens a kritikus értéket, és mikor kezd „forrni” a homok?	# chapters/04_kimosas.html:22
+da0ca41	Az árhullám után a folyó vízszintje lecsökken. Állítsd be, milyen gyorsan apad, és milyen a part talaja: a talajvíz lassan követi, a part felé áramló víz kimossa a finom szemcséket.	# chapters/04_kimosas.html:16
+0a11528	Egy talajoszlop a téli fagyban. Válassz talajt, talajvízmélységet és hideget, majd indítsd a telet: a fagyfront lefelé halad, a jéglencsék nőnek, a felszín emelkedik.	# chapters/05_fagy.html:17
+3df91d8	Tizenegy kárhely, tizenegy rövid helyszíni leírás. Melyik hatás okozta a süllyedést vagy az emelkedést? Válassz, és nézd meg a magyarázatot.	# chapters/06_osszegzes.html:28

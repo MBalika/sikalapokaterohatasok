@@ -184,7 +184,7 @@ function openVideo(n) {
   const m = $('#vmodal');
   $('#vmTitle', m).textContent = v.t;
   $('#vmFrame', m).src = `video/${EN ? 'en/' : ''}${n}.html#autoplay`;
-  $('#vmInfo', m).textContent = `${curIdx + 1} / ${order.length}` + (v.d ? ` · ${v.d}` : '') + ` · zene: ${v.g} · Esc: bezárás`;
+  $('#vmInfo', m).textContent = `${curIdx + 1} / ${order.length}` + (v.d ? ` · ${v.d}` : '') + ` · Esc: bezárás`;
   m.hidden = false; document.body.style.overflow = 'hidden';
   dispatchEvent(new Event('sims:pause'));
   setTimeout(() => $('#vmFrame', m).focus(), 300);
@@ -205,7 +205,7 @@ function initVideos() {
   const lib = $('#vlib');
   if (lib) {
     const grid = h('div', { class: 'vgrid' });
-    for (const v of VIDEOS) grid.append(h('button', { class: 'vtile', type: 'button', style: `--vc:var(--${v.c})`, onclick: () => openVideo(v.n), 'aria-label': 'Videó: ' + v.t }, thumb(v), h('span', { class: 'vk' }, `${order.indexOf(v.n) + 1} / ${order.length} · ${v.g}`), h('b', {}, v.t), h('span', {}, v.s)));
+    for (const v of VIDEOS) grid.append(h('button', { class: 'vtile', type: 'button', style: `--vc:var(--${v.c})`, onclick: () => openVideo(v.n), 'aria-label': 'Videó: ' + v.t }, thumb(v), h('span', { class: 'vk' }, `${order.indexOf(v.n) + 1} / ${order.length}` + (v.d ? ` · ${v.d}` : '')), h('b', {}, v.t), h('span', {}, v.s)));
     lib.append(grid);
   }
   const m = $('#vmodal');

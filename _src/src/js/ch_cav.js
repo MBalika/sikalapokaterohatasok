@@ -1,5 +1,5 @@
 // CH3 – Földalatti üregnyitás: teknő az üreg fölött, mélység–szilárdság–idő, pincekataszter, alagút a ház alatt, kvíz
-import { register, shell, slider, seg, toggle, stat, verdict, h, svg, figure, clear, fmt, clamp, lerp, smooth, loop, cssVar, onTheme, $, $$ } from './core.js';
+import { register, shell, slider, seg, toggle, stat, verdict, h, svg, figure, clear, fmt, clamp, lerp, smooth, loop, cssVar, onTheme, $, $$, grassLine, miniHouse } from './core.js';
 import { chart, pd, samp } from './plot.js';
 import { defineQuiz } from './ui.js';
 
@@ -30,7 +30,7 @@ register('cav-trough', (root) => {
     // talaj
     svg('rect', { x: 0, y: 0, width: 720, height: y0, fill: 'var(--sky)' }, fig);
     const surf = samp((x) => S(x), -24, 24, 240).map(([x, s]) => [x0 + x * sc, y0 + s * sc * EXd]);
-    svg('path', { d: pd([[0, 380], [0, y0], ...surf, [720, y0], [720, 380]]) + 'Z', class: 'f-soilA' }, fig);
+    svg('path', { d: pd([[0, 380], [0, y0], ...surf, [720, y0], [720, 380]]) + 'Z', class: 'f-soilA' }, fig); grassLine(fig, [[0, y0], ...surf, [720, y0]]);
     svg('line', { x1: 0, y1: y0, x2: 720, y2: y0, stroke: 'var(--muted)', 'stroke-dasharray': '4 4' }, fig);
     // mozgó földtömeg (szakadólapok közt)
     const yb = y0 + zb * sc;
@@ -86,14 +86,16 @@ register('cav-time', (root) => {
   const draw = () => {
     clear(fig); const t = tS.v;
     cases.forEach((c, k) => {
-      const sc = 9, y0 = 60, i = Math.max(0.8, c.K * (c.z + 1.5)); const Smax = V / (Math.sqrt(2 * Math.PI) * i);
+      const sc = 9, y0 = 86, i = Math.max(0.8, c.K * (c.z + 1.5)); const Smax = V / (Math.sqrt(2 * Math.PI) * i);
       const p = smooth((t - c.t0) / (c.t1 - c.t0)); const S = (x) => p * Smax * Math.exp(-(x * x) / (2 * i * i));
       const gx = c.x;
       svg('rect', { x: gx - 170, y: 0, width: 340, height: y0, fill: 'var(--sky)' }, fig);
       svg('path', { d: pd([[gx - 170, 300], [gx - 170, y0], ...samp(S, -18, 18, 120).map(([x, s]) => [gx + x * sc, y0 + s * sc * 30]), [gx + 170, y0], [gx + 170, 300]]) + 'Z', fill: c.col }, fig);
       svg('rect', { x: gx - 18, y: y0 + c.z * sc, width: 36, height: 27, rx: 12, fill: 'var(--ink)', stroke: 'var(--brick)', 'stroke-width': 4 }, fig);
+      const sp = samp(S, -18, 18, 120).map(([x, sv]) => [gx + x * sc, y0 + sv * sc * 30]); grassLine(fig, sp);
+      const hxm = 2.2, sl = (S(hxm + 3.4) - S(hxm - 3.4)) / 6.8 * 30; miniHouse(fig, gx + hxm * sc, y0 + S(hxm) * sc * 30 + 1, 62, 34, { rot: Math.atan(sl) * 180 / Math.PI, crack: p * (k ? 0.45 : 1) });
       svg('text', { x: gx, y: 290, 'text-anchor': 'middle', class: 't-s t-b halo', text: c.n }, fig);
-      svg('text', { x: gx, y: 24, 'text-anchor': 'middle', class: 't-num t-b halo', text: p > 0.01 ? `Δs = ${fmt(p * Smax * 1000, 0)} mm` : 'még nincs mozgás' }, fig);
+      svg('text', { x: gx, y: 18, 'text-anchor': 'middle', class: 't-num t-b halo', text: p > 0.01 ? `Δs = ${fmt(p * Smax * 1000, 0)} mm` : 'még nincs mozgás' }, fig);
       (k ? sB : sA).set(`${fmt(p * Smax * 1000, 0)} mm`, null, `${fmt(p * Smax * 1000, 0)}<small>mm</small>`);
     });
     svg('line', { x1: 360, y1: 0, x2: 360, y2: 300, stroke: 'var(--line2)' }, fig);
@@ -127,7 +129,7 @@ register('cav-cities', (root) => {
     narrow = viz.clientWidth > 0 && viz.clientWidth < 520;
     const W = narrow ? 400 : 720, Hh = narrow ? 340 : 320;
     fig.setAttribute('viewBox', `0 0 ${W} ${Hh}`);
-    const c = chart(fig, { w: W, h: Hh, m: { l: narrow ? 104 : 130, r: narrow ? 74 : 30, t: 8, b: 36 }, x: [0, 160], y: [0, 1], xt: narrow ? [0, 40, 80, 120, 160] : [0, 20, 40, 60, 80, 100, 120, 140, 160], yt: [], xl: 'feltárt pincehossz, km' });
+    const c = chart(fig, { w: W, h: Hh, m: { l: narrow ? 104 : 130, r: narrow ? 74 : 92, t: 8, b: 36 }, x: [0, 160], y: [0, 1], xt: narrow ? [0, 40, 80, 120, 160] : [0, 20, 40, 60, 80, 100, 120, 140, 160], yt: [], xl: 'feltárt pincehossz, km' });
     CELLARS.forEach((p, i) => {
       const y = c.T + 6 + i * ((c.B - c.T - 8) / CELLARS.length); const bh = (c.B - c.T) / CELLARS.length - 8;
       const g = svg('g', { 'data-i': i, style: 'cursor:pointer' }, fig);
@@ -174,7 +176,7 @@ register('cav-tunnel', (root) => {
     const sc = 7.2, cx = 360, y0 = 120, EXd = Math.max(1, Math.min(2000, 60 / Math.max(1e-6, Smax * sc)));
     svg('rect', { x: 0, y: 0, width: 720, height: y0, fill: 'var(--sky)' }, fig);
     const surf = samp(S, -50, 50, 300).map(([x, s]) => [cx + x * sc, y0 + s * EXd * sc]);
-    svg('path', { d: pd([[0, 400], [0, y0], ...surf, [720, y0], [720, 400]]) + 'Z', fill: K.v === 0.5 ? 'var(--soilB)' : 'var(--soilA)' }, fig);
+    svg('path', { d: pd([[0, 400], [0, y0], ...surf, [720, y0], [720, 400]]) + 'Z', fill: K.v === 0.5 ? 'var(--soilB)' : 'var(--soilA)' }, fig); grassLine(fig, [[0, y0], ...surf, [720, y0]]);
     svg('line', { x1: 0, y1: y0, x2: 720, y2: y0, stroke: 'var(--muted)', 'stroke-dasharray': '4 4' }, fig);
     svg('path', { d: pd(surf), fill: 'none', stroke: 'var(--c3)', 'stroke-width': 2.4 }, fig);
     // inflexiós pontok
@@ -209,7 +211,7 @@ defineQuiz('cav', 'Kvíz – földalatti üregek', [
   { q: 'Mitől függ közelítőleg a süllyedés nagysága?', a: ['Az üregbe benyomódott talajtömeg térfogatától', 'Az épület színétől', 'Csak a talajvízszinttől', 'Az üreg korától'], c: 0, e: 'A felszíni teknő térfogata közelítőleg egyenlő az üregbe benyomódott talaj térfogatával.' },
   { q: 'Hogyan hat a mélység és a talajszilárdság az elmozdulásra?', a: ['Mélyebb üreg és szilárdabb talaj esetén kisebb és később jelentkező az elmozdulás', 'Mélyebb üregnél mindig nagyobb a süllyedés', 'A szilárdság nem számít', 'Szilárdabb talajban azonnal beszakad'], c: 0, e: 'Minél mélyebben van az üreg és minél szilárdabb a talaj, annál kisebb lesz és később következik be az elmozdulás.' },
   { q: 'Mi a teendő, ha üreget találunk egy épület alatt?', a: ['Mielőbb megtámasztani vagy tömedékelni, és víztelenítéssel szárazon tartani', 'Megvárni, amíg magától beomlik', 'Vízzel feltölteni', 'Az épület tetejét megerősíteni'], c: 0, e: 'Az üreg megtámasztása (vagy tömedékelése) és víztelenítése mielőbb meg kell történjen.' },
-  { q: 'Mit jelent az alagútépítésnél a térfogatveszteség?', a: ['A felszíni teknő térfogatát az alagút keresztmetszetének százalékában', 'Az elszállított föld tömegét', 'A beton zsugorodását', 'A talajvíz elpárolgását'], c: 0, e: 'V<sub>L</sub> = V<sub>s</sub> / (πD²/4); modern, homlokzattámasztásos pajzsoknál jellemzően 0,3–0,5 %.' },
+  { q: 'Mit jelent az alagútépítésnél a térfogatveszteség?', a: ['A felszíni teknő térfogatát az alagút keresztmetszetének százalékában', 'Az elszállított föld tömegét', 'A beton zsugorodását', 'A talajvíz elpárolgását'], c: 0, e: 'V<sub>L</sub> = V<sub>s</sub> / (πD²/4); modern, homloktámasztásos pajzsoknál jellemzően 0,3–0,5 %.' },
   { q: 'Hol dől meg a legjobban egy ház a süllyedési teknőben?', a: ['A teknő szélén, az inflexiós pont közelében', 'Pontosan a teknő közepén', 'A teknőn kívül', 'Mindenhol ugyanannyira'], c: 0, e: 'Az inflexiós pontnál (x = i) a legmeredekebb a teknő; itt a legnagyobb a dőlés és a megnyúlás.' },
-  { q: 'Miért veszélyes, ha egy tufába vájt pince átázik?', a: ['A tufa szilárdsága vízzel telítve töredékére csökken, a boltozat beszakadhat', 'Mert a víz megfagy benne nyáron', 'Mert a tufa vízben oldódik, mint a só', 'Nem veszélyes'], c: 0, e: 'Egerben a riodácittufa szilárdsága átázva harmadára-ötödére csökken – ezért kell a csapadék- és közműveket elvezetni.' },
+  { q: 'Miért veszélyes, ha egy tufába vájt pince átázik?', a: ['A tufa szilárdsága vízzel telítve töredékére csökken, a boltozat beszakadhat', 'Mert a víz megfagy benne nyáron', 'Mert a tufa vízben oldódik, mint a só', 'Nem veszélyes'], c: 0, e: 'Egerben a riodácittufa szilárdsága átázva harmadára-ötödére csökken – ezért kell a csapadékvizet elvezetni és a szivárgó közműveket kijavítani.' },
 ]);
