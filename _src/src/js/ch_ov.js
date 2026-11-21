@@ -26,7 +26,7 @@ const CASES = [
 ];
 
 register('ov-sort', (root) => {
-  const { viz, out } = shell(root, { tag: 'Játék' });
+  const { viz, out } = shell(root);
   const grid = h('div', { class: 'grid2' });
   let ok = 0, done = 0;
   const score = h('div', { class: 'stat' }, h('div', { class: 'stat-l' }, 'Eredmény'), h('div', { class: 'stat-v' }, `0\u00a0/\u00a0${CASES.length}`));

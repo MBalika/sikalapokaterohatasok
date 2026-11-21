@@ -42,7 +42,6 @@ fcc5427	Diagonal cracks opened in the wall of a single-storey house with 0.6 m d
 5aedb33	A machine foundation is a dynamically loaded foundation. If the speed of the machine falls close to the natural frequency of the system, resonance occurs.
 61966c6	A farmstead on the Great Plain, with loose, saturated sand beneath the house. After an earthquake the house tilted, and sand bubbled up from cracks in the yard.
 c29e640	Liquefaction: cyclic shearing in loose, saturated sand raises the pore water pressure, and the soil loses its bearing capacity. The sand boil is its sign.
-d9c07f7	Game
 269731d	Result
 4ebe14b	Site ${String(i + 1).padStart(2, '0')}
 42525a1	Hint

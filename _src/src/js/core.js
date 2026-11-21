@@ -179,9 +179,9 @@ export function verdict(parent) {
 export function shell(root, o = {}) {
   const title = o.title ?? root.dataset.title ?? '';
   const sub = o.sub ?? root.dataset.sub ?? '';
-  const tag = o.tag ?? root.dataset.tag ?? 'Interaktív';
+  const tag = o.tag ?? root.dataset.tag ?? null; // a widgetcím előtt nincs „Interaktív” címke
   if (!root.querySelector(':scope > .w-head')) {
-    root.prepend(h('div', { class: 'w-head' }, h('span', { class: 'w-tag' }, tag), h('span', { class: 'w-title', html: title }), sub ? h('span', { class: 'w-sub', html: sub }) : null));
+    root.prepend(h('div', { class: 'w-head' }, tag ? h('span', { class: 'w-tag' }, tag) : null, h('span', { class: 'w-title', html: title }), sub ? h('span', { class: 'w-sub', html: sub }) : null));
   }
   const layout = o.layout ?? root.dataset.layout ?? '';
   const body = h('div', { class: 'w-body ' + layout });
