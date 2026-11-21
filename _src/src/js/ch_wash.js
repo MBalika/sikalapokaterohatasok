@@ -7,7 +7,7 @@ import { defineQuiz } from './ui.js';
 const BANK = [
   { k: 'kavics', n: 'homokos kavics', K: 2e-3, i0: 0.6, fines: 0.3, col: '--soilD' },
   { k: 'durva', n: 'közepes-durva homok', K: 5e-4, i0: 0.35, fines: 0.6, col: '--soilA' },
-  { k: 'finom', n: 'egyenletes finom homok', K: 1e-4, i0: 0.18, fines: 1.0, col: '--soilA' },
+  { k: 'finom', n: 'egyenletes finom homok', K: 3e-5, i0: 0.18, fines: 1.0, col: '--soilA' },
 ];
 register('wash-drawdown', (root) => {
   const { ctrls, viz, out } = shell(root);
@@ -23,6 +23,7 @@ register('wash-drawdown', (root) => {
   const L = 60, N = 61, dx = L / (N - 1);
   let hgw, t = 0, run = false, washed = 0, parts = [];
   const H0 = 0, hR = (tt) => -drop.v * smooth(Math.min(1, tt / days.v));
+  const cavY = () => { const yb = clamp(-drop.v + 0.1, -4.6, -3.2); return [yb + 1.35, yb]; }; // az üreg a kilépési pont (az apadt vízszint) magasságában nyílik a rézsűn
   const reset = () => { hgw = new Float64Array(N).fill(H0); t = 0; washed = 0; parts = []; };
   const step = (dtDays) => {
     const B = BANK.find((b) => b.k === soil.v);
@@ -59,8 +60,8 @@ register('wash-drawdown', (root) => {
     g.moveTo(X(Math.min(bankX + 2, bankX - 4 + (1 - hr) * 0.75)), Y(hr)); g.lineTo(X(L + 12), Y(hr)); g.lineTo(X(L + 12), Y(-8)); g.lineTo(X(bankX + 2), Y(-7)); g.closePath(); g.fill(); g.globalAlpha = 1;
     // talajvízszint
     g.strokeStyle = cssVar('--water'); g.lineWidth = 2; g.setLineDash([6, 4]); g.beginPath(); for (let j = 0; j < N; j++) { const x = X(j * dx), y = Y(hgw[j]); j ? g.lineTo(x, y) : g.moveTo(x, y); } g.stroke(); g.setLineDash([]);
-    // épület (régi rakparti épület) – az alap a part éléhez közel
-    const bx0 = X(bankX - 22), bx1 = X(bankX - 8), cavR = clamp(washed * 2.2, 0, 1);
+    // épület (régi rakparti épület) – közvetlenül a part élén, a jobb alap a rézsű tetejénél
+    const bx0 = X(bankX - 18.6), bx1 = X(bankX - 4.6), cavR = clamp(washed * 20, 0, 1);
     const sink = cavR * H * 0.04;
     g.fillStyle = cssVar('--building'); g.strokeStyle = cssVar('--ink2'); g.lineWidth = 1.2;
     g.save(); g.translate(bx1, Y(1)); g.rotate(sink / (bx1 - bx0) * 0.9); g.translate(-bx1, -Y(1));
@@ -69,8 +70,14 @@ register('wash-drawdown', (root) => {
     g.fillStyle = cssVar('--concrete'); g.fillRect(bx0, Y(1), 8, Y(-1.4) - Y(1)); g.fillRect(bx1 - 8, Y(1), 8, Y(-1.4) - Y(1));
     g.fillRect(bx0 - 5, Y(-1.4), 18, Y(-2) - Y(-1.4)); g.fillRect(bx1 - 13, Y(-1.4), 18, Y(-2) - Y(-1.4));
     g.restore();
-    // üreg az alap jobb sarka alatt
-    if (cavR > 0.01) { g.fillStyle = '#1a1612'; g.beginPath(); g.ellipse(bx1 - 6, Y(-2.6), 6 + 26 * cavR, 3 + 9 * cavR, 0, 0, Math.PI * 2); g.fill(); }
+    // üreg: a rézsű lábánál kilépő víz a part felől befelé hátrál, a jobb alap alá
+    if (cavR > 0.01) {
+      const [yt, yb] = cavY(), sx = (y) => bankX - 4 + (1 - y) / 8 * 6; const xin = sx(yt) - (1.2 + 6.5 * cavR);
+      g.fillStyle = '#1b2a33'; g.strokeStyle = cssVar('--c4'); g.lineWidth = 1.2; g.beginPath(); g.moveTo(X(sx(yt)), Y(yt));
+      g.quadraticCurveTo(X((sx(yt) + xin) / 2), Y(yt + 0.12), X(xin), Y(yt - 0.12));
+      g.quadraticCurveTo(X(xin - 1.4), Y((yt + yb) / 2), X(xin + 0.8), Y(yb + 0.25));
+      g.quadraticCurveTo(X((xin + sx(yb)) / 2), Y(yb - 0.1), X(sx(yb)), Y(yb)); g.closePath(); g.fill(); g.stroke();
+    }
     // szemcsék
     g.fillStyle = cssVar('--c4');
     for (const p of parts) { g.beginPath(); g.arc(X(p.x), Y(p.y), 2.2, 0, 7); g.fill(); }
@@ -81,13 +88,14 @@ register('wash-drawdown', (root) => {
     sI.set(fmt(Math.max(0, ie), 2), ie > B.i0 ? 'bad' : ie > B.i0 * 0.6 ? 'warn' : 'ok');
     sT.set(`${fmt(t, 1)} nap`, null, `${fmt(t, 1)}<small>nap</small>`);
     sV.set(`${fmt(washed, 2)} m³/fm`, washed > 0.2 ? 'bad' : washed > 0.02 ? 'warn' : 'ok', `${fmt(washed, 2)}<small>m³/fm</small>`);
-    vd.set(ie > B.i0 ? 'bad' : ie > 0.6 * B.i0 ? 'warn' : 'ok', ie > B.i0 ? 'Kimosás: a szemcsék elindulnak' : ie > 0.6 * B.i0 ? 'Erős áramlás a part felé' : 'Lassú áramlás', ie > B.i0 ? 'A part felé áramló víz elég erős ahhoz, hogy a finom szemcséket kiragadja; az alap alatt üreg nő.' : soil.v === 'kavics' ? 'A kavicsos talaj jól áteresztő: a talajvíz gyorsan követi a folyót, kicsi a szintkülönbség.' : 'Lassabb apadásnál a talajvíz követni tudja a folyót – a gradiens kisebb marad.');
+    if (ie <= B.i0 && washed > 0.01) vd.set('bad', 'Kimosódott a talaj az alap alól', 'A gyors apadás alatt a part felé áramló víz a rézsű lábánál kiragadta a finom szemcséket, és az üreg az alap alá hátrált. Most már lassú az áramlás, de a kár megtörtént.');
+    else vd.set(ie > B.i0 ? 'bad' : ie > 0.6 * B.i0 ? 'warn' : 'ok', ie > B.i0 ? 'Kimosás: a szemcsék elindulnak' : ie > 0.6 * B.i0 ? 'Erős áramlás a part felé' : 'Lassú áramlás', ie > B.i0 ? 'A part felé áramló víz elég erős ahhoz, hogy a finom szemcséket kiragadja: a rézsű lábától az alap alá üreg hátrál.' : soil.v === 'kavics' ? 'A kavicsos talaj jól áteresztő: a talajvíz gyorsan követi a folyót, kicsi a szintkülönbség.' : 'Lassabb apadásnál a talajvíz követni tudja a folyót – a gradiens kisebb marad.');
   }
   const tick = (dt) => {
     if (!run) return;
     const ie = step(dt * 1.6);
     const B = BANK.find((b) => b.k === soil.v);
-    if (ie > B.i0) for (let k = 0; k < 2; k++) parts.push({ x: L - 24 + Math.random() * 14, y: -1.8 - Math.random() * 1.5 });
+    if (ie > B.i0) for (let k = 0; k < 2; k++) parts.push({ x: L - 4 - Math.random() * (2 + 6 * clamp(washed * 20, 0, 1)), y: cavY()[0] - 0.2 - Math.random() * 0.9 }); // a hátráló üregből a rézsűn át a folyóba
     for (const p of parts) { p.x += dt * 9 * (0.6 + Math.random() * 0.6); p.y -= dt * 0.8; }
     parts = parts.filter((p) => p.x < L + 6).slice(-160);
     if (t > days.v * 2.2 + 4) run = false;

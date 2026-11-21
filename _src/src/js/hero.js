@@ -2,11 +2,14 @@
 // a ház két sarkának függőleges (földrengésnél vízszintes) mozgását egy regisztráló „toll” rajzolja.
 import * as THREE from 'three';
 import { $, h, cssVar, clamp, smooth, onTheme, EN } from './core.js';
+const lerp = (a, b, u) => a + (b - a) * u;
 
 const X0 = -18, X1 = 18, YB = -14, ZB = -11;           // a talajtömb: x, alsó sík, hátsó sík (elöl a z = 0 metszet)
 const HOUSE = { x0: -5, x1: 5, z0: -8, z1: 0, h: 6.2, roof: 2.6 };
 const FOOT = { L: { x: -4.6, b: 0.9, top: -0.25, bot: -0.75 }, R: { x: 4.6, b: 0.9, top: -0.35, bot: -1.15 } }; // a bal sávalap sekély (fagyhatár fölött)
 const RIVER = { x0: 11.5, x1: 13.6, bed: -3.4 };       // jobb oldalon folyó (rézsű 11,5 → 13,6 m között)
+const RIVER_W = { x0: 5.75, x1: 7.2, bed: -3.4 };      // kimosásnál a sebes folyó közvetlenül a ház mellett folyik (a part éle 0,7 m-re a jobb alaptól)
+let R = RIVER;
 const LAYERS = [ // y felső, név, szín-változó
   { top: 0, bot: -0.9, key: '--soilE', name: 'feltöltés' },
   { top: -0.9, bot: -6.2, key: '--soilA', name: 'iszapos finom homok' },
@@ -18,7 +21,7 @@ const FX = {
   vib: { c: 'c1', n: 'Rezgés', tag: 'CH1 · rezgés', cap: '<b>Szádfalverés 9 m-re.</b> A vibrátor rezgése a telített, laza finom homokot tömöríti: a közelebbi sarok jobban süllyed, a fal megreped.', rec: 'v' },
   quake: { c: 'c2', n: 'Földrengés', tag: 'CH2 · földrengés', cap: '<b>Rengés a mélyben.</b> A fészekből induló hullámok a felszínen vízszintesen rázzák az épületet – a puha talaj felerősíti a mozgást.', rec: 'hz' },
   cav: { c: 'c3', n: 'Üreg', tag: 'CH3 · üreg', cap: '<b>Beszakad a régi pince.</b> A föld az üreg felé mozdul, a felszínen süllyedési teknő nyílik; a ház a teknő felé billen.', rec: 'v' },
-  wash: { c: 'c4', n: 'Kimosás', tag: 'CH4 · kimosás', cap: '<b>Gyorsan apad a folyó.</b> A part alatti talajvíz a meder felé áramlik, kimossa a finom szemcséket, az alap alatt üreg nő.', rec: 'v' },
+  wash: { c: 'c4', n: 'Kimosás', tag: 'CH4 · kimosás', cap: '<b>Sebes folyó közvetlenül a ház mellett.</b> A sodrás alámossa a partot, apadáskor a kiáramló talajvíz is viszi a szemcséket: az alap alól elfogy a talaj, a ház a folyó felé billen.', rec: 'v' },
   frost: { c: 'c5', n: 'Fagy', tag: 'CH5 · fagy', cap: '<b>Három hét fagy.</b> Az iszapos talajban jéglencsék nőnek; a fagyhatár fölött álló bal oldali alapot megemeli a fagy.', rec: 'v' },
 };
 const ORDER = ['vib', 'quake', 'cav', 'wash', 'frost'];
@@ -43,7 +46,8 @@ export function initHero() {
   const topP0 = Float32Array.from(top.geometry.attributes.position.array);
   top.geometry.setAttribute('color', new THREE.BufferAttribute(new Float32Array(topP0.length), 3));
   scene.add(top);
-  const groundY = (x) => x < RIVER.x0 ? 0 : x > RIVER.x1 ? RIVER.bed : RIVER.bed * smooth((x - RIVER.x0) / (RIVER.x1 - RIVER.x0));
+  const groundY = (x) => x < R.x0 ? 0 : x > R.x1 ? R.bed : R.bed * smooth((x - R.x0) / (R.x1 - R.x0));
+  const bankX = (y) => { if (y >= 0) return R.x0; if (y <= R.bed) return R.x1; let a = R.x0, b = R.x1; for (let k = 0; k < 24; k++) { const m = (a + b) / 2; if (groundY(m) > y) a = m; else b = m; } return (a + b) / 2; }; // a part felülete adott mélységben
 
   const sec = new THREE.Mesh(new THREE.PlaneGeometry(X1 - X0, -YB, 144, 56), new THREE.MeshBasicMaterial({ vertexColors: true }));
   sec.geometry.translate(0, YB / 2, 0);
@@ -74,8 +78,12 @@ export function initHero() {
 
   /* ---------------- víz (folyó a metszetben és felül), talajvízszint */
   const waterMat = new THREE.MeshLambertMaterial({ color: col('--water'), transparent: true, opacity: 0.62 });
-  const riverTop = new THREE.Mesh(new THREE.PlaneGeometry(X1 - RIVER.x0 + 0.5, -ZB), waterMat);
-  riverTop.rotation.x = -Math.PI / 2; riverTop.position.set((X1 + RIVER.x0) / 2, -1, ZB / 2); scene.add(riverTop);
+  const riverTop = new THREE.Mesh(new THREE.PlaneGeometry(1, -ZB), waterMat);
+  riverTop.rotation.x = -Math.PI / 2; riverTop.position.set((X1 + R.x0) / 2, -1, ZB / 2); scene.add(riverTop);
+  // a sodrás csíkjai a vízfelszínen (a néző felé folyik)
+  const NS = 34; const flowGeo = new THREE.BufferGeometry(); flowGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(NS * 6), 3));
+  const flow = new THREE.LineSegments(flowGeo, new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.75 })); scene.add(flow);
+  const fSeed = Array.from({ length: NS }, (_, i) => ({ u: ((i * 61) % 101) / 101, z: ((i * 37) % 89) / 89, s: 0.75 + ((i * 17) % 23) / 23 * 0.6, l: 0.7 + ((i * 13) % 11) / 11 * 0.9 }));
   const riverSec = new THREE.Mesh(new THREE.BufferGeometry(), new THREE.MeshBasicMaterial({ color: col('--water'), transparent: true, opacity: 0.55 }));
   riverSec.position.z = 0.03; scene.add(riverSec);
   const gwLine = new THREE.Line(new THREE.BufferGeometry(), new THREE.LineDashedMaterial({ color: col('--water'), dashSize: 0.5, gapSize: 0.3 }));
@@ -143,9 +151,10 @@ export function initHero() {
 
   // kimosás: szemcsék, üreg az alap alatt
   const NP = 140; const pGeo = new THREE.BufferGeometry(); pGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(NP * 3), 3));
-  const parts = new THREE.Points(pGeo, new THREE.PointsMaterial({ color: col('--c4'), size: 0.22 })); parts.position.z = 0.07; scene.add(parts);
+  const parts = new THREE.Points(pGeo, new THREE.PointsMaterial({ color: 0xe8d29a, size: 0.2 })); parts.position.z = 0.07; scene.add(parts);
   const pSeed = Array.from({ length: NP }, (_, i) => ({ x: 2 + ((i * 37) % 97) / 97 * 10, y: -1.6 - ((i * 53) % 89) / 89 * 3.6, s: 0.6 + ((i * 29) % 31) / 31 }));
-  const washCav = new THREE.Mesh(new THREE.BufferGeometry(), new THREE.MeshBasicMaterial({ color: 0x1a1612 })); washCav.position.z = 0.032; scene.add(washCav);
+  const washCav = new THREE.Mesh(new THREE.BufferGeometry(), new THREE.MeshBasicMaterial({ color: 0x1b2a33 })); washCav.position.z = 0.032; scene.add(washCav);
+  const washRim = new THREE.Line(new THREE.BufferGeometry(), new THREE.LineBasicMaterial({ color: col('--c4') })); washRim.position.z = 0.036; scene.add(washRim);
 
   // fagy: fagyott zóna, jéglencsék, hó
   const frostMesh = new THREE.Mesh(new THREE.BufferGeometry(), new THREE.MeshBasicMaterial({ color: col('--ice'), transparent: true, opacity: 0.45 })); frostMesh.position.z = 0.025; scene.add(frostMesh);
@@ -170,11 +179,11 @@ export function initHero() {
       const hgt = y - yc, i = 1.4 + 0.42 * hgt; const S = c * (1.6 * 1.4) / i * (1 + 0.15 * e);
       return -S * Math.exp(-((x - CAV.x) ** 2) / (2 * i * i));
     }
-    if (mode === 'wash') {
-      const c = smooth((T - 3.2) / 6.0); const xc = 4.8, yc = -1.8;
-      if (y < -4.5) return 0;
-      const hgt = Math.max(0, y - yc), i = 0.9 + 0.35 * hgt;
-      return -c * 0.85 * (0.9 / i) * Math.exp(-((x - xc) ** 2) / (2 * i * i)) * (y < yc ? Math.exp(-((y - yc) ** 2) / 1.2) : 1);
+    if (mode === 'wash') { // az alámosott part fölött: a jobb alap elveszti az alátámasztását, a ház a folyó felé billen
+      const c = smooth((T - 3.0) / 6.5); const xc = 5.2, yT = -1.22;
+      if (y < -4.5 || x < -1) return 0;
+      const hgt = Math.max(0, y - yT), i = 1.0 + 0.25 * hgt;
+      return -c * 0.95 * (0.9 + 0.1 / i) * Math.exp(-((x - xc) ** 2) / (2 * i * i)) * (y < yT ? Math.exp(-((y - yT) ** 2) / 0.05) : 1);
     }
     if (mode === 'frost') { // emelés a fagyott zónában (a ház fűtött belseje alatt kevésbé)
       const yf = frontY(x); if (y < yf) return 0;
@@ -200,7 +209,8 @@ export function initHero() {
     rig.visible = m === 'vib'; rings.forEach((r) => (r.visible = m === 'vib')); densMesh.visible = m === 'vib';
     fault.visible = hypo.visible = m === 'quake'; waves.forEach((w) => (w.visible = m === 'quake'));
     cavMesh.visible = m === 'cav'; archPieces.forEach((a) => (a.visible = m === 'cav')); shearL.visible = shearR.visible = m === 'cav';
-    parts.visible = washCav.visible = m === 'wash';
+    parts.visible = washCav.visible = washRim.visible = flow.visible = m === 'wash';
+    R = m === 'wash' ? RIVER_W : RIVER; riverTop.scale.x = X1 - R.x0 + 0.5; riverTop.position.x = (X1 + R.x0) / 2;
     frostMesh.visible = m === 'frost'; lenses.forEach((l) => (l.l.visible = m === 'frost'));
     gwLine.visible = gwTri.visible = m !== 'frost';
     render();
@@ -212,12 +222,12 @@ export function initHero() {
   const tmpC = new THREE.Color();
   function shapeGeo(mesh, pts) { const s = new THREE.Shape(pts.map(([x, y]) => new THREE.Vector2(x, y))); mesh.geometry.dispose(); mesh.geometry = new THREE.ShapeGeometry(s); }
   function lineGeo(line, pts, dashed = false) { line.geometry.dispose(); line.geometry = new THREE.BufferGeometry().setFromPoints(pts.map(([x, y, z]) => new THREE.Vector3(x, y, z || 0))); if (dashed) line.computeLineDistances(); }
-  const riverLevel = () => (mode === 'wash' ? -0.9 - 2.1 * smooth((T - 1.0) / 3.2) : -1.6);
+  const riverLevel = () => (mode === 'wash' ? -0.55 - 1.35 * smooth((T - 4.0) / 3.5) : -1.6); // kimosás: árvízi sodrás, majd gyors apadás
   const gwAt = (x) => { // talajvízszint a metszetben
     const rl = riverLevel();
     if (mode !== 'wash') return Math.min(-1.6, -1.6);
-    const lag = -0.9 - 1.0 * smooth((T - 3.0) / 9.0); // a part alatti szint lassan követi
-    const k = clamp((x - (-6)) / (RIVER.x0 + 0.6 - (-6)), 0, 1);
+    const lag = -0.6 - 0.6 * smooth((T - 5.0) / 9.0); // a part alatti szint lassan követi
+    const k = clamp((x - (-6)) / (bankX(rl) - (-6)), 0, 1);
     return lag + (rl - lag) * k ** 2.2;
   };
   function frame() {
@@ -235,7 +245,7 @@ export function initHero() {
       const x = topP0[i * 3], z = topP0[i * 3 + 2]; let y = groundY(x) + uy(x, groundY(x));
       if (mode === 'vib') { const r = Math.hypot(x - rig.position.x - 2.75, z - rig.position.z); y += 0.05 * e * Math.sin(r * 2.2 - T * 14) * Math.exp(-r / 10); }
       tp.setXYZ(i, x + ux(0), y, z);
-      tmpC.copy(x > RIVER.x0 ? sand : grass); if (mode === 'frost') tmpC.lerp(snow, 0.85 * e); tmpC.offsetHSL(0, 0, Math.sin(x * 1.7 + z * 2.3) * 0.02);
+      tmpC.copy(x > R.x0 ? sand : grass); if (mode === 'frost') tmpC.lerp(snow, 0.85 * e); tmpC.offsetHSL(0, 0, Math.sin(x * 1.7 + z * 2.3) * 0.02);
       tc.setXYZ(i, tmpC.r, tmpC.g, tmpC.b);
     }
     tp.needsUpdate = true; tc.needsUpdate = true; top.geometry.computeVertexNormals();
@@ -250,9 +260,9 @@ export function initHero() {
     for (const k of ['L', 'R']) { const f = FOOT[k]; const dy = k === 'L' ? yL : yR; foots[k].position.set(f.x + ux(f.bot), (f.top + f.bot) / 2 + dy, 0.04); foots[k].rotation.z = ang; foots[k + 's'].position.set(f.x + ux(0), f.top / 2 + dy, 0.045); }
     // víz
     const rl = riverLevel(); riverTop.position.y = rl;
-    const bedPts = []; for (let x = RIVER.x0; x <= X1 + 0.01; x += 0.25) bedPts.push([x, Math.min(groundY(x), rl)]);
-    shapeGeo(riverSec, [[RIVER.x0 + (RIVER.x1 - RIVER.x0) * clamp(rl / RIVER.bed, 0, 1) * 0.9, rl], [X1, rl], ...bedPts.reverse().filter((p) => p[1] < rl - 0.01)]);
-    if (gwLine.visible) { const pts = []; for (let x = X0; x <= RIVER.x0 + 1.2; x += 0.4) pts.push([x + ux(gwAt(x)), gwAt(x) + uy(x, gwAt(x)), 0]); lineGeo(gwLine, pts, true); gwTri.position.set(-14 + ux(gwAt(-14)), gwAt(-14) + 0.32, 0.06); }
+    const bedPts = []; for (let x = R.x0; x <= X1 + 0.01; x += 0.25) bedPts.push([x, Math.min(groundY(x), rl)]);
+    shapeGeo(riverSec, [[bankX(rl), rl], [X1, rl], ...bedPts.reverse().filter((p) => p[1] < rl - 0.01)]);
+    if (gwLine.visible) { const pts = []; const xw = bankX(rl); for (let x = X0; x <= xw + 1e-6; x = x >= xw ? xw + 1 : Math.min(xw, x + 0.4)) pts.push([x + ux(gwAt(x)), gwAt(x) + uy(x, gwAt(x)), 0]); lineGeo(gwLine, pts, true); gwTri.position.set(-14 + ux(gwAt(-14)), gwAt(-14) + 0.32, 0.06); }
     // hatás-specifikus rajzok
     if (mode === 'vib') {
       rings.forEach((r, i) => { const ph = ((T * 0.9 + i / rings.length) % 1); const R = 1 + ph * 18; r.scale.set(R, 1, R); r.position.set(rig.position.x + 2.75, 0.08, rig.position.z); r.material.opacity = 0.85 * (1 - ph) * (T > 1 && T < 10.5 ? 1 : 0); });
@@ -277,11 +287,24 @@ export function initHero() {
       shearL.material.opacity = 1;
     }
     if (mode === 'wash') {
-      const pa = pGeo.attributes.position; const on = smooth((T - 3.0) / 1.0);
-      for (let i = 0; i < NP; i++) { const p = pSeed[i]; let x = p.x + ((T * 1.4 * p.s) % 11); if (x > RIVER.x1 + 1) x -= 11; const y = Math.min(gwAt(x) - 0.2, p.y) + 0.15 * Math.sin(x * 2 + i); pa.setXYZ(i, x, on > 0.01 && y < gwAt(x) ? y : 99, 0); }
+      const c = smooth((T - 1.6) / 7.0); // az alámosás mélysége nő
+      const yT = -1.22, yB = -2.9, xFT = bankX(yT), xFB = bankX(yB), xIn = xFT - 0.2 - 2.5 * c; // üreg: a part lábától befelé, a jobb alap alá
+      const hp = [[xFT + 0.05, yT]]; for (let k = 0; k <= 12; k++) { const u = k / 12; const x = lerp(xFT, xIn, u); hp.push([x, yT - 0.08 * Math.sin(Math.PI * u) - 0.05 * u]); }
+      for (let k = 1; k <= 8; k++) { const a = (Math.PI / 2) * (k / 8); hp.push([xIn + 0.7 * (1 - Math.cos(a)), (yT - 0.13) - ((yT - 0.13) - (yB + 0.6)) * Math.sin(a)]); }
+      for (let k = 0; k <= 10; k++) { const u = k / 10; const x = lerp(xIn + 0.7, xFB, u); hp.push([x, lerp(yB + 0.6, yB, u ** 1.6)]); }
+      for (let k = 0; k <= 8; k++) { const y = lerp(yB, yT, k / 8); hp.push([bankX(y) + 0.04, y]); } // a nyílás a part felületén
+      const hpd = hp.map(([x, y]) => [x + ux(y), y + 0.55 * clamp((y - yB - 0.6) / (yT - yB - 0.6), 0, 1) * uy(x, yT + 0.02)]); shapeGeo(washCav, hpd); washCav.visible = washRim.visible = c > 0.02; // az üreg mennyezete kissé lehajlik, az alja marad
+      lineGeo(washRim, hpd.slice(0, hpd.length - 9));
+      washCav.material.color.setHex(0x1b2a33);
+      const pa = pGeo.attributes.position; const on = smooth((T - 1.4) / 0.8);
+      for (let i = 0; i < NP; i++) { const p = pSeed[i]; const u = ((T * 0.32 * p.s) + p.x / 10) % 1;
+        const x0 = lerp(xIn + 0.3, xFT, (p.y + 5.2) / 3.6), y0 = lerp(yT - 0.2, yB + 0.3, (p.x - 2) / 10);
+        const x = x0 + u * (2.6 + 3.0 * p.s), y = Math.max(groundY(x) + 0.1, y0 - u * 1.4 + 0.1 * Math.sin(x * 3 + i));
+        pa.setXYZ(i, x, on > 0.01 && c > 0.05 ? y : 99, 0); }
       pa.needsUpdate = true;
-      const c = smooth((T - 3.2) / 6.0); const pts = []; for (let k = 0; k <= 20; k++) { const a = (k / 20) * Math.PI * 2; pts.push([4.8 + Math.cos(a) * (0.25 + 1.3 * c), -1.85 + Math.sin(a) * (0.12 + 0.42 * c)]); }
-      shapeGeo(washCav, pts); washCav.visible = c > 0.02;
+      const fa = flowGeo.attributes.position, xA = bankX(rl) + 0.3;
+      fSeed.forEach((f, i) => { const z = ZB + ((f.z + T * 0.36 * f.s) % 1) * (-ZB + 0.5); const x = lerp(xA, X1 - 0.3, f.u); const z2 = Math.min(0.2, z + f.l); fa.setXYZ(i * 2, x, rl + 0.03, z); fa.setXYZ(i * 2 + 1, x, rl + 0.03, z2); });
+      fa.needsUpdate = true; flow.material.opacity = 0.8;
     }
     if (mode === 'frost') {
       const pts = []; for (let x = X0; x <= RIVER.x0; x += 0.4) pts.push([x, groundY(x) + uy(x, 0)]); for (let x = RIVER.x0; x >= X0; x -= 0.4) pts.push([x, frontY(x) + uy(x, frontY(x))]);

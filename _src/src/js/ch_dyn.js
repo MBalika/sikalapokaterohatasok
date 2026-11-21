@@ -96,12 +96,13 @@ register('dyn-soil', (root) => {
   const build = () => {
     const S = SOILS.find((s) => s.k === soil.v); const R = S.r * 1.6; const W = 300, H = 210;
     grains = []; let seed = 7; const rnd = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
-    const nx = Math.floor(W / (2 * R)), loose = 1.0 + 0.32 * dens.v;
-    const rows = Math.floor(H / (2 * R * loose * 0.9));
+    const nx = Math.floor((W - R) / (2 * R)), loose = 1.0 + 0.32 * dens.v; // a tömör (eltolt soros) elrendezés is a dobozon belül marad
+    const rows = Math.floor(H / (2 * R * loose * 0.9)), dxL = (W - 2 * R) / Math.max(1, nx - 1); // laza állapot: a sorok ritkábbak, a szemcsék a doboz teljes szélességén
     for (let j = 0; j < rows; j++) for (let i = 0; i < nx; i++) {
       const rr = R * (S.k === 'gr' ? 0.55 + rnd() * 0.9 : S.k === 'ss' ? 0.6 + rnd() * 0.6 : S.k === 'cl' ? 0.8 + rnd() * 0.3 : 0.9 + rnd() * 0.15);
-      const x0 = 12 + R + i * 2 * R * loose + (rnd() - 0.5) * R * 0.5, y0 = H - R - j * 2 * R * loose * 0.92 + (rnd() - 0.5) * R * 0.4;
-      const x1 = 12 + R + i * 2 * R + (j % 2) * R, y1 = H - R - j * 2 * R * 0.87;
+      const hw = S.k === 'cl' ? rr * 1.6 : rr; // a szemcse fél szélessége (az agyaglemez lapos ellipszis)
+      const x0 = clamp(12 + R + i * dxL + (rnd() - 0.5) * R * 0.5, 12 + hw, 312 - hw), y0 = H - R - j * 2 * R * loose * 0.92 + (rnd() - 0.5) * R * 0.4;
+      const x1 = clamp(12 + R + i * 2 * R + (j % 2) * R, 12 + hw, 312 - hw), y1 = H - R - j * 2 * R * 0.87;
       if (y0 < 8) continue;
       grains.push({ x0, y0, x1, y1, r: rr });
     }
@@ -117,12 +118,14 @@ register('dyn-soil', (root) => {
     // víz
     if (sat.v) { g.fillStyle = cssVar('--water-fill'); g.fillRect(12, 6, 300, 214); }
     let topY = 999;
+    g.save(); g.beginPath(); g.rect(11, -40, 302, 262); g.clip(); // semmi nem lóghat ki a doboz falán
     g.fillStyle = cssVar(S.col); g.strokeStyle = 'rgba(0,0,0,.25)'; g.lineWidth = 0.6;
     for (const q of grains) {
       const x = lerp(q.x0, q.x1, p) + Math.sin(tt * 40 + q.x0) * jit, y = lerp(q.y0, q.y1, p) + Math.cos(tt * 37 + q.y0) * jit;
       topY = Math.min(topY, y - q.r);
       g.beginPath(); if (S.k === 'cl') g.ellipse(x, y, q.r * 1.6, q.r * 0.55, 0.1, 0, 7); else g.arc(x, y, q.r, 0, 7); g.fill(); g.stroke();
     }
+    g.restore();
     // doboz
     g.strokeStyle = cssVar('--ink2'); g.lineWidth = 2; g.beginPath(); g.moveTo(10, 4); g.lineTo(10, 222); g.lineTo(314, 222); g.lineTo(314, 4); g.stroke();
     // kiinduló felszín
