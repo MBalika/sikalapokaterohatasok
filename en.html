@@ -637,6 +637,8 @@ main .card .rag, main .callout .rag, main .case .rag, main .fx .rag, main .q-exp
 @media (max-width: 440px) { .series { grid-template-columns: minmax(0, 1fr); } }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .series a.next b { color: #b56d00; } }
 :root[data-theme="dark"] .series a.next b { color: #b56d00; }
+/* fejléc: az app teljes neve keskeny kijelzőn is (két sorba törhet, nem vágjuk le) */
+@media (max-width: 600px) { .brand { flex: 1 1 auto; min-width: 0; } .brand b { white-space: normal; font-size: 16px; line-height: 1.05; } }
 
 </style>
 </head>
