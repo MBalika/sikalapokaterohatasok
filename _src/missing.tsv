@@ -24,5 +24,9 @@ ec1714e	Állítsd be az üreg mélységét, méretét, a talaj belső súrlódá
 ba30de6	A kimosást szűrőréteggel lehet megállítani: a szűrő hézagai elég kicsik ahhoz, hogy a védett talaj szemcséit visszatartsák, de elég nagyok ahhoz, hogy a víz akadálytalanul átfolyjon. Válassz talajt és szűrőt.	# chapters/04_kimosas.html:23
 7d53f57	Homokminta alulról felfelé áramló vízben. Emeld a felvízszintet: mikor éri el a gradiens a kritikus értéket, és mikor kezd „forrni” a homok?	# chapters/04_kimosas.html:22
 da0ca41	Az árhullám után a folyó vízszintje lecsökken. Állítsd be, milyen gyorsan apad, és milyen a part talaja: a talajvíz lassan követi, a part felé áramló víz kimossa a finom szemcséket.	# chapters/04_kimosas.html:16
+777d755	Kétdimenziós hővezetési modell egy hűtőház fél keresztmetszetére. Állítsd be a hűtőtér hőmérsékletét, a szigetelést és a padlófűtést, majd futtasd le az éveket: mennyire hatol le a 0 °C-os vonal?	# chapters/05_fagy.html:41
+e6310e3	Kapcsold be a veszélyforrásokat, és nézd meg, hol fagy át a talaj, és hol emeli meg a fagy a szerkezetet (Δf).	# chapters/05_fagy.html:35
+e2016bb	A fagyindex (a fagyos napok átlaghőmérsékleteinek összege) és a talaj tulajdonságai alapján becsüljük, milyen mélyre hatol a fagy – és ellenőrizzük, hogy az alaptest a hazai fagyhatár alatt van-e.	# chapters/05_fagy.html:29
+beae8ca	A talaj fagyérzékenységét főként a 0,02 mm-nél finomabb szemcsék aránya dönti el. Állítsd be a talajt és a finomrész-tartalmat.	# chapters/05_fagy.html:18
 0a11528	Egy talajoszlop a téli fagyban. Válassz talajt, talajvízmélységet és hideget, majd indítsd a telet: a fagyfront lefelé halad, a jéglencsék nőnek, a felszín emelkedik.	# chapters/05_fagy.html:17
 3df91d8	Tizenegy kárhely, tizenegy rövid helyszíni leírás. Melyik hatás okozta a süllyedést vagy az emelkedést? Válassz, és nézd meg a magyarázatot.	# chapters/06_osszegzes.html:28

@@ -32,8 +32,8 @@ elif cmd == 'miss':
             if r > 0.45: print(f'RÉGI ({r:.2f}): {best[1]}\nEN  : {(T.get(best[0]) or T.get(best[0] + "!"))[0]}')
         print()
 elif cmd == 'prune':
-    r = subprocess.run(['node', str(R / 'apply.mjs'), str(SRC), str(R.parent / '.en'), ','.join(sorted(glob.glob(str(R / 'en_*.tsv')))), *FILES], capture_output=True, text=True, cwd=R, env={**__import__('os').environ, 'NUMFIX': '1'})
-    m = re.search(r'^\s+fel nem használt: (.*)$', r.stdout, re.M); un = set(m.group(1).split()) if m else set()
+    r = subprocess.run(['node', str(R / 'apply.mjs'), str(SRC), str(R.parent / '.en'), ','.join(sorted(glob.glob(str(R / 'en_*.tsv')))), *FILES], capture_output=True, text=True, cwd=R, env={**__import__('os').environ, 'NUMFIX': '1', 'ATTRS': 'data-sub,data-l'})
+    n = re.search(r'fel nem használt: (\d+)', r.stdout); m = re.search(r'^  fel nem használt: (.*)$', r.stdout, re.M); un = set(m.group(1).split()) if (m and n and int(n.group(1)) > 0) else set()
     if not un: print('nincs fel nem használt kulcs'); sys.exit(0)
     print('(egyszerre legfeljebb 20 kulcsot töröl – ismételd, amíg van)')
     for f in sorted(glob.glob(str(R / 'en_*.tsv'))):
