@@ -629,3 +629,7 @@ section.vstrip { padding: 34px 0 26px; }
 :root { --grass: #6f9a4a; --wall: #efe6d4; --glass: #b9d3e2; }
 :root[data-theme="dark"] { --grass: #4f7436; --wall: #b9ae98; --glass: #5c7f96; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --grass: #4f7436; --wall: #b9ae98; --glass: #5c7f96; } }
+/* kilenc menüpont: közepes szélességen a csatornajel nélkül, hogy a nyelvváltó elé kiférjen (HU és EN) */
+@media (max-width: 1600px) { .topnav a small { display: none; } .topnav a { padding: 7px 8px; } }
+@media (max-width: 1320px) { .topnav { display: none; } .menubtn { display: inline-grid; margin-left: auto; } }
+html[lang^="en"] .topnav a small { display: none; } html[lang^="en"] .topnav a { padding: 7px 8px; }

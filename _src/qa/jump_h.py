@@ -20,7 +20,7 @@ with sync_playwright() as p:
                 pg.wait_for_timeout(350)
                 sel = f'#navlist [href="#{cid}"], #navlist [data-ch="{cid}"]'
                 if not pg.query_selector(sel):
-                    res.append((cid, 'nincs gomb')); continue
+                    pg.evaluate("document.getElementById('navsheet').hidden=true"); res.append((cid, 'nincs gomb')); continue
                 pg.click(sel)
             pg.wait_for_timeout(2600)
             d = pg.evaluate(f"(()=>{{const s=document.getElementById('{cid}');const hd=document.querySelector('.topbar').getBoundingClientRect().bottom;return Math.round(s.getBoundingClientRect().top-hd);}})()")

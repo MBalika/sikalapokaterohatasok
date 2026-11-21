@@ -175,7 +175,6 @@ a6dfba1	Monitoring station · standby
 e879254	=
 dc92e6e	=
 79dddf2	img/thumb/en/${v.n}.jpg
-35436a1	=
 1027e1a	=
 3c4fd30	=
 13a6c48	Animated video · ${order.indexOf(v.n) + 1} / ${order.length}
