@@ -623,6 +623,22 @@ main .card .rag, main .callout .rag, main .case .rag, main .fx .rag, main .q-exp
 .grid3 .case { grid-template-rows: auto 1fr; }   /* egyforma magas kártyáknál a többletmagasság a szövegrészé, ne az évszámsávé */
 @media (max-width: 1100px) { .case { grid-template-rows: auto 1fr; } }
 
+/* ---------------------------------------------------------------- a sorozat többi része (az oldal alján) */
+.series { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 8px; }
+.series a { position: relative; display: block; text-align: center; text-decoration: none; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 15px 20px; box-shadow: var(--shadow); transition: transform .2s, border-color .2s; }
+.series a:hover { transform: translateY(-2px); border-color: var(--line2); }
+.series a::after { content: "↗"; position: absolute; top: 7px; right: 10px; font-size: 12px; color: var(--faint); }
+.series a b { display: block; font-family: var(--f-display); font-size: 16.5px; font-weight: 600; line-height: 1.25; margin-bottom: 4px; }
+.series a small { display: block; font-size: 13px; line-height: 1.45; color: var(--muted); }
+.series a.next { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.series a.next b { color: var(--c1); }
+.series a.next small, .series a.next::after { color: var(--paper); opacity: .78; }
+@media (max-width: 1040px) { .series { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .series { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 440px) { .series { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .series a.next b { color: #b56d00; } }
+:root[data-theme="dark"] .series a.next b { color: #b56d00; }
+
 </style>
 </head>
 <body>
@@ -1076,6 +1092,30 @@ main .card .rag, main .callout .rag, main .case .rag, main .fx .rag, main .q-exp
     <div id="tf"></div>
     <h3 class="sh"><span class="k">fogalomtár</span>Fogalmak A-tól Z-ig</h3>
     <div id="gloss"></div>
+  </div>
+</section>
+
+<section class="ch" id="sorozat">
+  <div class="wrap">
+    <header class="ch-head">
+      <div class="ch-meta"><span class="ch-no">↗</span><span>a sorozat többi része</span></div>
+      <h2>Az Alapozás tananyagai</h2>
+      <p class="ch-lead">A síkalapokat érő hatások a tárgy útjának 7. állomása. A többi interaktív tananyag ugyanebben a rendszerben mutatja be az alapozás tervezésének lépéseit.</p>
+    </header>
+    <div class="series">
+      <a class="next" href="https://melyalapozasok.vercel.app/" target="_blank" rel="noopener"><b>Következik: mélyalapozások</b><small>Cölöpök, résfalak, kutak – ha a teherbíró réteg mélyen van</small></a>
+      <a href="https://bme-alapozas.vercel.app/" target="_blank" rel="noopener"><b>Alapozás – nyitóoldal</b><small>A tárgy útja kilenc állomáson és minden tananyag egy helyen</small></a>
+      <a href="https://talajfelderites.vercel.app/" target="_blank" rel="noopener"><b>Talajfelderítés</b><small>Fúrás, szondázás, geofizika, mintavétel – mit tudunk meg a talajról</small></a>
+      <a href="https://sikalapoktervezese.vercel.app/" target="_blank" rel="noopener"><b>Síkalapok tervezése</b><small>Alaptípusok, alapsík, határállapotok, törési mechanizmus</small></a>
+      <a href="https://sikalapok-teherbirasszamitasa.vercel.app/" target="_blank" rel="noopener"><b>Síkalapok teherbírásszámítása</b><small>Az alapfelület méretezése teherbírási határállapotban</small></a>
+      <a href="https://sikalapokallekonysagvizsgalata.vercel.app/" target="_blank" rel="noopener"><b>Síkalapok állékonyságvizsgálata</b><small>Elcsúszás, felborulás, felúszás, általános állékonyság</small></a>
+      <a href="https://sikalapok-sullyedesszamitasa.vercel.app/" target="_blank" rel="noopener"><b>Síkalapok süllyedésszámítása</b><small>Feszültségek az altalajban, süllyedés, süllyedéstűrés, mérés</small></a>
+      <a href="https://vedekezesakarossullyedesekellen.vercel.app/" target="_blank" rel="noopener"><b>Védekezés a káros süllyedések ellen</b><small>Alapozás átalakítása, tömörítés, injektálás, tervezői eszközök</small></a>
+      <a href="https://kedvezotlen-altalaj.vercel.app/" target="_blank" rel="noopener"><b>Alapozás kedvezőtlen altalajon</b><small>Térfogatváltozó agyag, roskadékony lösz, feltöltés, szerves talaj</small></a>
+      <a href="https://munkaterhatarolasok.vercel.app/" target="_blank" rel="noopener"><b>Munkatérhatárolások</b><small>Dúcolás, falak, horgonyzás – a mélyebb alapsík munkagödre</small></a>
+      <a href="https://bme-alapozas.vercel.app/telek/" target="_blank" rel="noopener"><b>Egy telek, egy félév</b><small>Kilenc feladat egyetlen telken – te vagy a geotechnikus</small></a>
+      <a href="https://bme-alapozas.vercel.app/ar-labor/" target="_blank" rel="noopener"><b>Alapozás AR labor</b><small>Talajtörés, feszültséghagyma, CFA cölöp és munkagödör a saját asztalodon</small></a>
+    </div>
   </div>
 </section>
 

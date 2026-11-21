@@ -622,6 +622,22 @@ main .card .rag, main .callout .rag, main .case .rag, main .fx .rag, main .q-exp
 .grid3 .case { grid-template-rows: auto 1fr; }   /* egyforma magas kártyáknál a többletmagasság a szövegrészé, ne az évszámsávé */
 @media (max-width: 1100px) { .case { grid-template-rows: auto 1fr; } }
 
+/* ---------------------------------------------------------------- a sorozat többi része (az oldal alján) */
+.series { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 8px; }
+.series a { position: relative; display: block; text-align: center; text-decoration: none; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 15px 20px; box-shadow: var(--shadow); transition: transform .2s, border-color .2s; }
+.series a:hover { transform: translateY(-2px); border-color: var(--line2); }
+.series a::after { content: "↗"; position: absolute; top: 7px; right: 10px; font-size: 12px; color: var(--faint); }
+.series a b { display: block; font-family: var(--f-display); font-size: 16.5px; font-weight: 600; line-height: 1.25; margin-bottom: 4px; }
+.series a small { display: block; font-size: 13px; line-height: 1.45; color: var(--muted); }
+.series a.next { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.series a.next b { color: var(--c1); }
+.series a.next small, .series a.next::after { color: var(--paper); opacity: .78; }
+@media (max-width: 1040px) { .series { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .series { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 440px) { .series { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .series a.next b { color: #b56d00; } }
+:root[data-theme="dark"] .series a.next b { color: #b56d00; }
+
 </style>
 </head>
 <body>
@@ -1075,6 +1091,30 @@ main .card .rag, main .callout .rag, main .case .rag, main .fx .rag, main .q-exp
     <div id="tf"></div>
     <h3 class="sh"><span class="k">glossary</span>Terms from A to Z</h3>
     <div id="gloss"></div>
+  </div>
+</section>
+
+<section class="ch" id="sorozat">
+  <div class="wrap">
+    <header class="ch-head">
+      <div class="ch-meta"><span class="ch-no">↗</span><span>the rest of the series</span></div>
+      <h2>The Foundation Engineering modules</h2>
+      <p class="ch-lead">External effects on shallow foundations are station 7 of the course. The other interactive modules present the steps of foundation design in the same system.</p>
+    </header>
+    <div class="series">
+      <a class="next" href="https://melyalapozasok.vercel.app/en" target="_blank" rel="noopener"><b>Next: deep foundations</b><small>Piles, diaphragm walls, caissons – when the bearing stratum lies deep</small></a>
+      <a href="https://bme-alapozas.vercel.app/en" target="_blank" rel="noopener"><b>Foundation Engineering – home page</b><small>The nine stations of the course and every module in one place</small></a>
+      <a href="https://talajfelderites.vercel.app/en" target="_blank" rel="noopener"><b>Ground investigation</b><small>Boring, probing, geophysics, sampling – what we learn about the ground</small></a>
+      <a href="https://sikalapoktervezese.vercel.app/en" target="_blank" rel="noopener"><b>Design of shallow foundations</b><small>Foundation types, foundation level, limit states, failure mechanism</small></a>
+      <a href="https://sikalapok-teherbirasszamitasa.vercel.app/en" target="_blank" rel="noopener"><b>Bearing resistance of shallow foundations</b><small>Sizing the foundation area in the ultimate limit state</small></a>
+      <a href="https://sikalapokallekonysagvizsgalata.vercel.app/en" target="_blank" rel="noopener"><b>Stability of shallow foundations</b><small>Sliding, overturning, uplift, overall stability</small></a>
+      <a href="https://sikalapok-sullyedesszamitasa.vercel.app/en" target="_blank" rel="noopener"><b>Settlement of shallow foundations</b><small>Stresses in the ground, settlement, settlement tolerance, monitoring</small></a>
+      <a href="https://vedekezesakarossullyedesekellen.vercel.app/en" target="_blank" rel="noopener"><b>Protection against harmful settlement</b><small>Changing the foundation, compaction, grouting, design measures</small></a>
+      <a href="https://kedvezotlen-altalaj.vercel.app/en" target="_blank" rel="noopener"><b>Foundations on unfavourable ground</b><small>Expansive clay, collapsible loess, made ground, organic soil</small></a>
+      <a href="https://munkaterhatarolasok.vercel.app/en" target="_blank" rel="noopener"><b>Excavation support</b><small>Strutting, walls, anchoring – the excavation for a deeper foundation level</small></a>
+      <a href="https://bme-alapozas.vercel.app/telek/en" target="_blank" rel="noopener"><b>One site, one semester</b><small>Nine tasks on a single site – you are the geotechnical engineer</small></a>
+      <a href="https://bme-alapozas.vercel.app/ar-labor/en" target="_blank" rel="noopener"><b>Foundation Engineering AR lab</b><small>Bearing failure, pressure bulb, CFA pile and excavation on your own desk</small></a>
+    </div>
   </div>
 </section>
 

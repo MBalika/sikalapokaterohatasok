@@ -111,7 +111,6 @@ bc1a185	Number of storeys (RC frame)
 7fcc1cb	Acceleration <i>S</i><sub>e</sub>(<i>T</i><sub>1</sub>)
 a2480f8	Compared with rock (A)
 18cddfb	period T, s
-f335e9a	=
 dab3606	${cl.v}: plateau 2.5·S·a
 7d5414b	5 % damping (η = 1). The fundamental period of the building is estimated with the approximate formula of the standard (T<sub>1</sub> = C<sub>t</sub>·H<sup>3/4</sup>, C<sub>t</sub> = 0.075 for an RC frame, H = 3 m/storey).
 56b565f	Thickness of the soft layer
@@ -121,10 +120,8 @@ ff919ff	Preset
 bd0d576	Great Plain deposit
 c2c1664	Thin layer on rock
 f1ffb9b	Resonating number of storeys (<i>T</i> ≈ 0.1·<i>N</i>)
-1ffef86	=
 9712ad9	building period T ≈ 0.1·N, s
 f10520b	amplification
-33664d1	=
 b6c0811	Long-period ground
 bdb3791	Medium period
 ab2565a	Short period
