@@ -82,7 +82,6 @@ df55584	For a residential building 5 mm/s below 10 Hz (20 mm/s for industrial, 3
 3c174ea	Because a low frequency does not compact
 03459a6	Above the natural frequency the vibration is not amplified; it is recommended that the operating frequency be at least one and a half times the resonance frequency.
 2a4e690	Approximately what is the radius of the settlement crater around a pile driven into loose sand?
-dead78e	Compaction occurs in a zone of radius about 3D, and the surface crater has a radius of roughly 3D + L/2 – this is why it is dangerous if a neighbouring footing is within one pile length.
 10c6264	What is one of the basic rules of machine foundation design?
 e7b1715	The operating frequency should differ from the natural frequency of the system by at least 20–30 %
 6e12341	The operating frequency should equal the natural frequency

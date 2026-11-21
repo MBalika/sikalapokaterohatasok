@@ -5,7 +5,6 @@ d9344a6	Fill it
 6ff631a	A redundant cavity is filled with fly-ash concrete, cement mortar or by grouting.
 a5a27a0	04 · water
 e17da46	Keep it dry
-fa87a31	Rainwater and utility pipes must be routed away from the cavity: soaking is the main cause of failure.
 9d8fd36	<span class="ch-no">CH4</span><span>drawdown · grains · sump</span>
 b1ac344	<em>Erosion</em> by groundwater
 d847974	Flowing water exerts not only pressure but also a force on the soil grains. If this force is large enough, it tears the finer grains out of the soil skeleton and carries them away: cavities form under the foundations and the building settles. Riverbanks, bridge piers, poorly dewatered excavations and the surroundings of leaking utility pipes are particularly at risk.
@@ -13,7 +12,6 @@ e871be7	<span class="k">01 · rapid drawdown</span>When the river falls faster t
 341543a	For structures built on granular soil on the banks of rivers, during <b>rapid drawdown</b> the groundwater beneath the bank cannot follow the river level fast enough: it stays higher in the ground. The level difference starts a strong flow towards the river, and this <span class="hl">carries the grains away with it</span>. Cavities form under the foundations. The same process is also very important for the foundations of river bridges. In Budapest it caused damage under the old Customs House – today the main building of Corvinus University.
 4819516	Drawdown at the embankment
 d26b0db	<span class="k">02 · grains</span>When does a grain start to move?
-c4103fd	Flowing water exerts a <b>seepage force</b> on the soil skeleton in the direction of flow, proportional to the <b>hydraulic gradient</b> (<i>i</i> = Δ<i>h</i>/<i>L</i>, the fall in water level per unit length of flow path). For upward flow, at the <b>critical gradient</b>, <i>i</i><sub>cr</sub> = γ′/γ<sub>w</sub> ≈ 1, the effective stress drops to zero: the soil loses its weight and behaves like a dense liquid – this is a boil, “quicksand”. A much smaller gradient is enough to wash the fine grains out of a loose skeleton (suffusion) – especially in gap-graded, uniform fine sand and silt.
 dcf7a9e	Boil lab
 a2b4002	Filter test
 85c8251	<span class="k">03 · bridges</span>Scour around the bridge pier
@@ -51,7 +49,6 @@ bac2da7	Frost susceptibility classification
 4b4418a	Like frost action, the water content of the soil also lifts and lowers the building on <b>expansive clays</b> – but here no ice forms. High-plasticity clay swells when it takes up water and shrinks when it dries: in winter and spring it lifts a lightly loaded house, and by late summer and autumn it lowers it again; the cracks open and close with the seasons. This effect is covered in detail on another page.
 e1d4803	Foundations on unfavourable ground – expansive clay ↗
 d86b828	<span class="k">02 · frost depth</span>The foundation must go below the frost depth
-809ca83	One consideration in setting the foundation level is that the footing must be <b>below the frost depth</b>. In Hungarian practice the frost depth is 0.8 m: a smaller depth (0.5 m) is acceptable only for sand and gravel if the groundwater is deeper than 2 m; for ground levels above 300 m above sea level the frost depth is 0.8 or 1.0 m. The depth of frost penetration depends on the severity and duration of the frost (the freezing index), on the thermal conductivity and on the water content of the soil: in moist soil the latent heat of the freezing water slows the frost front down.
 e833026	Frost penetration calculator
 89098cf	<span class="k">03 · buildings</span>Where does the ground freeze under a building?
 5914b67	In normal, heated buildings it is mainly the foundation of the <b>external walls</b> and the <b>basement floor</b> that are exposed to frost. Next to the external wall, the intermittent melting of accumulated snow keeps the soil moist, and if the foundation is above the frost depth, the frost penetrates below it too. If the basement window is left open in winter, the air in the basement cools down and the soil below the floor freezes as well: the floor heaves and the walls crack. The same threatens half-finished buildings left unheated in winter and open excavations, where the already excavated foundation level can freeze.
@@ -69,9 +66,6 @@ fcaaaea	The soil beneath the floor of a cold store was kept above freezing by el
 f273f70	Cold store floors today typically have 10–15 cm of extruded polystyrene insulation, below which glycol heating pipes or heating cables placed every 60–120 cm keep the soil a few degrees above freezing. The heating power required is small, about 10–20 W/m² – much cheaper than the damage caused by frost heave.
 3da79c0	<span class="ch-no">REC</span><span>six animations</span>
 3a13dfb	Video <em>library</em>
-ae91c72	The chapter’s six animated videos in one place. Each presents one effect through an invented but realistic situation – the sixth sums up and tests your knowledge with six questions. In the player Esc closes and the arrow keys step through.
-33ab7d1	<span class="k">real footage</span>See it in real life!
-ac5437e	A short video from the BME Faculty of Civil Engineering shows the development of scour around a bridge pier on a three-dimensional model – minute by minute, as the water digs an ever deeper funnel around the pier.
 167ccc7	<span class="ch-no">TEST</span><span>true/false · glossary</span>
 2581956	Self-<em>check</em>
 459c3fa	Forty statements covering the whole chapter. Decide for each whether it is true – you get the explanation straight after answering. Below it is the glossary: the most important terms in one place, searchable.

@@ -14,3 +14,12 @@ Egyoldalas, statikus oldal (`index.html`), a forrás a `_src/` mappában (a Verc
 ## Videók zenéje
 
 A videók zenéje (2026-11) valódi hangszerek felvett mintáiból készült – zongora, vonósok, akusztikus és elektromos gitár, basszusgitár, fúvósok, akusztikus dob –, ütemre igazítva a képhez; a gép- és effekthangok a korábbi hangkönyvtárból vannak. Hangminták: Salamander Grand Piano (Alexander Holm, CC BY 3.0); tonejs-instruments (nbrosowsky; VSCO2, Karoryfer, Iowa, Freesound – CC BY 3.0); Tone.js dobminták.
+
+## Átnézés és ellenőrzés (`_src/qa/`)
+
+Helyi szerver a repó gyökerében (`python3 -m http.server 8850`), majd:
+- `audit.py <url> hu|en [szélességek]` – túlcsordulás, lyukas sor, tiltott sorvég, dobozcím, konzolhiba (az angol oldalon bent maradt magyar szó és tizedesvessző is);
+- `verify.py <url>` – a kalkulátorok alapértékeinek független újraszámolása;
+- `jump_h.py <url>` – a menügombok ugrása 1440 és 390 px-en; `perf.py`, `perf1.py` – képkockaidő widgetenként;
+- `scan.py`, `els.py`, `sections.py`, `sheet.py` – fényképezés; `boxcenter.py`, `boxshots.py` – dobozszöveg középre zárása; `mut_h.py`, `mutsrc.py` – tétlen DOM-mutációk.
+- Fordítás karbantartása: `python3 _src/i18n/sync.py snap | miss | prune` (szerkesztés előtt mentés, hiányzók a régi párral, fel nem használt kulcsok törlése).

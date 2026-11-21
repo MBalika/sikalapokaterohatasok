@@ -37,10 +37,8 @@ c58669c	Isoseismal map
 fc8b244	Hungarian firsts
 90a16de	After the 1810 Mór earthquake, Pál Kitaibel and Ádám Tomcsányi produced in 1814 what is perhaps the world’s first isoseismal map. The relationship describing the decrease of intensity with distance was formulated by Radó Kövesligethy, the founder of Hungarian seismology – the map above also uses it.
 f721fc1	<span class="k">03 · at home</span>Earthquakes in Hungary
-1826d6d	Hungary is not considered highly exposed, but it is not earthquake-free either. The national seismological network records 100–150 smaller earthquakes a year, most of which cannot be felt; a few a year are clearly felt around the epicentre but do not yet cause damage. An earthquake causing more significant damage occurs every decade, and a strong one causing heavy damage (<i>M</i> 5.5–6.0) on average every 40–70 years. The first known earthquake in Hungary occurred on 7 September 456 in Savaria, near today’s Szombathely (<i>M</i> ≈ 6.1). The area stretching from Komárom to the northern end of Lake Balaton is still one of the most active parts of the country; in the east, near the Hungarian–Romanian border, the activity of the Érmellék seismic zone has been known since 1829 – the damage from the 1834 earthquake can still be seen in the church of Máriapócs.
 31bae14	Map of historical earthquakes
 2269d9c	=
-21fd958	A third of the town was destroyed
 545221d	The intensity was IX: of the 1169 houses, 279 collapsed completely and 353 partly, seven churches collapsed, and 63 people died in Komárom. The number of victims was small for the strength of the earthquake – because of the light rammed-earth houses of the time.
 ee7dddc	=
 be5bbdb	3144 of 3500 buildings damaged
@@ -87,7 +85,6 @@ a7bc7d6	<b>1985</b><span>Mexico City<br>Mw 8.0</span>
 e3f051d	The focus was more than 350 km away, yet buildings collapsed in the city. On the lake-bed clay the acceleration was 4–5 times greater than on firm ground, and the motion was dominated by a period of about 2 s. Buildings with 6–15 storeys were hit hardest: 412 buildings collapsed and 3124 were severely damaged.
 5449f20	<b>1964</b><span>Niigata<br>M 7.5</span>
 910da7b	The houses toppled over intact
-29a9f1b	The loose sand along the river liquefied, and 340 reinforced concrete buildings tilted or settled; the structure of about two thirds of them remained intact. In the Kawagishi-cho housing estate the buildings settled by more than half a metre and tilted severely, and a four-storey building overturned completely.
 2c91eb6	<b>2011</b><span>Christchurch<br>New Zealand</span>
 dd13068	Half a million tonnes of ejected sand
 fbfcc51	Liquefaction during the 2010–2011 earthquake sequence damaged utilities over about a third of the city area. More than 500 000 t of sand that had erupted to the surface was carted away; the state bought up and demolished more than 8000 properties.
@@ -109,7 +106,6 @@ dea24d6	Cellar register
 bfa0002	A ten-thousand-cubic-metre collapse
 0e9af22	About 10 000 m³ of rock collapsed over an area of 35 × 40 m. During the later remediation, 105 flats and 21 public buildings had to be given up in Eger, and 25.4 km of cellars were backfilled.
 7e23d5e	<span class="chip c">rhyodacite tuff</span><span class="chip">soaking</span><span class="chip">backfilling</span>
-838b775	=
 58995b6	1300 cellars under the town centre
 01837a4	About 50 km of cellars run beneath the town centre. Collapses became regular from the late 1960s because of traffic and rainwater from the Mecsek hills; the cellars were backfilled with fly-ash concrete and cement mortar, or strengthened with shotcrete and mesh.
 8c21123	<span class="chip c">rainwater</span><span class="chip">shotcrete</span><span class="chip">fly-ash concrete</span>
@@ -120,7 +116,6 @@ c9937b8	The cavities of old limestone quarries extend beneath Budapest’s 10th 
 1a31a33	About 300 settlements affected
 a1fff82	Nationwide there are dangerous cellars in about 300 settlements. The state programme for mitigating cellar and bank-wall hazards ran for 30–35 years and was stopped in 2007; since then the municipalities have had to protect themselves from their own funds.
 7988b0a	<span class="k">03 · tunnels, mines</span>Tunnelling under the houses
-7bb09da	Urban tunnelling is also cavity excavation: behind the shield tunnelling machine, because of the gap between the lining ring and the soil and the movement of the soil ahead of the face, a settlement trough travels along the tunnel alignment at the surface. The shape of the trough is well approximated by a Gaussian curve: the maximum settlement is above the tunnel axis, and the inflection point, where the trough is steepest, lies at a distance <i>i</i> = <i>K</i>·<i>z</i><sub>0</sub> from the axis. The volume of the trough can be calculated from the <b>volume loss</b> (a few tenths of a per cent of the tunnel cross-section) – for modern face-supported shields it is typically 0.3–0.5 %.
 98049e4	=
 e2f2442	<b>i = K · z<sub>0</sub></b> – K ≈ 0.5 in clay, 0.25–0.35 in sand; z<sub>0</sub> is the depth of the tunnel axis
 04b4beb	<b>V<sub>s</sub> = √(2π) · i · S<sub>max</sub> ≈ 2.5 · i · S<sub>max</sub></b> – trough volume = volume loss · πD²/4

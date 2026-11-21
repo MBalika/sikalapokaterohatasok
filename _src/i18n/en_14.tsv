@@ -1,0 +1,35 @@
+# 2026-11-21: átnézés – videósáv a bevezető alatt, Összegzés fejezet, tartalmi javítások
+36f486d	Six short 3D animations: one per chapter, and the sixth sums up and tests you with six questions. Start with these – in the player Esc closes and the arrows step between videos.
+c41d425	The loose sand along the river liquefied, and more than 300 reinforced concrete buildings tilted or settled; the structure of about two thirds of them remained intact. In the Kawagishi-cho housing estate the buildings settled by more than half a metre and tilted severely, and a four-storey building overturned completely.
+f8652df	More than half of the houses damaged
+064fbdd	Hungary is not considered highly exposed, but it is not earthquake-free either. The national seismological network records on average 100–120 smaller earthquakes (below magnitude 2.5) a year, most of which cannot be felt; four or five a year are clearly felt around the epicentre but do not yet cause damage. An earthquake causing more significant damage occurs every 15–20 years, and a strong one causing very heavy damage (<i>M</i> 5.5–6.0) every 40–50 years. The first known earthquake in Hungary occurred on 7 September 456 in Savaria, near today’s Szombathely (<i>M</i> ≈ 6.1). The area stretching from Komárom to the northern end of Lake Balaton is still one of the most active parts of the country; in the east, near the Hungarian–Romanian border, the activity of the Érmellék seismic zone has been known since 1829 – the damage from the 1834 earthquake can still be seen in the church of Máriapócs.
+0a13ac9	Rainwater must be drained away and leaking utility pipes repaired: soaking is the main cause of failure.
+94252bc	Urban tunnelling is also cavity excavation: behind the shield tunnelling machine, because of the gap between the lining ring and the soil and the movement of the soil ahead of the face, a settlement trough travels along the tunnel alignment at the surface. The shape of the trough is well approximated by a Gaussian curve: the maximum settlement is above the tunnel axis, and the inflection point, where the trough is steepest, lies at a distance <i>i</i> = <i>K</i>·<i>z</i><sub>0</sub> from the axis. The volume of the trough can be calculated from the <b>volume loss</b> (a few tenths of a per cent of the tunnel cross-section) – for modern closed-face shields it is typically 0.3–0.5 %.
+504a1f4	=
+84f11ae	Flowing water exerts a <b>seepage force</b> on the soil skeleton in the direction of flow, proportional to the <b>hydraulic gradient</b> (<i>i</i> = Δ<i>h</i>/<i>L</i>, the fall in water level per unit length of flow path). For upward flow, at the <b>critical gradient</b>, <i>i</i><sub>cr</sub> = γ′/γ<sub>w</sub> ≈ 1, the effective stress drops to zero: the soil loses its weight and behaves like a dense liquid – this is a boil, “quicksand”. A much smaller gradient is enough to wash the fine grains out of a loose skeleton (suffusion) – especially in gap-graded soils, and in uniform fine sand and silt.
+062a639	One consideration in choosing the foundation level is that the footing should lie <b>below the frost depth</b>. In Hungarian practice the frost depth is 0.8 m in fine-grained soil, and 1.0 m above 500 m above Baltic sea level. In coarse-grained soil it is also 0.8 m, but below 500 m it may be reduced to 0.5 m if the winter groundwater level stays at least 2.0 m below the foundation level. The depth of frost penetration depends on the severity and duration of the frost (the freezing index) and on the thermal conductivity and water content of the soil: in wet soil the latent heat of the freezing water slows the frost front.
+275dad2	<span class="k">02 · game</span>Which effect caused it?
+9d4636e	<span class="k">01 · comparison</span>The effects in one table
+2742f48	Five effects, five mechanisms – and each leaves different traces. First we set them side by side in a table, then the summary video tests you with six questions, and finally in the Effect detective you decide for eleven damage sites what moved the building.
+2e7af1d	Sum<em>mary</em>
+f36d9c0	<span class="ch-no">Σ</span><span>comparison · video · effect detective</span>
+77574b7	In Eger the strength of rhyodacite tuff drops to a third to a fifth when soaked – this is why rainwater must be drained away and leaking utility pipes repaired.
+e37a5f6	V<sub>L</sub> = V<sub>s</sub> / (πD²/4); for modern closed-face shields typically 0.3–0.5 %.
+3d547e5	Compaction occurs in a zone of radius about 3·<i>D</i>, and the surface crater has a radius of roughly 3·<i>D</i> + <i>L</i>/2 – this is why it is dangerous if a neighbouring footing is within one pile length.
+03b6f12	One unit of magnitude means ten times the amplitude and 10<sup>1.5</sup> ≈ 32 times the energy.
+2748be2	In fine-grained soil 0.8 m, and 1.0 m above 500 m above sea level. In coarse-grained soil it may be reduced to 0.5 m below 500 m if the winter groundwater stays at least 2.0 m below the foundation level.
+1ee1ebd	the ground level is above 500 m above sea level
+2792a4e	winter groundwater at least 2 m below the foundation level
+d17650f	From quicksand the pump draws out the sand along with the water. Cloudy water is a warning sign: dewater with filtered wells or a filter layer.
+0a4ccd7	In quicksand, sump pumping also draws out the sand; dewater with filtered wells or a filter layer.
+eee4f12	comparison · video · effect detective
+69d8aca	Summary
+f49315e	A funnel-shaped settlement forming around a driven pile because of soil compaction; its radius is roughly 3·<i>D</i> + <i>L</i>/2 (<i>D</i> is the pile diameter, <i>L</i> its length).
+c5406ad	In coarse-grained soil it may be reduced to 0.5 m below 500 m above sea level if the winter groundwater stays at least 2.0 m below the foundation level; in fine-grained soil it is 1.0 m above 500 m.
+b527fdb	The structure of about two thirds of the more than 300 tilted or settled RC buildings remained intact – the soil liquefied beneath the foundations.
+dbc48d3	Of the 1169 houses, 279 collapsed completely and 353 partly; the relatively small number of victims is explained by the light rammed-earth houses.
+ced4501	In the 1763 Komárom earthquake more than half of the town’s houses collapsed or were damaged.
+c317de3	10<sup>1.5</sup> ≈ 32; the amplitude is ten times larger.
+a4bc082	Compaction occurs in a zone of radius about 3·<i>D</i>; the surface crater is much wider.
+070387f	Around a pile driven into loose sand, the radius of the settlement crater is roughly 3·<i>D</i> + <i>L</i>/2.
+90adc9f	 · Esc: close

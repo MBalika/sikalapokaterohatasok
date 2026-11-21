@@ -45,7 +45,6 @@ dce168b	The volume of the surface trough as a percentage of the tunnel cross-sec
 d926569	The mass of soil carted away
 e012b66	The shrinkage of the concrete
 1e68815	The evaporation of the groundwater
-09b49dc	V<sub>L</sub> = V<sub>s</sub> / (πD²/4); for modern face-supported shields typically 0.3–0.5 %.
 74eb06a	Where does a house tilt the most in a settlement trough?
 a9ef80c	At the edge of the trough, near the inflection point
 835c141	Exactly in the middle of the trough
@@ -57,7 +56,6 @@ fccfa1e	At the inflection point (x = i) the trough is steepest; this is where ti
 afc4397	Because the water freezes in it in summer
 a0c5ed4	Because tuff dissolves in water like salt
 4d3a922	It is not dangerous
-1f613f4	In Eger the strength of rhyodacite tuff drops to a third to a fifth when soaked – this is why rainwater and utility pipes must be routed away.
 5fd48ad	Blasting
 5cb3ef1	individual shocks < 1 s, in delayed sequences
 24c59e9	up to 100 mm/s near the source

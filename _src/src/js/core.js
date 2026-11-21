@@ -35,12 +35,14 @@ export function h(tag, attrs = {}, ...kids) {
 
 const SVGNS = 'http://www.w3.org/2000/svg';
 /** SVG-építő: svg('rect', {x:0, y:0, width:10, height:5, class:'f-steel'}, parent) */
+const SOILFILL = /^var\(--soil([A-E])\)$/;
 export function svg(tag, attrs = {}, parent = null) {
   const el = document.createElementNS(SVGNS, tag);
   for (const [k, v] of Object.entries(attrs || {})) {
     if (v === null || v === undefined || v === false) continue;
     if (k === 'text') el.textContent = v;
     else if (k === 'html') el.innerHTML = v;
+    else if (k === 'fill' && typeof v === 'string' && SOILFILL.test(v)) { el.setAttribute('fill', v); el.style.fill = `url(#tx-soil${v.match(SOILFILL)[1]})`; }   // valósághű talajtextúra (img/tex), tartalék: a színváltozó
     else el.setAttribute(k, v);
   }
   if (parent) parent.appendChild(el);
@@ -529,3 +531,21 @@ export function wrapText(ctx, str, maxW) {
   return lines.map(l => l.replace(/\u2060/g, ''));
 }
 
+
+/* ---------------------------------------------------------------- füves felszín és kis ház az SVG-metszetekhez */
+/** Füves sáv a terepvonal mentén: grassLine(g, [[x, y], …]) */
+export function grassLine(parent, pts) {
+  return svg('path', { d: pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + (p[1] + 1.5).toFixed(1)).join(' '), class: 'grassln' }, parent);
+}
+/** Kis ház a felszínen: a (cx, yb) pont a lábazat közepe; rot fokban, crack 0…1 (repedés a falon). */
+export function miniHouse(parent, cx, yb, w = 64, hh = 34, o = {}) {
+  const g = svg('g', { transform: `translate(${cx.toFixed(1)} ${yb.toFixed(1)}) rotate(${(o.rot || 0).toFixed(2)})` }, parent);
+  svg('rect', { x: -w / 2 - 3, y: -5, width: w + 6, height: 9, fill: 'var(--concrete)', stroke: 'var(--ink2)', 'stroke-width': 0.8 }, g);
+  svg('rect', { x: -w / 2, y: -hh, width: w, height: hh - 4, fill: 'var(--wall, #efe6d4)', stroke: 'var(--ink2)', 'stroke-width': 1 }, g);
+  svg('path', { d: `M${-w / 2 - 6} ${-hh} L0 ${-hh - w * 0.3} L${w / 2 + 6} ${-hh} Z`, fill: 'var(--brick)', stroke: 'var(--ink2)', 'stroke-width': 1, 'stroke-linejoin': 'round' }, g);
+  svg('rect', { x: w * 0.2, y: -hh - w * 0.3, width: 6, height: w * 0.2, fill: 'var(--brick)', stroke: 'var(--ink2)', 'stroke-width': 0.8 }, g);
+  for (const x of [-w * 0.3, w * 0.12]) svg('rect', { x: x - 5, y: -hh + 8, width: 11, height: 11, fill: 'var(--glass, #b9d3e2)', stroke: 'var(--ink2)', 'stroke-width': 0.8 }, g);
+  svg('rect', { x: -w * 0.08 - 4, y: -22, width: 9, height: 18, fill: 'var(--timber)', stroke: 'var(--ink2)', 'stroke-width': 0.8 }, g);
+  if (o.crack > 0.05) svg('path', { d: `M${w * 0.33} ${-hh + 1} l-4 8 l5 6 l-5 8 l3 7`, fill: 'none', stroke: 'var(--bad)', 'stroke-width': 0.8 + 1.6 * o.crack, 'stroke-linejoin': 'round', opacity: Math.min(1, o.crack * 1.6) }, g);
+  return g;
+}
