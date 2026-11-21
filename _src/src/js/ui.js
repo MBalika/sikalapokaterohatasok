@@ -183,7 +183,7 @@ function openVideo(n) {
   curIdx = order.indexOf(n);
   const m = $('#vmodal');
   $('#vmTitle', m).textContent = v.t;
-  $('#vmFrame', m).src = `video/${EN ? 'en/' : ''}${n}.html?v=3#autoplay`;
+  $('#vmFrame', m).src = `video/${EN ? 'en/' : ''}${n}.html?v=4#autoplay`;
   $('#vmInfo', m).textContent = `${curIdx + 1} / ${order.length}` + (v.d ? ` · ${v.d}` : '') + ` · Esc: bezárás`;
   m.hidden = false; document.body.style.overflow = 'hidden';
   dispatchEvent(new Event('sims:pause'));
