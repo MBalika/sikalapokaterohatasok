@@ -674,8 +674,17 @@ section.vstrip { padding: 34px 0 26px; }
 @media (max-width: 1320px) { .topnav { display: none; } .menubtn { display: inline-grid; margin-left: auto; } }
 html[lang^="en"] .topnav a small { display: none; } html[lang^="en"] .topnav a { padding: 7px 8px; }
 
+/* kereszthivatkozások a társ-tananyagokra („máshol is” dobozok) */
+.xref { margin: 22px 0 8px; padding: 12px 14px 14px; border: 1px dashed var(--line2, var(--line)); border-radius: 12px; background: var(--surface2, var(--card2)); }
+.xref-h { display: block; text-align: center; font: 700 11.5px/1.2 var(--f-mono, ui-monospace, monospace); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, var(--mute)); margin: 0 0 10px; }
+.xref-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.xref a { flex: 1 1 260px; max-width: 440px; display: grid; grid-template-columns: auto 1fr; column-gap: 11px; align-items: center; padding: 9px 12px; border-radius: 10px; background: var(--surface, var(--card)); border: 1px solid var(--line); border-left: 4px solid var(--xc); text-decoration: none; color: var(--ink); transition: border-color .15s, transform .15s; }
+.xref a:hover { border-color: var(--xc); transform: translateY(-1px); }
+.xref .xa { grid-row: span 2; min-width: 34px; height: 34px; padding: 0 5px; border-radius: 8px; display: grid; place-items: center; font: 800 12px/1 var(--f-mono, ui-monospace, monospace); color: #fff; background: var(--xc); }
+.xref b { font-size: 13.5px; line-height: 1.25; }
+.xref small { color: var(--muted, var(--mute)); font-size: 12.5px; line-height: 1.35; text-align: left; hyphens: manual; }
+
 </style>
-<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script><script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 <header class="topbar" id="top">
@@ -829,6 +838,8 @@ html[lang^="en"] .topnav a small { display: none; } html[lang^="en"] .topnav a {
       <b>How much vibration can be felt?</b>
       <p>People are much more sensitive to vibration than buildings: continuous vibration is clearly perceptible at around 1 mm/s, and 2.5 mm/s is strong. In buildings next to busy roads, traffic vibration rarely reaches 2 mm/s; at 5 mm/s it is already disturbing. The 5 mm/s limit for residential buildings is therefore not the limit of discomfort but of damage.</p>
     </div>
+
+    <aside class="xref" aria-label="Related course materials"><span class="xref-h">Related topic elsewhere</span><div class="xref-list"><a href="https://munkaterhatarolasok.vercel.app/en#szadfal" target="_blank" rel="noopener" style="--xc:#d38a12"><span class="xa">4.5</span><b>Excavation support ↗</b><small>Steel sheet pile wall: vibrating, driving, pressing – a vibration estimator for the neighbouring building</small></a><a href="https://melyalapozasok.vercel.app/en#elore-rezges" target="_blank" rel="noopener" style="--xc:#9b3cab"><span class="xa">3.5</span><b>Deep foundations ↗</b><small>Vibration next door: driven and vibrated piles beside a sensitive building</small></a></div></aside>
 
     <div class="quiz" data-quiz="dyn"></div>
   </div>
@@ -984,6 +995,8 @@ html[lang^="en"] .topnav a small { display: none; } html[lang^="en"] .topnav a {
       <div class="card tint"><span class="k">04 · water</span><h4>Keep it dry</h4><p>Rainwater must be drained away and leaking utility pipes repaired: soaking is the main cause of failure.</p></div>
     </div>
 
+    <aside class="xref" aria-label="Related course materials"><span class="xref-h">Related topic elsewhere</span><div class="xref-list"><a href="https://munkaterhatarolasok.vercel.app/en#resfal" target="_blank" rel="noopener" style="--xc:#d38a12"><span class="xa">4.8</span><b>Excavation support ↗</b><small>Diaphragm wall: the watertight wall of deep urban excavations – how it is built</small></a><a href="https://munkaterhatarolasok.vercel.app/en#szegezes" target="_blank" rel="noopener" style="--xc:#d38a12"><span class="xa">6</span><b>Excavation support ↗</b><small>Soil nailing: nails, mesh and shotcrete – support lift by lift</small></a></div></aside>
+
     <div class="quiz" data-quiz="cav"></div>
   </div>
 </section>
@@ -1039,6 +1052,8 @@ html[lang^="en"] .topnav a small { display: none; } html[lang^="en"] .topnav a {
       <div class="case" style="--c:var(--c4)"><div class="yr"><b>2010</b><span>Guatemala City</span></div><div class="bd"><h4>A circular collapse in the city</h4><p>After a tropical storm, a circular, vertical-walled hole about 18–20 m in diameter opened at a road junction. The probable cause: a leaking sewer had been washing out the loose pumice fill for a long time.</p></div></div>
     </div>
 
+    <aside class="xref" aria-label="Related course materials"><span class="xref-h">Related topic elsewhere</span><div class="xref-list"><a href="https://munkaterhatarolasok.vercel.app/en#falak" target="_blank" rel="noopener" style="--xc:#d38a12"><span class="xa">4</span><b>Excavation support ↗</b><small>Excavation support walls: which one keeps the groundwater out of the pit?</small></a><a href="https://munkaterhatarolasok.vercel.app/en#gat" target="_blank" rel="noopener" style="--xc:#d38a12"><span class="xa">7.2</span><b>Excavation support ↗</b><small>Cofferdams in open water: a dry working space in the river bed, around the bridge pier</small></a><a href="https://melyalapozasok.vercel.app/en#alap-kimosas" target="_blank" rel="noopener" style="--xc:#9b3cab"><span class="xa">1.5</span><b>Deep foundations ↗</b><small>When water scours the foundation: a deep foundation beneath the river pier</small></a></div></aside>
+
     <div class="quiz" data-quiz="wash"></div>
   </div>
 </section>
@@ -1092,6 +1107,8 @@ html[lang^="en"] .topnav a small { display: none; } html[lang^="en"] .topnav a {
       <b>Today’s solution in brief</b>
       <p>Cold store floors today typically have 10–15 cm of extruded polystyrene insulation, below which glycol heating pipes or heating cables placed every 60–120 cm keep the soil a few degrees above freezing. The heating power required is small, about 10–20 W/m² – much cheaper than the damage caused by frost heave.</p>
     </div>
+
+    <aside class="xref" aria-label="Related course materials"><span class="xref-h">Related topic elsewhere</span><div class="xref-list"><a href="https://munkaterhatarolasok.vercel.app/en#fagyasztas" target="_blank" rel="noopener" style="--xc:#d38a12"><span class="xa">7.1</span><b>Excavation support ↗</b><small>Frozen wall: when frost is called in on purpose</small></a></div></aside>
 
     <div class="quiz" data-quiz="frost"></div>
   </div>

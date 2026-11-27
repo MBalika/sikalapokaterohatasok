@@ -675,8 +675,17 @@ section.vstrip { padding: 34px 0 26px; }
 @media (max-width: 1320px) { .topnav { display: none; } .menubtn { display: inline-grid; margin-left: auto; } }
 html[lang^="en"] .topnav a small { display: none; } html[lang^="en"] .topnav a { padding: 7px 8px; }
 
+/* kereszthivatkozások a társ-tananyagokra („máshol is” dobozok) */
+.xref { margin: 22px 0 8px; padding: 12px 14px 14px; border: 1px dashed var(--line2, var(--line)); border-radius: 12px; background: var(--surface2, var(--card2)); }
+.xref-h { display: block; text-align: center; font: 700 11.5px/1.2 var(--f-mono, ui-monospace, monospace); letter-spacing: .08em; text-transform: uppercase; color: var(--muted, var(--mute)); margin: 0 0 10px; }
+.xref-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.xref a { flex: 1 1 260px; max-width: 440px; display: grid; grid-template-columns: auto 1fr; column-gap: 11px; align-items: center; padding: 9px 12px; border-radius: 10px; background: var(--surface, var(--card)); border: 1px solid var(--line); border-left: 4px solid var(--xc); text-decoration: none; color: var(--ink); transition: border-color .15s, transform .15s; }
+.xref a:hover { border-color: var(--xc); transform: translateY(-1px); }
+.xref .xa { grid-row: span 2; min-width: 34px; height: 34px; padding: 0 5px; border-radius: 8px; display: grid; place-items: center; font: 800 12px/1 var(--f-mono, ui-monospace, monospace); color: #fff; background: var(--xc); }
+.xref b { font-size: 13.5px; line-height: 1.25; }
+.xref small { color: var(--muted, var(--mute)); font-size: 12.5px; line-height: 1.35; text-align: left; hyphens: manual; }
+
 </style>
-<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script><script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 <header class="topbar" id="top">
@@ -830,6 +839,8 @@ html[lang^="en"] .topnav a small { display: none; } html[lang^="en"] .topnav a {
       <b>Mekkora rezgés érezhető?</b>
       <p>Az ember a rezgésre sokkal érzékenyebb, mint az épület: folyamatos rezgésnél már 1 mm/s körül jól érzékelhető, a 2,5 mm/s erős. A nagy forgalmú utak melletti épületekben a forgalom okozta rezgés ritkán éri el a 2 mm/s-ot, 5 mm/s-nál már zavaró. A lakóépületekre vonatkozó 5 mm/s-os határérték tehát nem a kellemetlenség, hanem a kár határa.</p>
     </div>
+
+    <aside class="xref" aria-label="Kapcsolódó tananyagok"><span class="xref-h">Kapcsolódó téma máshol</span><div class="xref-list"><a href="https://munkaterhatarolasok.vercel.app#szadfal" target="_blank" rel="noopener" style="--xc:#d38a12"><span class="xa">4.5</span><b>Munkatérhatárolások ↗</b><small>Acél szádfal: vibrálás, verés, sajtolás – rezgésbecslő a szomszéd épülethez</small></a><a href="https://melyalapozasok.vercel.app#elore-rezges" target="_blank" rel="noopener" style="--xc:#9b3cab"><span class="xa">3.5</span><b>Mélyalapozások ↗</b><small>Rezgés a szomszédban: vert és vibrált cölöpök érzékeny épület mellett</small></a></div></aside>
 
     <div class="quiz" data-quiz="dyn"></div>
   </div>
@@ -985,6 +996,8 @@ html[lang^="en"] .topnav a small { display: none; } html[lang^="en"] .topnav a {
       <div class="card tint"><span class="k">04 · víz</span><h4>Szárazon tartani</h4><p>A csapadékvizet el kell vezetni, a szivárgó közműveket ki kell javítani: az átázás a tönkremenetel fő oka.</p></div>
     </div>
 
+    <aside class="xref" aria-label="Kapcsolódó tananyagok"><span class="xref-h">Kapcsolódó téma máshol</span><div class="xref-list"><a href="https://munkaterhatarolasok.vercel.app#resfal" target="_blank" rel="noopener" style="--xc:#d38a12"><span class="xa">4.8</span><b>Munkatérhatárolások ↗</b><small>Réselt fal: a mély városi munkagödrök vízzáró fala – így készül</small></a><a href="https://munkaterhatarolasok.vercel.app#szegezes" target="_blank" rel="noopener" style="--xc:#d38a12"><span class="xa">6</span><b>Munkatérhatárolások ↗</b><small>Talajszegezés: szegek, háló és lőttbeton – megtámasztás fogásról fogásra</small></a></div></aside>
+
     <div class="quiz" data-quiz="cav"></div>
   </div>
 </section>
@@ -1040,6 +1053,8 @@ html[lang^="en"] .topnav a small { display: none; } html[lang^="en"] .topnav a {
       <div class="case" style="--c:var(--c4)"><div class="yr"><b>2010</b><span>Guatemalaváros</span></div><div class="bd"><h4>Kerek beszakadás a városban</h4><p>Egy trópusi vihar után egy kb. 18–20 m átmérőjű, kör alakú, függőleges falú gödör nyílt egy útkereszteződésben. A valószínű ok: egy lyukas csatorna hosszú időn át mosta ki a laza horzsakő-feltöltést.</p></div></div>
     </div>
 
+    <aside class="xref" aria-label="Kapcsolódó tananyagok"><span class="xref-h">Kapcsolódó téma máshol</span><div class="xref-list"><a href="https://munkaterhatarolasok.vercel.app#falak" target="_blank" rel="noopener" style="--xc:#d38a12"><span class="xa">4</span><b>Munkatérhatárolások ↗</b><small>Munkatérhatároló falak: melyik zárja ki a talajvizet a gödörből?</small></a><a href="https://munkaterhatarolasok.vercel.app#gat" target="_blank" rel="noopener" style="--xc:#d38a12"><span class="xa">7.2</span><b>Munkatérhatárolások ↗</b><small>Gátak élővízben: száraz munkatér a mederben, a hídpillér körül</small></a><a href="https://melyalapozasok.vercel.app#alap-kimosas" target="_blank" rel="noopener" style="--xc:#9b3cab"><span class="xa">1.5</span><b>Mélyalapozások ↗</b><small>Ha a víz kimossa az alapot: mélyalap a mederpillér alatt</small></a></div></aside>
+
     <div class="quiz" data-quiz="wash"></div>
   </div>
 </section>
@@ -1093,6 +1108,8 @@ html[lang^="en"] .topnav a small { display: none; } html[lang^="en"] .topnav a {
       <b>A mai megoldás röviden</b>
       <p>A hűtőházak padlójában ma jellemzően 10–15 cm extrudált polisztirol hőszigetelés van, alatta 60–120 cm-enként elhelyezett glikolos fűtőcsövek vagy fűtőkábelek tartják a talajt néhány fokkal fagypont felett. A szükséges fűtési teljesítmény kicsi, kb. 10–20 W/m² – sokkal olcsóbb, mint a fagyemelés okozta kár.</p>
     </div>
+
+    <aside class="xref" aria-label="Kapcsolódó tananyagok"><span class="xref-h">Kapcsolódó téma máshol</span><div class="xref-list"><a href="https://munkaterhatarolasok.vercel.app#fagyasztas" target="_blank" rel="noopener" style="--xc:#d38a12"><span class="xa">7.1</span><b>Munkatérhatárolások ↗</b><small>Fagyasztott fal: amikor a fagyot szándékosan hívjuk segítségül</small></a></div></aside>
 
     <div class="quiz" data-quiz="frost"></div>
   </div>
